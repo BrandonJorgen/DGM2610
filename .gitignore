@@ -58,3 +58,11 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+Unity Project/Library/
+
+Unity Project/Logs/Packages-Update.log
+
+Unity Project/Temp/
+
+Unity Project/Packages/
