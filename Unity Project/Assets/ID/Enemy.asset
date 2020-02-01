@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 900b50f9480d9104fb3ef6594c756353, type: 3}
-  m_Name: HVControls
+  m_Script: {fileID: 11500000, guid: 980b8754f90edaa479c31efc2d46327b, type: 3}
+  m_Name: Enemy
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -9.118529, z: 0}
-  moveSpeed: 5
-  jumpSpeed: 5
-  rollSpeed: 300
-  gravity: 9.81
-  swingMomentumSpeed: 1
-  canMove: 1

@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class ControlsEventBehavior : MonoBehaviour
 {
-    public UnityEvent spaceDown, leftControlDown, leftControlUp;
+    public UnityEvent spaceDown, leftControlDown, leftControlUp, leftShiftDown, leftShiftUp;
 
     private void Update()
     {
@@ -20,6 +20,16 @@ public class ControlsEventBehavior : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             leftControlUp.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            leftShiftDown.Invoke();
+        }
+        
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            leftShiftUp.Invoke();
         }
     }
 }

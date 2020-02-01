@@ -4,44 +4,84 @@
 public class CharacterControllerSO : ScriptableObject
 {
     public Vector3 position;
+    
+    public float moveSpeed = 5f, jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f;
 
-    public float moveSpeed = 5f, jumpSpeed = 10f, rollDistance = 100f, gravity = 9.81f;
+    public bool canMove = true;
+
+    public void ResetPosition()
+    {
+        position = new Vector3(0, 1, 0);
+    }
     
     public void MoveCharacter(CharacterController controller)
     {
-        if (controller.isGrounded)
+        if (canMove)
         {
-            position.Set(Input.GetAxis("Horizontal") * moveSpeed, 0, Input.GetAxis("Vertical") * moveSpeed);
-            
-            if (position != Vector3.zero)
+            if (controller.isGrounded)
             {
-                controller.transform.forward = position;
+                position.Set(Input.GetAxis("Horizontal") * moveSpeed, 0, Input.GetAxis("Vertical") * moveSpeed);
+            
+                if (position != Vector3.zero)
+                {
+                    controller.transform.forward = position;
+                }
             }
-        }
         
-        position.y -= gravity * Time.deltaTime;
-        controller.Move(position * Time.deltaTime);
+            position.y -= gravity * Time.deltaTime;
+            controller.Move(position * Time.deltaTime);
+        }
     }
 
     public void Jump(CharacterController controller)
     {
-        if (controller.isGrounded)
+        if (canMove)
         {
-            position.y = jumpSpeed;
-        }
+            if (controller.isGrounded)
+            {
+                position.y = jumpSpeed;
+            }
         
-        controller.Move(position * Time.deltaTime);
+            controller.Move(position * Time.deltaTime);
+        }
     }
 
     public void DodgeRoll(CharacterController controller)
     {
-        if (controller.isGrounded)
+        if (canMove)
         {
-            //Move forward by a specific amount at a specific speed
-            position.Set(Input.GetAxis("Horizontal") * rollDistance, 0, Input.GetAxis("Vertical") * rollDistance);
-            //Reduce controller height
-        }
+            if (controller.isGrounded)
+            {
+                position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
+            }
         
-        controller.Move(position * Time.deltaTime);
+            controller.Move(position * Time.deltaTime);
+        }
+    }
+
+    public void ShrinkHeight(CharacterController controller)
+    {
+        controller.height = 0.5f;
+    }
+
+    public void GrowHeight(CharacterController controller)
+    {
+        controller.height = 1f;
+    }
+
+    public void StopMovement(CharacterController controller)
+    {
+        canMove = false;
+        position = Vector3.zero;
+    }
+
+    public void ResumeMovement(CharacterController controller)
+    {
+        canMove = true;
+    }
+
+    public void SwingMomentum(CharacterController controller)
+    {
+        //Placeholder for attack movement
     }
 }
