@@ -11,6 +11,7 @@
           <e p="CharacterControllerSO.cs" t="Include" />
           <e p="ControlsEventBehavior.cs" t="Include" />
           <e p="Debugger.cs" t="Include" />
+          <e p="FloatData.cs" t="Include" />
           <e p="IDBehavior.cs" t="Include" />
           <e p="IDMatch.cs" t="Include" />
           <e p="IDName.cs" t="Include" />
