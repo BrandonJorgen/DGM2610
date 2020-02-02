@@ -5,10 +5,15 @@ using UnityEngine.Events;
 public class IDBehavior : MonoBehaviour
 {
     public List<IDName> IDNameList;
-    public UnityEvent ExecuteEvent;
+    public UnityEvent EnteredEvent, ExitedEvent;
 
-    public void Execute()
+    public void EnteredTrigger()
     {
-        ExecuteEvent.Invoke();
+        EnteredEvent.Invoke();
+    }
+
+    public void ExitedTrigger()
+    {
+        ExitedEvent.Invoke();
     }
 }

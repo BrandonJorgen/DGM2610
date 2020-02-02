@@ -168,22 +168,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IDNameList:
   - {fileID: 11400000, guid: 3b0e9dcff2947bd49bf6f160d2051230, type: 2}
-  ExecuteEvent:
+  EnteredEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: bd86bae312ab1094d89030881cc5d81c, type: 2}
-        m_MethodName: EventDebug
-        m_Mode: 5
+      - m_Target: {fileID: 5281621}
+        m_MethodName: InstantiateObj
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: debug more like denut
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5281621}
-        m_MethodName: InstantiateObj
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ExitedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: bc2ac9fea4aa7574d9650223b54ee25b, type: 2}
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -885,7 +890,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IDNameList:
   - {fileID: 11400000, guid: fb4fe69a89fdc2f4a926c71984e5b7af, type: 2}
-  ExecuteEvent:
+  EnteredEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ExitedEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
