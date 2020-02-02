@@ -13,6 +13,7 @@
           <e p="ControlsEventBehavior.cs" t="Include" />
           <e p="Debugger.cs" t="Include" />
           <e p="DestroyObjSO.cs" t="Include" />
+          <e p="EbuttonEventBehavior.cs" t="Include" />
           <e p="FloatData.cs" t="Include" />
           <e p="GameAction.cs" t="Include" />
           <e p="GameActionHandler.cs" t="Include" />
@@ -24,6 +25,7 @@
           <e p="MonoEventBehavior.cs" t="Include" />
           <e p="TransformSO.cs" t="Include" />
           <e p="TriggerBehavior.cs" t="Include" />
+          <e p="UseObjSO.cs" t="Include" />
           <e p="Vector3SO.cs" t="Include" />
         </e>
       </e>
