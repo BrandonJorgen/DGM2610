@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="AnimBehavior.cs" t="Include" />
           <e p="AnimEventBehavior.cs" t="Include" />
           <e p="CharacterControllerSO.cs" t="Include" />
           <e p="ControlsEventBehavior.cs" t="Include" />
@@ -15,6 +16,8 @@
           <e p="IDBehavior.cs" t="Include" />
           <e p="IDMatch.cs" t="Include" />
           <e p="IDName.cs" t="Include" />
+          <e p="InstantiateObjBehavior.cs" t="Include" />
+          <e p="LookAtCameraSO.cs" t="Include" />
           <e p="MonoEventBehavior.cs" t="Include" />
           <e p="TransformSO.cs" t="Include" />
           <e p="TriggerBehavior.cs" t="Include" />
