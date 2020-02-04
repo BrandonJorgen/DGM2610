@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900b50f9480d9104fb3ef6594c756353, type: 3}
   m_Name: HVControls
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -0.16503854, z: 0}
-  moveSpeed: 5
+  position: {x: 0, y: -0.22306961, z: 0}
   jumpSpeed: 5
   rollSpeed: 300
   gravity: 9.81
   swingMomentumSpeed: 1
+  moveSpeed: {fileID: 11400000, guid: 25641122a6ad2db4ebfd5cfac64ce6da, type: 2}
   canMove: {fileID: 11400000, guid: 3d1b4b45a53d8414fac98e8f8be18cc5, type: 2}
   canMoveLeft: {fileID: 11400000, guid: 45ce73ad2e8b85040a53b7376cfee1bc, type: 2}
   canMoveRight: {fileID: 11400000, guid: 350dcde262f889a449c8453e849958aa, type: 2}

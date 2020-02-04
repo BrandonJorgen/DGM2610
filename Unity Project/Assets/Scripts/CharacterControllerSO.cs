@@ -5,7 +5,8 @@ public class CharacterControllerSO : ScriptableObject
 {
     public Vector3 position;
     
-    public float moveSpeed = 5f, jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f;
+    public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f;
+    public FloatDataSO moveSpeed;
 
     private float horizontalInput, verticalInput;
 
@@ -50,7 +51,7 @@ public class CharacterControllerSO : ScriptableObject
                     horizontalInput = 0;
                 }
             
-                position.Set(horizontalInput * moveSpeed, 0, verticalInput * moveSpeed);
+                position.Set(horizontalInput * moveSpeed.value, 0, verticalInput * moveSpeed.value);
 
                 if (faceMoveDirection.boolData)
                 {

@@ -405,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 2605852142987860972, guid: 9e87f6204099a994fa3455d3c31cc1d2,
         type: 3}
       propertyPath: m_Name
-      value: MovingBoxBoundaryBox
+      value: MovingBoxBoundary
       objectReference: {fileID: 0}
     - target: {fileID: 2605852142987860971, guid: 9e87f6204099a994fa3455d3c31cc1d2,
         type: 3}
@@ -462,7 +462,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6119665203795457530, guid: 9e87f6204099a994fa3455d3c31cc1d2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2605852142987860970, guid: 9e87f6204099a994fa3455d3c31cc1d2, type: 3}
+    - {fileID: 5360900261109838703, guid: 9e87f6204099a994fa3455d3c31cc1d2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e87f6204099a994fa3455d3c31cc1d2, type: 3}
 --- !u!4 &7284735668901009813 stripped
 Transform:
