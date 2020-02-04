@@ -3,7 +3,7 @@
  
  public class ControlsEventBehavior : MonoBehaviour
  {
-     public UnityEvent spaceDown, leftControlDown, leftControlUp, leftShiftDown, leftShiftUp, qDown, qUp;
+     public UnityEvent spaceDown, leftControlDown, leftControlUp, leftShiftDown, leftShiftUp, qDown, qUp, eDown, eUp, fDown, fUp;
  
      private void Update()
      {
@@ -40,6 +40,26 @@
          if (Input.GetKeyUp(KeyCode.Q))
          {
              qUp.Invoke();
+         }
+         
+         if (Input.GetKeyDown(KeyCode.E))
+         {
+             eDown.Invoke();
+         }
+
+         if (Input.GetKeyUp(KeyCode.E))
+         {
+             eUp.Invoke();
+         }
+         
+         if (Input.GetKeyDown(KeyCode.F))
+         {
+             fDown.Invoke();
+         }
+
+         if (Input.GetKeyUp(KeyCode.F))
+         {
+             fUp.Invoke();
          }
      }
  }

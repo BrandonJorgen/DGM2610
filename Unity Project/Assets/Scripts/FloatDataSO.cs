@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu]
-public class FloatData : ScriptableObject
+public class FloatDataSO : ScriptableObject
 {
     public float data, dataCap;
 

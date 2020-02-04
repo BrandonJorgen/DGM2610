@@ -7,24 +7,57 @@ public class CharacterControllerSO : ScriptableObject
     
     public float moveSpeed = 5f, jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f;
 
-    public bool canMove = true;
+    private float horizontalInput, verticalInput;
 
-    public void ResetPosition()
+    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection;
+
+    public void ResetBools()
     {
-        position = new Vector3(0, 1, 0);
+        canMove.boolData = true;
+        canMoveUp.boolData = true;
+        canMoveDown.boolData = true;
+        canMoveLeft.boolData = true;
+        canMoveRight.boolData = true;
+        faceMoveDirection.boolData = true;
     }
     
     public void MoveCharacter(CharacterController controller)
     {
-        if (canMove)
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+        
+        if (canMove.boolData)
         {
             if (controller.isGrounded)
             {
-                position.Set(Input.GetAxis("Horizontal") * moveSpeed, 0, Input.GetAxis("Vertical") * moveSpeed);
-            
-                if (position != Vector3.zero)
+                if (!canMoveUp.boolData && verticalInput > 0)
                 {
-                    controller.transform.forward = position;
+                    verticalInput = 0;
+                }
+
+                if (!canMoveDown.boolData && verticalInput < 0)
+                {
+                    verticalInput = 0;
+                }
+
+                if (!canMoveLeft.boolData && horizontalInput < 0)
+                {
+                    horizontalInput = 0;
+                }
+
+                if (!canMoveRight.boolData && horizontalInput > 0)
+                {
+                    horizontalInput = 0;
+                }
+            
+                position.Set(horizontalInput * moveSpeed, 0, verticalInput * moveSpeed);
+
+                if (faceMoveDirection.boolData)
+                {
+                    if (position != Vector3.zero)
+                    {
+                        controller.transform.forward = position;
+                    }
                 }
             }
         
@@ -35,7 +68,7 @@ public class CharacterControllerSO : ScriptableObject
 
     public void Jump(CharacterController controller)
     {
-        if (canMove)
+        if (canMove.boolData)
         {
             if (controller.isGrounded)
             {
@@ -48,7 +81,7 @@ public class CharacterControllerSO : ScriptableObject
 
     public void DodgeRoll(CharacterController controller)
     {
-        if (canMove)
+        if (canMove.boolData)
         {
             if (controller.isGrounded)
             {
@@ -71,17 +104,12 @@ public class CharacterControllerSO : ScriptableObject
 
     public void StopMovement(CharacterController controller)
     {
-        canMove = false;
+        canMove.boolData = false;
         position = Vector3.zero;
     }
 
     public void ResumeMovement(CharacterController controller)
     {
-        canMove = true;
-    }
-
-    public void SwingMomentum(CharacterController controller)
-    {
-        //Placeholder for attack movement
+        canMove.boolData = true;
     }
 }

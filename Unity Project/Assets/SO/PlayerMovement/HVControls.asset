@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900b50f9480d9104fb3ef6594c756353, type: 3}
+  m_Name: HVControls
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: -0.16503854, z: 0}
+  moveSpeed: 5
+  jumpSpeed: 5
+  rollSpeed: 300
+  gravity: 9.81
+  swingMomentumSpeed: 1
+  canMove: {fileID: 11400000, guid: 3d1b4b45a53d8414fac98e8f8be18cc5, type: 2}
+  canMoveLeft: {fileID: 11400000, guid: 45ce73ad2e8b85040a53b7376cfee1bc, type: 2}
+  canMoveRight: {fileID: 11400000, guid: 350dcde262f889a449c8453e849958aa, type: 2}
+  canMoveUp: {fileID: 11400000, guid: f70270cbd002712438de4be9cf4a26fe, type: 2}
+  canMoveDown: {fileID: 11400000, guid: 56f649f7169b636488d5872d9d22e3f4, type: 2}
+  faceMoveDirection: {fileID: 11400000, guid: abedd7e5dfa643e4abc8a1657dea8b6d, type: 2}
