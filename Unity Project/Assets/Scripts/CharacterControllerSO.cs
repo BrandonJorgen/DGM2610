@@ -3,7 +3,7 @@
 [CreateAssetMenu]
 public class CharacterControllerSO : ScriptableObject
 {
-    public Vector3 position;
+    public Vector3 position = Vector3.zero;
     
     public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f;
     public FloatDataSO moveSpeed;
@@ -24,8 +24,8 @@ public class CharacterControllerSO : ScriptableObject
     
     public void MoveCharacter(CharacterController controller)
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
         
         if (canMove.boolData)
         {
@@ -50,18 +50,20 @@ public class CharacterControllerSO : ScriptableObject
                 {
                     horizontalInput = 0;
                 }
-            
-                position.Set(horizontalInput * moveSpeed.value, 0, verticalInput * moveSpeed.value);
+                
+                position.y = 0;
+            }
+            position.x = horizontalInput * moveSpeed.value;
+            position.z = verticalInput * moveSpeed.value;
 
-                if (faceMoveDirection.boolData)
+            if (faceMoveDirection.boolData)
+            {
+                if (position.x != 0 || position.z != 0)
                 {
-                    if (position != Vector3.zero)
-                    {
-                        controller.transform.forward = position;
-                    }
+                    controller.transform.forward = new Vector3(position.x, 0, position.z);
                 }
             }
-        
+            
             position.y -= gravity * Time.deltaTime;
             controller.Move(position * Time.deltaTime);
         }

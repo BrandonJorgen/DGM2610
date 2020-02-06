@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\10782743\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\10782743\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Unity Project.950165401.00" t="ExcludeRecursive" />
-    <e p="E:\DGM2610 Game Design I\Unity Project" t="IncludeRecursive">
+    <e p="C:\Users\Brandon\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Brandon\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Unity Project.970502776.00" t="ExcludeRecursive" />
+    <e p="F:\DGM2610 Game Design I\Unity Project" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -29,9 +29,12 @@
           <e p="Vector3SO.cs" t="Include" />
         </e>
       </e>
+      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
       <e p="Unity Project.sln" t="IncludeFlat" />
     </e>
   </component>

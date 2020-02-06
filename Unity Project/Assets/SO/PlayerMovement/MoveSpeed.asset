@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a1cb2b83865ac41b94fb722133187a, type: 3}
   m_Name: MoveSpeed
   m_EditorClassIdentifier: 
-  value: 5
-  valueCap: 5
-  valueOne: 2.5
-  valueTwo: 5
+  value: 7
+  valueCap: 7
+  valueOne: 4
+  valueTwo: 7
