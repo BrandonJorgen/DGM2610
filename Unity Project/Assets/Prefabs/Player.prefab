@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6574480379532828892}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6574480377886719368
 MonoBehaviour:
@@ -182,7 +182,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6574480379532828892}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6574480378439824408
 MonoBehaviour:
@@ -260,6 +260,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6574480378495206226}
+  - component: {fileID: 8636166756478995357}
+  - component: {fileID: 9129095570121722911}
+  - component: {fileID: 6623994914234618386}
+  - component: {fileID: 6335115796328210963}
   m_Layer: 0
   m_Name: Art
   m_TagString: Untagged
@@ -277,10 +281,130 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6574480378597652459}
   m_Father: {fileID: 6574480379532828892}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &8636166756478995357
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378495206237}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: f852cf6f10581f2409e321a3044fb5f5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &9129095570121722911
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378495206237}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &6623994914234618386
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378495206237}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66ac437fbf7f64048bf1bceb00ee13d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6335115796328210963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378495206237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df17f9b822cf3164595c4ac279c678ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventOne:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
+        m_MethodName: StopMovement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6574480379532828888}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
+        m_MethodName: SwingMomentum
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6574480379532828888}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  eventTwo:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
+        m_MethodName: ResumeMovement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6574480379532828888}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &6574480378573468710
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +434,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6574480379532828892}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6574480378573468708
 MonoBehaviour:
@@ -440,12 +564,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6574480378597652458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6574480379532828892}
-  m_RootOrder: 2
+  m_Father: {fileID: 6574480378495206226}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6574480378597652462
 MeshFilter:
@@ -597,13 +721,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6574480379532828892}
-  - component: {fileID: 6574480379532828895}
-  - component: {fileID: 6574480379532828894}
   - component: {fileID: 6574480379532828888}
   - component: {fileID: 6574480379532828891}
   - component: {fileID: 6574480379532828893}
-  - component: {fileID: 6574480379532828881}
-  - component: {fileID: 6574480379532828880}
+  - component: {fileID: 4502977656151970142}
   - component: {fileID: 6574480379532828882}
   - component: {fileID: 6574480379532828886}
   - component: {fileID: 6574480379532828883}
@@ -628,58 +749,12 @@ Transform:
   m_Children:
   - {fileID: 6574480378495206226}
   - {fileID: 6574480379250359825}
-  - {fileID: 6574480378597652459}
   - {fileID: 6574480377886719370}
   - {fileID: 6574480378573468711}
   - {fileID: 6574480378439824411}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6574480379532828895
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6574480379532828890}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6574480379532828894
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6574480379532828890}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: f852cf6f10581f2409e321a3044fb5f5, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!143 &6574480379532828888
 CharacterController:
   m_ObjectHideFlags: 0
@@ -780,6 +855,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onFixedUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 692845490043c034fbf7901babaf5896, type: 2}
+        m_MethodName: UpdateData
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6574480378495206226}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onLateUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -848,7 +939,7 @@ MonoBehaviour:
   leftShiftDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6574480379532828881}
+      - m_Target: {fileID: 6623994914234618386}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -918,26 +1009,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!95 &6574480379532828881
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6574480379532828890}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 66ac437fbf7f64048bf1bceb00ee13d5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6574480379532828880
+--- !u!114 &4502977656151970142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -946,29 +1018,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6574480379532828890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df17f9b822cf3164595c4ac279c678ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 37413d6dd25d5114d9f1d4b9c6f77744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventOne:
+  IDNameList:
+  - {fileID: 11400000, guid: 2b2ece72a7b54384eb785c70e4cf7512, type: 2}
+  EnteredEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
-        m_MethodName: StopMovement
+      - m_Target: {fileID: 11400000, guid: 15a1bf66d3486aa49b6a3e6c5731aae8, type: 2}
+        m_MethodName: MoveToData
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6574480379532828888}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
-        m_MethodName: SwingMomentum
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6574480379532828888}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
+          m_ObjectArgument: {fileID: 6574480379532828892}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -976,20 +1039,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  eventTwo:
+  ExitedEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
-        m_MethodName: ResumeMovement
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6574480379532828888}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &6574480379532828882

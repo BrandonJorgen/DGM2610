@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class MonoEventBehavior : MonoBehaviour
 {
-    public UnityEvent onAwakeEvent, onStartEvent, onUpdateEvent, onLateUpdateEvent;
+    public UnityEvent onAwakeEvent, onStartEvent, onUpdateEvent, onFixedUpdate, onLateUpdateEvent;
 
     private void Awake()
     {
@@ -18,6 +18,11 @@ public class MonoEventBehavior : MonoBehaviour
     private void Update()
     {
         onUpdateEvent.Invoke();
+    }
+
+    private void FixedUpdate()
+    {
+        onFixedUpdate.Invoke();
     }
 
     private void LateUpdate()

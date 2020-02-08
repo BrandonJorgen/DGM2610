@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d2897f428749374da8e7ab4a1dac68f, type: 3}
-  m_Name: 000
+  m_Script: {fileID: 11500000, guid: 980b8754f90edaa479c31efc2d46327b, type: 3}
+  m_Name: Box
   m_EditorClassIdentifier: 
-  vector3: {x: 1, y: 10, z: 1}
