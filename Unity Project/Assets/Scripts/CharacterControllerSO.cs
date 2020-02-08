@@ -5,12 +5,12 @@ public class CharacterControllerSO : ScriptableObject
 {
     public Vector3 position = Vector3.zero;
     
-    public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f;
+    public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f;
     public FloatDataSO moveSpeed;
 
     private float horizontalInput, verticalInput;
 
-    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection;
+    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, jumping;
 
     public void ResetBools()
     {
@@ -50,6 +50,11 @@ public class CharacterControllerSO : ScriptableObject
                 {
                     horizontalInput = 0;
                 }
+
+                if (jumping.boolData)
+                {
+                    jumping.boolData = false;
+                }
                 
                 position.y = 0;
             }
@@ -71,27 +76,44 @@ public class CharacterControllerSO : ScriptableObject
 
     public void Jump(CharacterController controller)
     {
-        if (canMove.boolData)
+        if (!jumping.boolData)
         {
-            if (controller.isGrounded)
+            if (canMove.boolData)
             {
-                position.y = jumpSpeed;
+                if (controller.isGrounded)
+                {
+                    position.y = jumpSpeed;
+                }
             }
-        
             controller.Move(position * Time.deltaTime);
+            jumping.boolData = true;
         }
     }
 
     public void DodgeRoll(CharacterController controller)
     {
-        if (canMove.boolData)
+        if (!jumping.boolData)
         {
-            if (controller.isGrounded)
+            if (canMove.boolData)
             {
-                position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
-            }
+                if (controller.isGrounded)
+                {
+                    position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
+                }
         
-            controller.Move(position * Time.deltaTime);
+                controller.Move(position * Time.deltaTime);
+            }
+        }
+    }
+
+    public void VaultEdge(CharacterController controller)
+    {
+        if (jumping.boolData)
+        {
+            controller.enabled = false;
+            controller.transform.position += Vector3.up * vaultDistance;
+            controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
+            //Remember to set the controller back to enabled when the player is ready to move again
         }
     }
 
