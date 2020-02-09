@@ -83,12 +83,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 86d3297f83a565e4bb7bae97e962d0e2, type: 2}
         m_MethodName: AddToData
-        m_Mode: 3
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
-          m_FloatArgument: 0
+          m_FloatArgument: 3
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IDNameList:
-  - {fileID: 11400000, guid: 23f6c0bdc5962b545ae9ebd2dfcd12bc, type: 2}
+  - {fileID: 0}
 --- !u!1 &6574480379532828890
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +846,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   onFixedUpdate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4ed495ca50766554d9f42dace34af742, type: 2}
+        m_MethodName: UpdateData
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6574480379532828892}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onLateUpdateEvent:
@@ -1082,6 +1093,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3b0e9dcff2947bd49bf6f160d2051230, type: 2}
   - {fileID: 11400000, guid: 923e6d25722c9d1498a6a8c68f91e8f1, type: 2}
   - {fileID: 11400000, guid: d3cf9b0a0b8e18c42941a379f6c8ca06, type: 2}
+  - {fileID: 11400000, guid: 5c8a5399121b2f949b2f71bda8e08174, type: 2}
 --- !u!114 &6574480379532828886
 MonoBehaviour:
   m_ObjectHideFlags: 0
