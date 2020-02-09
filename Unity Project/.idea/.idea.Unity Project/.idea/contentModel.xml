@@ -22,6 +22,7 @@
           <e p="IDMatch.cs" t="Include" />
           <e p="IDName.cs" t="Include" />
           <e p="InstantiateObjBehavior.cs" t="Include" />
+          <e p="KeyboardButtons.cs" t="Include" />
           <e p="LookAtCameraSO.cs" t="Include" />
           <e p="MonoEventBehavior.cs" t="Include" />
           <e p="ParentingBehavior.cs" t="Include" />
