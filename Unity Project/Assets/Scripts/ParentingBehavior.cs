@@ -8,7 +8,6 @@ public class ParentingBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         parentObj = other;
-        Debug.Log(other + " " + parentObj);
     }
 
     public void ParentingLogic()
@@ -23,5 +22,11 @@ public class ParentingBehavior : MonoBehaviour
             transform.parent = null;
             isParented = false;
         }
+    }
+
+    public void UnParentObj()
+    {
+        transform.parent = null;
+        isParented = false;
     }
 }

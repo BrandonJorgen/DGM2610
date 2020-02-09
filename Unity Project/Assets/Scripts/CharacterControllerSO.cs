@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Data.Common;
+using UnityEngine;
 
 [CreateAssetMenu]
 public class CharacterControllerSO : ScriptableObject
@@ -10,7 +11,7 @@ public class CharacterControllerSO : ScriptableObject
 
     private float horizontalInput, verticalInput;
 
-    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, jumping;
+    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, jumping, canJump;
 
     public void ResetBools()
     {
@@ -31,26 +32,6 @@ public class CharacterControllerSO : ScriptableObject
         {
             if (controller.isGrounded)
             {
-                if (!canMoveUp.boolData && verticalInput > 0)
-                {
-                    verticalInput = 0;
-                }
-
-                if (!canMoveDown.boolData && verticalInput < 0)
-                {
-                    verticalInput = 0;
-                }
-
-                if (!canMoveLeft.boolData && horizontalInput < 0)
-                {
-                    horizontalInput = 0;
-                }
-
-                if (!canMoveRight.boolData && horizontalInput > 0)
-                {
-                    horizontalInput = 0;
-                }
-
                 if (jumping.boolData)
                 {
                     jumping.boolData = false;
@@ -58,6 +39,26 @@ public class CharacterControllerSO : ScriptableObject
                 
                 position.y = 0;
             }
+            if (!canMoveUp.boolData && verticalInput > 0)
+            {
+                verticalInput = 0;
+            }
+
+            if (!canMoveDown.boolData && verticalInput < 0)
+            {
+                verticalInput = 0;
+            }
+
+            if (!canMoveLeft.boolData && horizontalInput < 0)
+            {
+                horizontalInput = 0;
+            }
+
+            if (!canMoveRight.boolData && horizontalInput > 0)
+            {
+                horizontalInput = 0;
+            }
+            
             position.x = horizontalInput * moveSpeed.value;
             position.z = verticalInput * moveSpeed.value;
 
@@ -76,17 +77,20 @@ public class CharacterControllerSO : ScriptableObject
 
     public void Jump(CharacterController controller)
     {
-        if (!jumping.boolData)
+        if (canJump.boolData)
         {
-            if (canMove.boolData)
+            if (!jumping.boolData)
             {
-                if (controller.isGrounded)
+                if (canMove.boolData)
                 {
-                    position.y = jumpSpeed;
+                    if (controller.isGrounded)
+                    {
+                        position.y = jumpSpeed;
+                    }
                 }
+                controller.Move(position * Time.deltaTime);
+                jumping.boolData = true;
             }
-            controller.Move(position * Time.deltaTime);
-            jumping.boolData = true;
         }
     }
 
@@ -111,6 +115,7 @@ public class CharacterControllerSO : ScriptableObject
         if (jumping.boolData)
         {
             controller.enabled = false;
+            //Coroutine here that fits the timing of the animation
             controller.transform.position += Vector3.up * vaultDistance;
             controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
             //Remember to set the controller back to enabled when the player is ready to move again

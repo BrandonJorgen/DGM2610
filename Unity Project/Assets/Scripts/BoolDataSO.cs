@@ -23,12 +23,10 @@ public class BoolDataSO : ScriptableObject
         if (boolData)
         {
             boolData = false;
-            Debug.Log(boolData + " just switched to false");
         }
         else
         {
             boolData = true;
-            Debug.Log(boolData + " just switched to true");
         }
     }
 }

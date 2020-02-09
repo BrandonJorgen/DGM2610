@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900b50f9480d9104fb3ef6594c756353, type: 3}
   m_Name: HVControls
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -0.201196, z: 0}
+  position: {x: 0, y: -0.200336, z: 0}
   jumpSpeed: 8
-  rollSpeed: 300
+  rollSpeed: 600
   gravity: 20
   swingMomentumSpeed: 1
   vaultDistance: 2
@@ -26,3 +26,4 @@ MonoBehaviour:
   canMoveDown: {fileID: 11400000, guid: 56f649f7169b636488d5872d9d22e3f4, type: 2}
   faceMoveDirection: {fileID: 11400000, guid: abedd7e5dfa643e4abc8a1657dea8b6d, type: 2}
   jumping: {fileID: 11400000, guid: 12b96bfabe3fef54984cc96088787259, type: 2}
+  canJump: {fileID: 11400000, guid: 7947aadb29f665a4a81fa040de505337, type: 2}

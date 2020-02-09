@@ -79,4 +79,9 @@ public class FloatDataSO : ScriptableObject
             value = 0;
         }
     }
+
+    public void SetToCap()
+    {
+        value = valueCap;
+    }
 }

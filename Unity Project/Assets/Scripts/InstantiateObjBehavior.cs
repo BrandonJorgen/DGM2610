@@ -3,7 +3,12 @@
 public class InstantiateObjBehavior : MonoBehaviour
 {
     public GameObject instObj;
-    public Transform instLocation;
+    private Transform instLocation;
+
+    private void Start()
+    {
+        instLocation = transform;
+    }
 
     public void InstantiateObj()
     {
