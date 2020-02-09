@@ -117,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/NavMeshAgentBehavior.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <marker date="1581275802000" expanded="false" signature="6:40" ph="..." />
                 <marker date="1581275802000" expanded="true" signature="132:368" ph="{...}" />
@@ -393,12 +393,12 @@
       <workItem from="1581130388408" duration="3819000" />
       <workItem from="1581181324118" duration="16712000" />
       <workItem from="1581221772751" duration="834000" />
-      <workItem from="1581273358061" duration="2404000" />
+      <workItem from="1581273358061" duration="3307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38501000" />
+    <option name="totallyTimeSpent" value="39404000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -684,7 +684,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/NavMeshAgentBehavior.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <marker date="1581275802000" expanded="false" signature="6:40" ph="..." />
             <marker date="1581275802000" expanded="true" signature="132:368" ph="{...}" />
