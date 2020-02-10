@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 9020014668612922738}
   - component: {fileID: 9020014668612922733}
   m_Layer: 0
-  m_Name: Vault
+  m_Name: VaultCemetery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &9020014668612922739
 Transform:
@@ -66,7 +66,8 @@ MonoBehaviour:
         m_MethodName: VaultEdge
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 6574480379532828888, guid: 2c4800b19680c234787bb8517f457e47,
+            type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -84,6 +85,11 @@ MonoBehaviour:
           m_StringArgument: Vault
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  StayEvent:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   ExitedEvent:

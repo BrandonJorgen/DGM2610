@@ -26,6 +26,25 @@ public class IDMatch : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        var triggerObj = other.GetComponent<IDBehavior>();
+        if (triggerObj == null) return;
+        var otherIDNameList = triggerObj.IDNameList;
+
+        foreach (var otherID in otherIDNameList)
+        {
+            foreach (var ID in IDNameList)
+            {
+                if (ID == otherID)
+                {
+                    triggerObj.StayedTrigger();
+                    return;
+                }
+            }
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         var triggerObj = other.GetComponent<IDBehavior>();
