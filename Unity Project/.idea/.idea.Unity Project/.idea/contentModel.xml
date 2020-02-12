@@ -28,6 +28,7 @@
           <e p="ParentingBehavior.cs" t="Include" />
           <e p="TransforBehavior.cs" t="Include" />
           <e p="TriggerBehavior.cs" t="Include" />
+          <e p="TRIGGERENTER.cs" t="Include" />
           <e p="Vector3SO.cs" t="Include" />
         </e>
       </e>

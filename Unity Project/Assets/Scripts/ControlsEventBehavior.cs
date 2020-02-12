@@ -3,7 +3,7 @@ using UnityEngine.Events;
  
  public class ControlsEventBehavior : MonoBehaviour
  {
-     public UnityEvent spaceDown, leftControlDown, leftControlUp, leftShiftDown, leftShiftUp, qDown, qUp, eDown, eUp, fDown, fUp;
+     public UnityEvent spaceDown, leftControlDown, leftControlUp, leftShiftDown, leftShiftUp, qDown, qUp, eDown, eUp, fDown, fUp, leftMouseDown;
  
      private void Update()
      {
@@ -60,6 +60,11 @@ using UnityEngine.Events;
          if (Input.GetKeyUp(KeyCode.F))
          {
              fUp.Invoke();
+         }
+
+         if (Input.GetMouseButtonDown(0))
+         {
+             leftMouseDown.Invoke();
          }
      }
  }
