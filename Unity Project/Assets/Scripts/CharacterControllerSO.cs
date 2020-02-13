@@ -11,7 +11,7 @@ public class CharacterControllerSO : ScriptableObject
 
     private float horizontalInput, verticalInput;
 
-    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, jumping, canJump;
+    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, jumping, canJump, canRoll;
 
     public void ResetBools()
     {
@@ -27,46 +27,49 @@ public class CharacterControllerSO : ScriptableObject
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        
-        if (canMove.boolData)
+
+        if (!canRoll.boolData)
         {
-            if (controller.isGrounded)
+            if (canMove.boolData)
             {
-                if (jumping.boolData)
+                if (controller.isGrounded)
                 {
-                    jumping.boolData = false;
-                }
+                    if (jumping.boolData)
+                    {
+                        jumping.boolData = false;
+                    }
                 
-                position.y = 0;
-            }
-            if (!canMoveUp.boolData && verticalInput > 0)
-            {
-                verticalInput = 0;
-            }
-
-            if (!canMoveDown.boolData && verticalInput < 0)
-            {
-                verticalInput = 0;
-            }
-
-            if (!canMoveLeft.boolData && horizontalInput < 0)
-            {
-                horizontalInput = 0;
-            }
-
-            if (!canMoveRight.boolData && horizontalInput > 0)
-            {
-                horizontalInput = 0;
-            }
-            
-            position.x = horizontalInput * moveSpeed.value;
-            position.z = verticalInput * moveSpeed.value;
-
-            if (faceMoveDirection.boolData)
-            {
-                if (position.x != 0 || position.z != 0)
+                    position.y = 0;
+                }
+                if (!canMoveUp.boolData && verticalInput > 0)
                 {
-                    controller.transform.forward = new Vector3(position.x, 0, position.z);
+                    verticalInput = 0;
+                }
+
+                if (!canMoveDown.boolData && verticalInput < 0)
+                {
+                    verticalInput = 0;
+                }
+
+                if (!canMoveLeft.boolData && horizontalInput < 0)
+                {
+                    horizontalInput = 0;
+                }
+
+                if (!canMoveRight.boolData && horizontalInput > 0)
+                {
+                    horizontalInput = 0;
+                }
+            
+                position.x = horizontalInput * moveSpeed.value;
+                position.z = verticalInput * moveSpeed.value;
+
+                if (faceMoveDirection.boolData)
+                {
+                    if (position.x != 0 || position.z != 0)
+                    {
+                        controller.transform.forward = new Vector3(position.x, 0, position.z);
+                    }
                 }
             }
             
@@ -96,16 +99,19 @@ public class CharacterControllerSO : ScriptableObject
 
     public void DodgeRoll(CharacterController controller)
     {
-        if (!jumping.boolData)
+        if (canRoll.boolData)
         {
-            if (canMove.boolData)
+            if (!jumping.boolData)
             {
-                if (controller.isGrounded)
+                if (canMove.boolData)
                 {
-                    position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
-                }
+                    if (controller.isGrounded)
+                    {
+                        position.Set(Input.GetAxisRaw("Horizontal") * rollSpeed, 0, Input.GetAxisRaw("Vertical") * rollSpeed);
+                    }
         
-                controller.Move(position * Time.deltaTime);
+                    controller.Move(position * Time.deltaTime);
+                }
             }
         }
     }

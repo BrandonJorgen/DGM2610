@@ -9,6 +9,7 @@
         <e p="Scripts" t="Include">
           <e p="AnimBehavior.cs" t="Include" />
           <e p="AnimEventBehavior.cs" t="Include" />
+          <e p="BoolCheckBehavior.cs" t="Include" />
           <e p="BoolDataSO.cs" t="Include" />
           <e p="CharacterControllerSO.cs" t="Include" />
           <e p="ControlsEventBehavior.cs" t="Include" />
@@ -26,9 +27,7 @@
           <e p="MonoEventBehavior.cs" t="Include" />
           <e p="NavMeshAgentBehavior.cs" t="Include" />
           <e p="ParentingBehavior.cs" t="Include" />
-          <e p="TransforBehavior.cs" t="Include" />
           <e p="TriggerBehavior.cs" t="Include" />
-          <e p="TRIGGERENTER.cs" t="Include" />
           <e p="Vector3SO.cs" t="Include" />
         </e>
       </e>
