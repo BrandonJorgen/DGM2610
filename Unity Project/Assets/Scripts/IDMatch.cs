@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+//comments are about fixing the possible multiple behavior bug by movng it to other scripts
 public class IDMatch : MonoBehaviour
 {
     public List<IDName> IDNameList;
 
     private bool idInTrigger;
     
+    //public List<DoWork> doWorks;
+    
     private void OnTriggerEnter(Collider other)
     {
-        var triggerObj = other.GetComponent<IDBehavior>();
+        var triggerObj = other.GetComponent<IDBehavior>(); //change this reference to dedicated variable
         if (triggerObj == null) return;
-        var otherIDNameList = triggerObj.IDNameList;
+        var otherIDNameList = triggerObj.IDNameList; //change this reference to dedicated variable
 
         foreach (var otherID in otherIDNameList)
         {
@@ -19,6 +21,8 @@ public class IDMatch : MonoBehaviour
             {
                 if (ID == otherID)
                 {
+                    //foreach loop that goes through dowork list
+                    //Call Work();
                     triggerObj.EnteredTrigger();
                     return;
                 }
@@ -63,4 +67,6 @@ public class IDMatch : MonoBehaviour
             }
         }
     }
+    
+    //add function that does checking here
 }
