@@ -38,6 +38,17 @@ public class CharacterControllerSO : ScriptableObject
                     {
                         jumping.boolData = false;
                     }
+                    
+                    position.x = horizontalInput * moveSpeed.value;
+                    position.z = verticalInput * moveSpeed.value;
+    
+                    if (faceMoveDirection.boolData)
+                    {
+                        if (position.x != 0 || position.z != 0)
+                        {
+                            controller.transform.forward = new Vector3(position.x, 0, position.z);
+                        }
+                    }
                 
                     position.y = 0;
                 }
@@ -59,17 +70,6 @@ public class CharacterControllerSO : ScriptableObject
                 if (!canMoveRight.boolData && horizontalInput > 0)
                 {
                     horizontalInput = 0;
-                }
-            
-                position.x = horizontalInput * moveSpeed.value;
-                position.z = verticalInput * moveSpeed.value;
-
-                if (faceMoveDirection.boolData)
-                {
-                    if (position.x != 0 || position.z != 0)
-                    {
-                        controller.transform.forward = new Vector3(position.x, 0, position.z);
-                    }
                 }
             }
             
@@ -120,6 +120,7 @@ public class CharacterControllerSO : ScriptableObject
     {
         if (jumping.boolData)
         {
+            faceMoveDirection.boolData = false;
             controller.enabled = false;
             //Coroutine here that fits the timing of the animation
             controller.transform.position += Vector3.up * vaultDistance;
