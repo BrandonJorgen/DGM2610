@@ -256,6 +256,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: CallEventSeven
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.21666667
+    functionName: CallEventEleven
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.33333334
     functionName: CallEventTwo
     data: 
@@ -265,6 +279,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.33333334
     functionName: CallEventSix
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: CallEventTen
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

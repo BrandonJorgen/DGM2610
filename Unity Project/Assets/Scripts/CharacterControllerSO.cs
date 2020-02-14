@@ -11,7 +11,7 @@ public class CharacterControllerSO : ScriptableObject
 
     private float horizontalInput, verticalInput;
 
-    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, jumping, canJump, canRoll;
+    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, jumping, canJump, canRoll, attacking;
 
     public void ResetBools()
     {
@@ -148,5 +148,15 @@ public class CharacterControllerSO : ScriptableObject
     public void ResumeMovement(CharacterController controller)
     {
         canMove.boolData = true;
+    }
+
+    public void SwingMovement(CharacterController controller)
+    {
+        if (!jumping.boolData && attacking.boolData)
+        {
+            position.Set(0, 0, swingMomentumSpeed);
+        }
+
+        controller.Move(position * Time.deltaTime);
     }
 }
