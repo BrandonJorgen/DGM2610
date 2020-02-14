@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-//comments are about fixing the possible multiple behavior bug by movng it to other scripts
+//comments are about fixing the possible multiple behavior bug by moving it to other scripts
 public class IDMatch : MonoBehaviour
 {
     public List<IDName> IDNameList;
 
     private bool idInTrigger;
+
+    private GameObject triggerObj;
     
     //public List<DoWork> doWorks;
     

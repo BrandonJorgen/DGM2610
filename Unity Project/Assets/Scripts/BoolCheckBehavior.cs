@@ -7,7 +7,7 @@ public class BoolCheckBehavior : MonoBehaviour
     public bool bothTrue, oneTrueTwoFalse, oneFalseTwoTrue, bothFalse;
     public UnityEvent conditionsMet;
 
-    public void BoolCheck()
+    public void TwoBoolCheck()
     {
         if (bothTrue)
         {
