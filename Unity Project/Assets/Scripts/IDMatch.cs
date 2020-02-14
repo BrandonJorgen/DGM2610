@@ -6,8 +6,6 @@ public class IDMatch : MonoBehaviour
     public List<IDName> IDNameList;
 
     private bool idInTrigger;
-
-    private GameObject triggerObj;
     
     //public List<DoWork> doWorks;
     
