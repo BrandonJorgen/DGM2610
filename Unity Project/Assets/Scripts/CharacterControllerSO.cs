@@ -121,8 +121,8 @@ public class CharacterControllerSO : ScriptableObject
         if (jumping.boolData)
         {
             faceMoveDirection.boolData = false;
-            controller.enabled = false;
-            //Coroutine here that fits the timing of the animation
+            DisableController(controller);
+            //TODO line up delay here with animation length or use a different function
             controller.transform.position += Vector3.up * vaultDistance;
             controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
             //Remember to set the controller back to enabled when the player is ready to move again
@@ -150,13 +150,21 @@ public class CharacterControllerSO : ScriptableObject
         canMove.boolData = true;
     }
 
+    public void EnableController(CharacterController controller)
+    {
+        controller.enabled = true;
+    }
+
+    public void DisableController(CharacterController controller)
+    {
+        controller.enabled = false;
+    }
+
     public void SwingMovement(CharacterController controller)
     {
         if (!jumping.boolData && attacking.boolData)
         {
-            position.Set(0, 0, swingMomentumSpeed);
+            controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * swingMomentumSpeed;
         }
-
-        controller.Move(position * Time.deltaTime);
     }
 }
