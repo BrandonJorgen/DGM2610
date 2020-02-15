@@ -19,22 +19,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="4" />
+          <entry key="cs" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="4" />
+          <entry key="C#" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="990" />
+          <entry key="cs" value="1864" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="990" />
+          <entry key="C#" value="1864" />
         </counts>
       </usages-collector>
     </session>
@@ -149,11 +149,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/AnimEventBehavior.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1080">
-              <caret line="73" column="1" lean-forward="true" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+              <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
               <folding>
                 <marker date="1581784500000" expanded="false" signature="6:44" ph="..." />
                 <marker date="1581784500000" expanded="true" signature="92:1269" ph="{...}" />
@@ -175,35 +175,56 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/ImageBehavior.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+              <folding>
+                <marker date="1581789616000" expanded="true" signature="6:40" ph="..." />
+                <marker date="1581789616000" expanded="true" signature="84:1076" ph="{...}" />
+                <marker date="1581789616000" expanded="true" signature="179:283" ph="{...}" />
+                <marker date="1581789616000" expanded="true" signature="223:277" ph="{...}" />
+                <marker date="1581789616000" expanded="true" signature="352:1074" ph="{...}" />
+                <marker date="1581789616000" expanded="true" signature="457:506" ph="{...}" />
+                <marker date="1581789616000" expanded="true" signature="565:699" ph="{...}" />
+                <marker date="1581789616000" expanded="true" signature="765:899" ph="{...}" />
+                <marker date="1581789616000" expanded="true" signature="934:1068" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LookAtCameraSO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InstantiateObjBehavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AnimEventBehavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameActionHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IDName.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EButtonEventBehavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Debugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IDMatch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ParentingBehavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MathFunctions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DestroyObjSO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TriggerBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControllerSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ControlsEventBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AnimBehavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FloatDataSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/NavMeshAgentBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MonoEventBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BoolCheckBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LookAtCameraSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ImageBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AnimEventBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameActionHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Debugger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MathFunctions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TriggerBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FloatDataSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IDBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DoWorkSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BoolDataSO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BoolCheckBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Vector3SO.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -244,6 +265,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/IDMatch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControllerSO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AnimEventBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ImageControllerSO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ImageBehavior.cs" />
       </list>
     </option>
   </component>
@@ -349,12 +372,12 @@
       <workItem from="1581544377212" duration="12012000" />
       <workItem from="1581609524978" duration="5137000" />
       <workItem from="1581639129216" duration="5713000" />
-      <workItem from="1581779609942" duration="4388000" />
+      <workItem from="1581779609942" duration="7609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10101000" />
+    <option name="totallyTimeSpent" value="13322000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -536,10 +559,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ImageControllerSO.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/AnimEventBehavior.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
-          <caret line="73" column="1" lean-forward="true" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+          <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
           <folding>
             <marker date="1581784500000" expanded="false" signature="6:44" ph="..." />
             <marker date="1581784500000" expanded="true" signature="92:1269" ph="{...}" />
@@ -556,6 +586,24 @@
             <marker date="1581784500000" expanded="true" signature="1050:1092" ph="{...}" />
             <marker date="1581784500000" expanded="true" signature="1131:1173" ph="{...}" />
             <marker date="1581784500000" expanded="true" signature="1223:1267" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ImageBehavior.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+          <folding>
+            <marker date="1581789616000" expanded="true" signature="6:40" ph="..." />
+            <marker date="1581789616000" expanded="true" signature="84:1076" ph="{...}" />
+            <marker date="1581789616000" expanded="true" signature="179:283" ph="{...}" />
+            <marker date="1581789616000" expanded="true" signature="223:277" ph="{...}" />
+            <marker date="1581789616000" expanded="true" signature="352:1074" ph="{...}" />
+            <marker date="1581789616000" expanded="true" signature="457:506" ph="{...}" />
+            <marker date="1581789616000" expanded="true" signature="565:699" ph="{...}" />
+            <marker date="1581789616000" expanded="true" signature="765:899" ph="{...}" />
+            <marker date="1581789616000" expanded="true" signature="934:1068" ph="{...}" />
           </folding>
         </state>
       </provider>
