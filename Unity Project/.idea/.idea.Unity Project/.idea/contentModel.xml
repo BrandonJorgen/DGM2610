@@ -33,6 +33,7 @@
           <e p="ObjPileBehavior.cs" t="Include" />
           <e p="ParentingBehavior.cs" t="Include" />
           <e p="TriggerBehavior.cs" t="Include" />
+          <e p="ValueCheckSO.cs" t="Include" />
           <e p="Vector3SO.cs" t="Include" />
         </e>
       </e>

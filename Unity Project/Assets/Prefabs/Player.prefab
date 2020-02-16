@@ -164,6 +164,8 @@ MonoBehaviour:
   oneTrueTwoFalse: 1
   oneFalseTwoTrue: 0
   bothFalse: 0
+  oneTrue: 0
+  oneFalse: 0
   conditionsMet:
     m_PersistentCalls:
       m_Calls:
@@ -245,6 +247,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8684075767830709645}
   - component: {fileID: 1016533602}
+  - component: {fileID: 3313331523895043776}
+  - component: {fileID: 271540164897287821}
   m_Layer: 0
   m_Name: AddToPile
   m_TagString: Untagged
@@ -326,14 +330,14 @@ MonoBehaviour:
   fDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: b3ce4be0faa950e43b648960b8413338, type: 2}
-        m_MethodName: Raise
-        m_Mode: 1
+      - m_Target: {fileID: 11400000, guid: 469664d10460ee54c94b77b5f1167792, type: 2}
+        m_MethodName: CheckAgainstFloat
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 25
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -347,6 +351,82 @@ MonoBehaviour:
   leftMouseDown:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &3313331523895043776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961856418650703072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afdd9f435e48f64293e03099c17a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolOne: {fileID: 11400000, guid: eb32b5c3450ce014abab5fb89940bfb4, type: 2}
+  boolTwo: {fileID: 0}
+  bothTrue: 0
+  oneTrueTwoFalse: 0
+  oneFalseTwoTrue: 0
+  bothFalse: 0
+  oneTrue: 1
+  oneFalse: 0
+  conditionsMet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b3ce4be0faa950e43b648960b8413338, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &271540164897287821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961856418650703072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aa6382d338a304e954d80ef90fa7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 90556fe0e68a6a8469c1fe40dff86982, type: 2}
+  handlerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: eb32b5c3450ce014abab5fb89940bfb4, type: 2}
+        m_MethodName: SetBool
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3313331523895043776}
+        m_MethodName: OneBoolCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &6574480377886719477
@@ -517,6 +597,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6574480378439824411}
   - component: {fileID: 6574480378439824408}
+  - component: {fileID: 4175030002371302713}
+  - component: {fileID: 9167362330278258175}
   m_Layer: 0
   m_Name: DropTreasure
   m_TagString: Untagged
@@ -598,6 +680,52 @@ MonoBehaviour:
   fDown:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 11400000, guid: e36317b7da25cb34296ec862901da65f, type: 2}
+        m_MethodName: CheckAgainstFloat
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 50
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  fUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  leftMouseDown:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &4175030002371302713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378439824410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afdd9f435e48f64293e03099c17a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolOne: {fileID: 11400000, guid: 5f0ccc0133efbad449a941095762cf2a, type: 2}
+  boolTwo: {fileID: 0}
+  bothTrue: 0
+  oneTrueTwoFalse: 0
+  oneFalseTwoTrue: 0
+  bothFalse: 0
+  oneTrue: 1
+  oneFalse: 0
+  conditionsMet:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: 06f7155484ddf344d99d20699bd221b5, type: 2}
         m_MethodName: InstantiateObj
         m_Mode: 2
@@ -622,14 +750,44 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  fUp:
+--- !u!114 &9167362330278258175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378439824410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aa6382d338a304e954d80ef90fa7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: cd40a6962bb67ea4ab3de5883ae929db, type: 2}
+  handlerEvent:
     m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  leftMouseDown:
-    m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 5f0ccc0133efbad449a941095762cf2a, type: 2}
+        m_MethodName: SetBool
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4175030002371302713}
+        m_MethodName: OneBoolCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &6574480378495206237
@@ -1092,6 +1250,8 @@ MonoBehaviour:
   oneTrueTwoFalse: 1
   oneFalseTwoTrue: 1
   bothFalse: 0
+  oneTrue: 0
+  oneFalse: 0
   conditionsMet:
     m_PersistentCalls:
       m_Calls:
@@ -1878,6 +2038,8 @@ MonoBehaviour:
   oneTrueTwoFalse: 0
   oneFalseTwoTrue: 1
   bothFalse: 0
+  oneTrue: 0
+  oneFalse: 0
   conditionsMet:
     m_PersistentCalls:
       m_Calls:
