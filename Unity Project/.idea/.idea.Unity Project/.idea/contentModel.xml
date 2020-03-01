@@ -9,15 +9,6 @@
         <e p="Scripts" t="Include">
           <e p="AnimBehavior.cs" t="Include" />
           <e p="AnimEventBehavior.cs" t="Include" />
-          <e p="AnthonysScripts" t="Include">
-            <e p="FloatData.cs" t="Include" />
-            <e p="FloatMathSystem.cs" t="Include" />
-            <e p="IdBehaviour.cs" t="Include" />
-            <e p="MatchIdBehaviour.cs" t="Include" />
-            <e p="NameID.cs" t="Include" />
-            <e p="WorkSystem.cs" t="Include" />
-            <e p="WorkSystemManager.cs" t="Include" />
-          </e>
           <e p="BoolCheckBehavior.cs" t="Include" />
           <e p="BoolDataSO.cs" t="Include" />
           <e p="CharacterControllerSO.cs" t="Include" />

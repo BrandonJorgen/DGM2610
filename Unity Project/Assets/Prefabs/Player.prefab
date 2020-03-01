@@ -1395,23 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37413d6dd25d5114d9f1d4b9c6f77744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDNameList:
-  - {fileID: 11400000, guid: fb4fe69a89fdc2f4a926c71984e5b7af, type: 2}
-  EnteredEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  StayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  ExitedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  nameIdObj: {fileID: 0}
 --- !u!114 &6574480378597652460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1424,8 +1408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd8c2ab11a9a464fa3c7c48e974c122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDNameList:
-  - {fileID: 0}
+  nameIdObj: {fileID: 0}
+  workIdList: []
 --- !u!1 &6574480379532828890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1423,6 @@ GameObject:
   - component: {fileID: 6574480379532828891}
   - component: {fileID: 6574480379532828893}
   - component: {fileID: 4502977656151970142}
-  - component: {fileID: 6574480379532828882}
   - component: {fileID: 6574480379532828886}
   - component: {fileID: 6574480379532828883}
   - component: {fileID: 3842075626555500467}
@@ -1821,74 +1804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37413d6dd25d5114d9f1d4b9c6f77744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDNameList:
-  - {fileID: 11400000, guid: 2b2ece72a7b54384eb785c70e4cf7512, type: 2}
-  EnteredEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6574480379532828888}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: bd86bae312ab1094d89030881cc5d81c, type: 2}
-        m_MethodName: EventDebug
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: playerOoB called
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 15a1bf66d3486aa49b6a3e6c5731aae8, type: 2}
-        m_MethodName: MoveToData
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6574480379532828892}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  StayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  ExitedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &6574480379532828882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6574480379532828890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd8c2ab11a9a464fa3c7c48e974c122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IDNameList:
-  - {fileID: 11400000, guid: 3b0e9dcff2947bd49bf6f160d2051230, type: 2}
-  - {fileID: 11400000, guid: 923e6d25722c9d1498a6a8c68f91e8f1, type: 2}
-  - {fileID: 11400000, guid: d3cf9b0a0b8e18c42941a379f6c8ca06, type: 2}
-  - {fileID: 11400000, guid: 5c8a5399121b2f949b2f71bda8e08174, type: 2}
-  - {fileID: 11400000, guid: 99a71767b6d33134da580b91186c5ed8, type: 2}
+  nameIdObj: {fileID: 11400000, guid: 4db7aee5db2ba89468d3a395592d7ff4, type: 2}
 --- !u!114 &6574480379532828886
 MonoBehaviour:
   m_ObjectHideFlags: 0

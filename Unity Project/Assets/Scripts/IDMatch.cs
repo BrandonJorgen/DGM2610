@@ -1,72 +1,37 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-//comments are about fixing the possible multiple behavior bug by moving it to other scripts
-public class IDMatch : MonoBehaviour
-{
-    public List<IDName> IDNameList;
+using UnityEngine.Events;
 
-    private bool idInTrigger;
-    
-    //public List<DoWork> doWorks;
+public class IDMatch : IDBehavior
+{
+    [Serializable]
+    public struct possibleWork
+    {
+        public IDName nameIdObj;
+        public UnityEvent workEvent;
+    }
+
+    private IDBehavior otherBehaviourObj;
+    private IDName otherIdObj;
+    public List<possibleWork> workIdList;
     
     private void OnTriggerEnter(Collider other)
     {
-        var triggerObj = other.GetComponent<IDBehavior>(); //change this reference to dedicated variable
-        if (triggerObj == null) return;
-        var otherIDNameList = triggerObj.IDNameList; //change this reference to dedicated variable
-
-        foreach (var otherID in otherIDNameList)
-        {
-            foreach (var ID in IDNameList)
-            {
-                if (ID == otherID)
-                {
-                    //foreach loop that goes through dowork list
-                    //Call Work();
-                    triggerObj.EnteredTrigger();
-                    return;
-                }
-            }
-        }
+        otherBehaviourObj = other.GetComponent<IDBehavior>();
+        if (otherBehaviourObj == null) return;
+        otherIdObj = otherBehaviourObj.nameIdObj;
+        CheckId();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void CheckId()
     {
-        var triggerObj = other.GetComponent<IDBehavior>();
-        if (triggerObj == null) return;
-        var otherIDNameList = triggerObj.IDNameList;
-
-        foreach (var otherID in otherIDNameList)
+        foreach (var obj in workIdList)
         {
-            foreach (var ID in IDNameList)
+            if (otherIdObj == obj.nameIdObj)
             {
-                if (ID == otherID)
-                {
-                    triggerObj.StayedTrigger();
-                    return;
-                }
+                obj.workEvent.Invoke();
             }
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        var triggerObj = other.GetComponent<IDBehavior>();
-        if (triggerObj == null) return;
-        var otherIDNameList = triggerObj.IDNameList;
-
-        foreach (var otherID in otherIDNameList)
-        {
-            foreach (var ID in IDNameList)
-            {
-                if (ID == otherID)
-                {
-                    triggerObj.ExitedTrigger();
-                    return;
-                }
-            }
-        }
-    }
-    
-    //add function that does checking here
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2605852142987860971}
   - component: {fileID: 2605852142987860968}
-  - component: {fileID: 2605852142987860969}
+  - component: {fileID: 7695805085458068046}
   - component: {fileID: 2605852142987860970}
   m_Layer: 0
   m_Name: MovingBoxBoundaryBox
@@ -49,7 +49,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2605852142987860969
+--- !u!114 &7695805085458068046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,11 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd8c2ab11a9a464fa3c7c48e974c122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDNameList:
-  - {fileID: 11400000, guid: 8953b462a1133d440b631568234ec8f0, type: 2}
-  - {fileID: 11400000, guid: b84f8963d10d7a941b5839a0f6cd5f95, type: 2}
-  - {fileID: 11400000, guid: eddf54056e647bd40b90e56de4d27dcc, type: 2}
-  - {fileID: 11400000, guid: ce096cb1f17ffbb42906157cbaba4243, type: 2}
+  nameIdObj: {fileID: 11400000, guid: 9a54bb430d56be94eba840562223be3c, type: 2}
+  workIdList: []
 --- !u!65 &2605852142987860970
 BoxCollider:
   m_ObjectHideFlags: 0
