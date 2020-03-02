@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a1cb2b83865ac41b94fb722133187a, type: 3}
-  m_Name: PlayerCanteen
+  m_Script: {fileID: 11500000, guid: 27f45cf9e2fa34b448289d41ee8769b7, type: 3}
+  m_Name: OnSlope
   m_EditorClassIdentifier: 
-  value: 3
-  valueCap: 3
-  valueOne: 0
-  valueTwo: 0
+  boolData: 0

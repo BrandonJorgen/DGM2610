@@ -6,12 +6,16 @@ public class CharacterControllerSO : ScriptableObject
 {
     public Vector3 position = Vector3.zero;
     
-    public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f;
+    public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f, 
+        slopeRayLength, slopeMultiplier;
     public FloatDataSO moveSpeed;
 
     private float horizontalInput, verticalInput;
 
-    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, jumping, canJump, canRoll, attacking;
+    private RaycastHit hit;
+
+    public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, 
+        jumping, canJump, canRoll, attacking, onSlope;
 
     public void ResetBools()
     {
@@ -49,8 +53,6 @@ public class CharacterControllerSO : ScriptableObject
                             controller.transform.forward = new Vector3(position.x, 0, position.z);
                         }
                     }
-                
-                    position.y = 0;
                 }
                 if (!canMoveUp.boolData && verticalInput > 0)
                 {
@@ -72,9 +74,39 @@ public class CharacterControllerSO : ScriptableObject
                     horizontalInput = 0;
                 }
             }
+
+            OnSlope(controller);
             
-            position.y -= gravity * Time.deltaTime;
+            if ((position.x != 0 || position.z != 0) && onSlope.boolData)
+            {
+                position.y -= gravity * slopeMultiplier * Time.deltaTime;
+            }
+            else
+            {
+                position.y -= gravity * Time.deltaTime;
+            }
+            
             controller.Move(position * Time.deltaTime);
+        }
+    }
+
+    private void OnSlope(CharacterController controller)
+    {
+        if (canJump.boolData && jumping.boolData)
+        {
+            onSlope.boolData = false;
+        }
+
+        if (Physics.Raycast(controller.transform.position, Vector3.down, out hit, controller.height / 2 * slopeRayLength))
+        {
+            if (hit.normal != Vector3.up)
+            {
+                onSlope.boolData = true;
+            }
+        }
+        else
+        {
+            onSlope.boolData = false;
         }
     }
 
@@ -89,10 +121,11 @@ public class CharacterControllerSO : ScriptableObject
                     if (controller.isGrounded)
                     {
                         position.y = jumpSpeed;
+                        jumping.boolData = true;
                     }
                 }
+                
                 controller.Move(position * Time.deltaTime);
-                jumping.boolData = true;
             }
         }
     }
