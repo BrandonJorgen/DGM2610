@@ -8,7 +8,6 @@ public class ParentingBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         objToParent = other.gameObject;
-        Debug.Log(objToParent);
     }
 
     public void ParentSwitch()
@@ -20,8 +19,13 @@ public class ParentingBehavior : MonoBehaviour
         }
         else
         {
-            transform.parent = null;
-            isParented = false;
+            UnParentObj();
         }
+    }
+
+    public void UnParentObj()
+    {
+        transform.parent = null;
+        isParented = false;
     }
 }
