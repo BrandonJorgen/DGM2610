@@ -31,6 +31,7 @@
           <e p="MonoEventBehavior.cs" t="Include" />
           <e p="NavMeshAgentBehavior.cs" t="Include" />
           <e p="ObjPileBehavior.cs" t="Include" />
+          <e p="ObjToggleBehavior.cs" t="Include" />
           <e p="ParentingBehavior.cs" t="Include" />
           <e p="TriggerBehavior.cs" t="Include" />
           <e p="ValueCheckSO.cs" t="Include" />

@@ -2,19 +2,20 @@
 
 public class ParentingBehavior : MonoBehaviour
 {
-    private Collider parentObj;
+    private GameObject objToParent;
     private bool isParented;
     
     private void OnTriggerEnter(Collider other)
     {
-        parentObj = other;
+        objToParent = other.gameObject;
+        Debug.Log(objToParent);
     }
 
-    public void ParentingLogic()
+    public void ParentSwitch()
     {
         if (!isParented)
         {
-            transform.parent = parentObj.transform;
+            transform.parent = objToParent.transform;
             isParented = true;
         }
         else
@@ -22,11 +23,5 @@ public class ParentingBehavior : MonoBehaviour
             transform.parent = null;
             isParented = false;
         }
-    }
-
-    public void UnParentObj()
-    {
-        transform.parent = null;
-        isParented = false;
     }
 }

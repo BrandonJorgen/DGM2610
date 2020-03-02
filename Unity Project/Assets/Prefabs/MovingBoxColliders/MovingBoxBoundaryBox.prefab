@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2605852142987860971}
   - component: {fileID: 2605852142987860968}
-  - component: {fileID: 7695805085458068046}
   - component: {fileID: 2605852142987860970}
+  - component: {fileID: -6965831023606277265}
   m_Layer: 0
   m_Name: MovingBoxBoundaryBox
   m_TagString: Untagged
@@ -49,20 +49,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7695805085458068046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2605852142987860972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd8c2ab11a9a464fa3c7c48e974c122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameIdObj: {fileID: 11400000, guid: 9a54bb430d56be94eba840562223be3c, type: 2}
-  workIdList: []
 --- !u!65 &2605852142987860970
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76,3 +62,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6965831023606277265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605852142987860972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37413d6dd25d5114d9f1d4b9c6f77744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameIdObj: {fileID: 11400000, guid: 9a54bb430d56be94eba840562223be3c, type: 2}

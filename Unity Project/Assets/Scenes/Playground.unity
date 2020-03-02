@@ -382,7 +382,7 @@ Transform:
   m_LocalScale: {x: 1.6457937, y: 1.6457937, z: 1.6457937}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1001 &392808121
 PrefabInstance:
@@ -1193,7 +1193,7 @@ Transform:
   m_Children:
   - {fileID: 1964341215}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1482560030
 Animator:
@@ -1377,7 +1377,7 @@ PrefabInstance:
     - target: {fileID: 6345933212306870374, guid: e3e0c534c32a3c646ac56f993a15d0db,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6345933212306870374, guid: e3e0c534c32a3c646ac56f993a15d0db,
         type: 3}
@@ -1446,7 +1446,7 @@ PrefabInstance:
     - target: {fileID: 6574480379532828892, guid: 2c4800b19680c234787bb8517f457e47,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6574480379532828892, guid: 2c4800b19680c234787bb8517f457e47,
         type: 3}
@@ -1461,6 +1461,47 @@ PrefabInstance:
     - target: {fileID: 6574480379532828892, guid: 2c4800b19680c234787bb8517f457e47,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574480378573468710, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574480378573468708, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eDown.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574480378573468708, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eDown.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574480378573468708, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eDown.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574480378573468708, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eDown.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: fcceb2ffd16147f49989ce26fe995207,
+        type: 2}
+    - target: {fileID: 6574480378573468708, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eDown.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574480378573468708, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eDown.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 235314276508046185, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
