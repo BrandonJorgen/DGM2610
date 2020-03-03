@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900b50f9480d9104fb3ef6594c756353, type: 3}
   m_Name: HVControls
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -0.22877, z: 0}
+  position: {x: 0, y: -16.522272, z: 0}
   jumpSpeed: 8
   rollSpeed: 25
   gravity: 20
@@ -20,6 +20,7 @@ MonoBehaviour:
   vaultDistance: 1.5
   slopeRayLength: 1.5
   slopeMultiplier: 3
+  dodgeRollCooldown: 1
   moveSpeed: {fileID: 11400000, guid: 25641122a6ad2db4ebfd5cfac64ce6da, type: 2}
   canMove: {fileID: 11400000, guid: 3d1b4b45a53d8414fac98e8f8be18cc5, type: 2}
   canMoveLeft: {fileID: 11400000, guid: 45ce73ad2e8b85040a53b7376cfee1bc, type: 2}
@@ -29,6 +30,7 @@ MonoBehaviour:
   faceMoveDirection: {fileID: 11400000, guid: abedd7e5dfa643e4abc8a1657dea8b6d, type: 2}
   jumping: {fileID: 11400000, guid: 12b96bfabe3fef54984cc96088787259, type: 2}
   canJump: {fileID: 11400000, guid: 7947aadb29f665a4a81fa040de505337, type: 2}
-  canRoll: {fileID: 11400000, guid: fd89ee7adf7166d42884a8ac96f46d9f, type: 2}
+  isRolling: {fileID: 11400000, guid: fd89ee7adf7166d42884a8ac96f46d9f, type: 2}
+  canRoll: {fileID: 11400000, guid: b0f690bf519f4bf458486bae1063be6b, type: 2}
   attacking: {fileID: 11400000, guid: 10cead8d737805e4db98d74e1959c15d, type: 2}
   onSlope: {fileID: 11400000, guid: 80f47e97b354c2f4cb481b2486e68c05, type: 2}

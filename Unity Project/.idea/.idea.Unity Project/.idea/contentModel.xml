@@ -15,6 +15,7 @@
           <e p="ControlsEventBehavior.cs" t="Include" />
           <e p="Debugger.cs" t="Include" />
           <e p="DestroyObjSO.cs" t="Include" />
+          <e p="DodgeRollCooldownBehavior.cs" t="Include" />
           <e p="DoWorkSO.cs" t="Include" />
           <e p="EbuttonEventBehavior.cs" t="Include" />
           <e p="FloatDataSO.cs" t="Include" />

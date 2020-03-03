@@ -7,7 +7,7 @@ public class CharacterControllerSO : ScriptableObject
     public Vector3 position = Vector3.zero;
     
     public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f, 
-        slopeRayLength, slopeMultiplier;
+        slopeRayLength, slopeMultiplier, dodgeRollCooldown = 1f;
     public FloatDataSO moveSpeed;
 
     private float horizontalInput, verticalInput;
@@ -15,7 +15,7 @@ public class CharacterControllerSO : ScriptableObject
     private RaycastHit hit;
 
     public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, 
-        jumping, canJump, canRoll, attacking, onSlope;
+        jumping, canJump, isRolling, canRoll, attacking, onSlope;
 
     public void ResetBools()
     {
@@ -32,7 +32,7 @@ public class CharacterControllerSO : ScriptableObject
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        if (!canRoll.boolData)
+        if (!isRolling.boolData)
         {
             if (canMove.boolData)
             {
@@ -134,16 +134,20 @@ public class CharacterControllerSO : ScriptableObject
     {
         if (canRoll.boolData)
         {
-            if (!jumping.boolData)
+            if (isRolling.boolData)
             {
-                if (canMove.boolData)
+                if (!jumping.boolData)
                 {
-                    if (controller.isGrounded)
+                    if (canMove.boolData)
                     {
-                        position.Set(Input.GetAxisRaw("Horizontal") * rollSpeed, 0, Input.GetAxisRaw("Vertical") * rollSpeed);
+                        if (controller.isGrounded)
+                        {
+                            position.Set(Input.GetAxisRaw("Horizontal") * rollSpeed, 0, Input.GetAxisRaw("Vertical") * rollSpeed);
+                        }
+
+                        position.y -= gravity * slopeMultiplier * Time.deltaTime;
+                        controller.Move(position * Time.deltaTime);
                     }
-        
-                    controller.Move(position * Time.deltaTime);
                 }
             }
         }
@@ -199,5 +203,10 @@ public class CharacterControllerSO : ScriptableObject
         {
             controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * swingMomentumSpeed;
         }
+    }
+
+    public void CannotRoll()
+    {
+        canRoll.boolData = false;
     }
 }
