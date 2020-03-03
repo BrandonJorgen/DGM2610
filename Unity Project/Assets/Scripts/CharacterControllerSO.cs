@@ -7,7 +7,7 @@ public class CharacterControllerSO : ScriptableObject
     public Vector3 position = Vector3.zero;
     
     public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f, 
-        slopeRayLength, slopeMultiplier, dodgeRollCooldown = 1f;
+        slopeRayLength, slopeMultiplier, knockbackDistance = 1f;
     public FloatDataSO moveSpeed;
 
     private float horizontalInput, verticalInput;
@@ -31,6 +31,8 @@ public class CharacterControllerSO : ScriptableObject
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+        
+        OnSlope(controller);
 
         if (!isRolling.boolData)
         {
@@ -74,10 +76,8 @@ public class CharacterControllerSO : ScriptableObject
                     horizontalInput = 0;
                 }
             }
-
-            OnSlope(controller);
             
-            if ((position.x != 0 || position.z != 0) && onSlope.boolData)
+            if (onSlope.boolData)
             {
                 position.y -= gravity * slopeMultiplier * Time.deltaTime;
             }
@@ -142,7 +142,8 @@ public class CharacterControllerSO : ScriptableObject
                     {
                         if (controller.isGrounded)
                         {
-                            position.Set(Input.GetAxisRaw("Horizontal") * rollSpeed, 0, Input.GetAxisRaw("Vertical") * rollSpeed);
+                            //SnapshotInput();
+                            position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
                         }
 
                         position.y -= gravity * slopeMultiplier * Time.deltaTime;
@@ -158,10 +159,13 @@ public class CharacterControllerSO : ScriptableObject
         if (jumping.boolData)
         {
             faceMoveDirection.boolData = false;
-            DisableController(controller);
+            //DisableController(controller);
             //TODO line up delay here with animation length or use a different function
-            controller.transform.position += Vector3.up * vaultDistance;
-            controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
+//            controller.transform.position += Vector3.up * vaultDistance;
+//            controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
+            position += controller.transform.TransformDirection(Vector3.forward) * 2;
+            position.y += 1;
+            controller.Move(position * Time.deltaTime);
             //Remember to set the controller back to enabled when the player is ready to move again
         }
     }
@@ -208,5 +212,10 @@ public class CharacterControllerSO : ScriptableObject
     public void CannotRoll()
     {
         canRoll.boolData = false;
+    }
+
+    public void KnockbackMovement(CharacterController controller)
+    {
+        controller.transform.localPosition -= controller.transform.TransformDirection(Vector3.forward) * knockbackDistance;
     }
 }

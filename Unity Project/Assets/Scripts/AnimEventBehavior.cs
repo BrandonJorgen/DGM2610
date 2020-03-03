@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class AnimEventBehavior : MonoBehaviour
 {
     public UnityEvent eventOne, eventTwo, eventThree, eventFour, eventFive, eventSix, eventSeven, eventEight, eventNine, eventTen, 
-        eventEleven, eventTwelve, eventThirteen;
+        eventEleven, eventTwelve, eventThirteen, eventFourteen;
 
     public void CallEventOne()
     {
@@ -66,9 +66,13 @@ public class AnimEventBehavior : MonoBehaviour
         eventTwelve.Invoke();
     }
     
-    public void CallEventThirteen
-        ()
+    public void CallEventThirteen()
     {
         eventThirteen.Invoke();
+    }
+
+    public void CallEventFourteen()
+    {
+        eventFourteen.Invoke();
     }
 }
