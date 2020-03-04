@@ -90,6 +90,8 @@ public class CharacterControllerSO : ScriptableObject
         }
     }
 
+    //BUG when the player is close to an edge, the controller thinks its on a slope
+    //FIX THIS: falling off an edge makes the controller think its on a slope
     private void OnSlope(CharacterController controller)
     {
         if (canJump.boolData && jumping.boolData)
