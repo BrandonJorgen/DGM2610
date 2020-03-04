@@ -10,12 +10,16 @@ public class CharacterControllerSO : ScriptableObject
         slopeRayLength, slopeMultiplier, knockbackDistance = 1f;
     public FloatDataSO moveSpeed;
 
+    private float offGroundTime = 0.25f;
+
     private float horizontalInput, verticalInput;
 
     private RaycastHit hit;
 
     public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, 
         jumping, canJump, isRolling, canRoll, attacking, onSlope;
+
+    private bool inAir, yReset;
 
     public void ResetBools()
     {
@@ -27,6 +31,7 @@ public class CharacterControllerSO : ScriptableObject
         faceMoveDirection.boolData = true;
     }
     
+    //BUG need to make position.y set to 0 due to the build up of gravity making falling off ledges incredibly fast
     public void MoveCharacter(CharacterController controller)
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -43,6 +48,13 @@ public class CharacterControllerSO : ScriptableObject
                     if (jumping.boolData)
                     {
                         jumping.boolData = false;
+                    }
+
+                    if (!yReset)
+                    {
+                        position.y = 0;
+                        yReset = true;
+                        offGroundTime = 0.25f;
                     }
                     
                     position.x = horizontalInput * moveSpeed.value;
@@ -75,40 +87,66 @@ public class CharacterControllerSO : ScriptableObject
                 {
                     horizontalInput = 0;
                 }
-            }
-            
-            if (onSlope.boolData)
-            {
-                position.y -= gravity * slopeMultiplier * Time.deltaTime;
-            }
-            else
-            {
-                position.y -= gravity * Time.deltaTime;
+                
+                if (!controller.isGrounded)
+                {
+                    if (!jumping.boolData)
+                    {
+                        if (onSlope.boolData && (position.x != 0 || position.z != 0))
+                        {
+                            position.y -= gravity * slopeMultiplier * Time.deltaTime;
+                        }
+                        else
+                        {
+                            position.y -= gravity * Time.deltaTime;
+                        }
+
+                        offGroundTime -= Time.deltaTime;
+
+                        if (offGroundTime <= 0)
+                        {
+                            yReset = false;
+                        }
+                    }
+                    else
+                    {
+                        position.y -= gravity * Time.deltaTime;
+                    }
+                }
             }
             
             controller.Move(position * Time.deltaTime);
         }
     }
-
-    //BUG when the player is close to an edge, the controller thinks its on a slope
-    //FIX THIS: falling off an edge makes the controller think its on a slope
+    
     private void OnSlope(CharacterController controller)
     {
         if (canJump.boolData && jumping.boolData)
         {
             onSlope.boolData = false;
         }
-
-        if (Physics.Raycast(controller.transform.position, Vector3.down, out hit, controller.height / 2 * slopeRayLength))
+        else if (Physics.Raycast(controller.transform.position, Vector3.down, out hit, controller.height / 2 * slopeRayLength))
         {
+            Debug.DrawRay(controller.transform.position, Vector3.down * slopeRayLength);
+            
             if (hit.normal != Vector3.up)
             {
                 onSlope.boolData = true;
+                
+
+                if (hit.normal.y <= 0.3f)
+                {
+                    onSlope.boolData = false;
+                } 
+                else if (hit.normal.y <= 0 && onSlope.boolData)
+                {
+                    onSlope.boolData = false;
+                }
             }
-        }
-        else
-        {
-            onSlope.boolData = false;
+            else
+            {
+                onSlope.boolData = false;
+            }
         }
     }
 
@@ -124,9 +162,10 @@ public class CharacterControllerSO : ScriptableObject
                     {
                         position.y = jumpSpeed;
                         jumping.boolData = true;
+                        yReset = false;
                     }
                 }
-                
+
                 controller.Move(position * Time.deltaTime);
             }
         }
@@ -144,7 +183,6 @@ public class CharacterControllerSO : ScriptableObject
                     {
                         if (controller.isGrounded)
                         {
-                            //SnapshotInput();
                             position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
                         }
 
@@ -156,19 +194,34 @@ public class CharacterControllerSO : ScriptableObject
         }
     }
 
+    //Can't vault after being in the air for an amount of time?
     public void VaultEdge(CharacterController controller)
     {
         if (jumping.boolData)
         {
             faceMoveDirection.boolData = false;
-            //DisableController(controller);
-            //TODO line up delay here with animation length or use a different function
-//            controller.transform.position += Vector3.up * vaultDistance;
-//            controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
-            position += controller.transform.TransformDirection(Vector3.forward) * 2;
+            position += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
+            
+            if (position.x > vaultDistance)
+            {
+                position.x = vaultDistance;
+            }
+            else if (position.x < -vaultDistance)
+            {
+                position.x = -vaultDistance;
+            }
+
+            if (position.z > vaultDistance)
+            {
+                position.z = vaultDistance;
+            } 
+            else if (position.z < -vaultDistance)
+            {
+                position.z = -vaultDistance;
+            }
+
             position.y += 1;
             controller.Move(position * Time.deltaTime);
-            //Remember to set the controller back to enabled when the player is ready to move again
         }
     }
 

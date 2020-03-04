@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instObj: {fileID: 4397891949789045845, guid: a7c302d5135ec0941a9d4242043f9a7b, type: 3}
-  instLocation: {fileID: 6345933212306870374}
 --- !u!114 &6345933212306870373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +66,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6345933212306870372}
-        m_MethodName: InstantiateObj
+        m_MethodName: InstantiateObjWithRotation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

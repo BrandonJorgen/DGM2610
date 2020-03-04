@@ -4,7 +4,7 @@ public class InstantiateObjBehavior : MonoBehaviour
 {
     public GameObject instObj;
 
-    public void InstantiateObj()
+    public void InstantiateObjWithRotation()
     {
         Instantiate(instObj, transform.position, transform.rotation);
     }

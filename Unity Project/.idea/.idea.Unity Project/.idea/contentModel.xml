@@ -16,8 +16,8 @@
           <e p="Debugger.cs" t="Include" />
           <e p="DestroyObjSO.cs" t="Include" />
           <e p="DodgeRollCooldownBehavior.cs" t="Include" />
-          <e p="DoWorkSO.cs" t="Include" />
           <e p="EbuttonEventBehavior.cs" t="Include" />
+          <e p="EnemyAttackBehavior.cs" t="Include" />
           <e p="FloatDataSO.cs" t="Include" />
           <e p="GameAction.cs" t="Include" />
           <e p="GameActionHandler.cs" t="Include" />
@@ -25,10 +25,12 @@
           <e p="IDMatch.cs" t="Include" />
           <e p="IDName.cs" t="Include" />
           <e p="ImageBehavior.cs" t="Include" />
+          <e p="InstantiatedFloatDataBehavior.cs" t="Include" />
+          <e p="InstantiatedValueCheckBehavior.cs" t="Include" />
           <e p="InstantiateObjBehavior.cs" t="Include" />
           <e p="InstantiateObjSO.cs" t="Include" />
+          <e p="InstantiateSOBehavior.cs" t="Include" />
           <e p="LookAtCameraSO.cs" t="Include" />
-          <e p="MathFunctions.cs" t="Include" />
           <e p="MonoEventBehavior.cs" t="Include" />
           <e p="NavMeshAgentBehavior.cs" t="Include" />
           <e p="ObjPileBehavior.cs" t="Include" />

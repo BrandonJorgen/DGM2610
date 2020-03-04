@@ -13,11 +13,6 @@ public class NavMeshAgentBehavior : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void SetDestination(Vector3SO destination)
     {
         agent.destination = destination.vector3;
@@ -25,7 +20,7 @@ public class NavMeshAgentBehavior : MonoBehaviour
 
     public void SetDestination(Transform transformObj)
     {
-        NavMeshPath path = new NavMeshPath();
+        var path = new NavMeshPath();
         
         agent.destination = transformObj.position;
 

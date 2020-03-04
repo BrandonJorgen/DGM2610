@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6376527321722130162
+--- !u!1 &6345933212306870375
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6376527321722130163}
-  - component: {fileID: 6376527321722130161}
-  - component: {fileID: 6376527321722130160}
+  - component: {fileID: 6345933212306870374}
+  - component: {fileID: 6345933212306870372}
+  - component: {fileID: 6345933212306870373}
   m_Layer: 0
-  m_Name: BigEnemyInstPoint
+  m_Name: RotterEnemyInstPoint
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6376527321722130163
+--- !u!4 &6345933212306870374
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6376527321722130162}
+  m_GameObject: {fileID: 6345933212306870375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.21, y: 1.5, z: -6.94}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.36, z: 6.01}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6376527321722130161
+--- !u!114 &6345933212306870372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6376527321722130162}
+  m_GameObject: {fileID: 6345933212306870375}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af51721c4625d394fa5cec8602b44338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instObj: {fileID: 361855803266964242, guid: 3349e21b507c5534d99b30e9e11af511, type: 3}
---- !u!114 &6376527321722130160
+  instObj: {fileID: 5695071078013771586, guid: b857c055c8e52a944a292ab3243cfc13, type: 3}
+--- !u!114 &6345933212306870373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6376527321722130162}
+  m_GameObject: {fileID: 6345933212306870375}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb73a05ead09c84e88f3bc9ae95c4d5, type: 3}
@@ -65,8 +65,8 @@ MonoBehaviour:
   onStartEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6376527321722130161}
-        m_MethodName: InstantiateObj
+      - m_Target: {fileID: 6345933212306870372}
+        m_MethodName: InstantiateObjWithRotation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
