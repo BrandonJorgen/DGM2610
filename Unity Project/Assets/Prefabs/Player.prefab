@@ -74,6 +74,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 2137679541}
+          m_MethodName: TwoBoolCheck
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     ExitEvent:
@@ -82,6 +93,17 @@ MonoBehaviour:
         - m_Target: {fileID: 11400000, guid: 8bc3be317ebac7d4e8b3ed9b6ad80899, type: 2}
           m_MethodName: SetBool
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2137679541}
+          m_MethodName: TwoBoolCheck
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -161,38 +183,27 @@ MonoBehaviour:
   conditionsMet:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
-        m_MethodName: VaultEdge
-        m_Mode: 2
+      - m_Target: {fileID: 11400000, guid: c75134fb463d7b14f8ae617d3ddbf63c, type: 2}
+        m_MethodName: SetBool
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 6574480379532828888}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 6623994914234618386}
-        m_MethodName: SetTrigger
-        m_Mode: 5
+      - m_Target: {fileID: 4918197957133609580}
+        m_MethodName: TwoBoolCheck
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vault
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: bd86bae312ab1094d89030881cc5d81c, type: 2}
-        m_MethodName: EventDebug
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: vaulting
-          m_BoolArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -915,8 +926,8 @@ GameObject:
   - component: {fileID: 9129095570121722911}
   - component: {fileID: 6623994914234618386}
   - component: {fileID: 6335115796328210963}
-  - component: {fileID: 664473622}
   - component: {fileID: 1803320521}
+  - component: {fileID: 4918197957133609580}
   m_Layer: 0
   m_Name: Art
   m_TagString: Untagged
@@ -1035,12 +1046,12 @@ MonoBehaviour:
   eventTwo:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
-        m_MethodName: EnableController
-        m_Mode: 2
+      - m_Target: {fileID: 11400000, guid: 3d1b4b45a53d8414fac98e8f8be18cc5, type: 2}
+        m_MethodName: SetBool
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 6574480379532828888}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1083,12 +1094,12 @@ MonoBehaviour:
   eventFive:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
-        m_MethodName: DisableController
-        m_Mode: 2
+      - m_Target: {fileID: 11400000, guid: 3d1b4b45a53d8414fac98e8f8be18cc5, type: 2}
+        m_MethodName: SetBool
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 6574480379532828888}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1273,33 +1284,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &664473622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6574480378495206237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37aa6382d338a304e954d80ef90fa7b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameActionObj: {fileID: 11400000, guid: 9c19c3b4f6b83ce408cb474882fdc619, type: 2}
-  handlerEvent:
+  eventFifteen:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6623994914234618386}
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Vault
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1803320521
@@ -1316,6 +1303,75 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataObj: {fileID: 11400000, guid: b0f690bf519f4bf458486bae1063be6b, type: 2}
   cooldownTime: 1
+--- !u!114 &4918197957133609580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378495206237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afdd9f435e48f64293e03099c17a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolOne: {fileID: 11400000, guid: c75134fb463d7b14f8ae617d3ddbf63c, type: 2}
+  boolTwo: {fileID: 11400000, guid: 12b96bfabe3fef54984cc96088787259, type: 2}
+  bothTrue: 1
+  oneTrueTwoFalse: 0
+  oneFalseTwoTrue: 0
+  bothFalse: 0
+  oneTrue: 0
+  oneFalse: 0
+  conditionsMet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e, type: 2}
+        m_MethodName: VaultEdge
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6574480379532828888}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.CharacterController, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: c75134fb463d7b14f8ae617d3ddbf63c, type: 2}
+        m_MethodName: SetBool
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6623994914234618386}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Vault
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: bd86bae312ab1094d89030881cc5d81c, type: 2}
+        m_MethodName: EventDebug
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Vaulting
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &6574480378573468710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,7 +2209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.114
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2193,11 +2249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_FarClipPlane
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
       propertyPath: m_FieldOfView
-      value: 38.16
+      value: 38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}

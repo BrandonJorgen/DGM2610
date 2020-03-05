@@ -31,7 +31,6 @@ public class CharacterControllerSO : ScriptableObject
         faceMoveDirection.boolData = true;
     }
     
-    //BUG need to make position.y set to 0 due to the build up of gravity making falling off ledges incredibly fast
     public void MoveCharacter(CharacterController controller)
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -197,42 +196,31 @@ public class CharacterControllerSO : ScriptableObject
     //Can't vault after being in the air for an amount of time?
     public void VaultEdge(CharacterController controller)
     {
-        if (jumping.boolData)
+        faceMoveDirection.boolData = false;
+        position += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
+        
+        if (position.x > vaultDistance)
         {
-            faceMoveDirection.boolData = false;
-            position += controller.transform.TransformDirection(Vector3.forward) * vaultDistance;
-            
-            if (position.x > vaultDistance)
-            {
-                position.x = vaultDistance;
-            }
-            else if (position.x < -vaultDistance)
-            {
-                position.x = -vaultDistance;
-            }
-
-            if (position.z > vaultDistance)
-            {
-                position.z = vaultDistance;
-            } 
-            else if (position.z < -vaultDistance)
-            {
-                position.z = -vaultDistance;
-            }
-
-            position.y += 1;
-            controller.Move(position * Time.deltaTime);
+            position.x = vaultDistance;
         }
-    }
+        else if (position.x < -vaultDistance)
+        {
+            position.x = -vaultDistance;
+        }
 
-    public void ShrinkHeight(CharacterController controller)
-    {
-        controller.height = 0.5f;
-    }
+        if (position.z > vaultDistance)
+        {
+            position.z = vaultDistance;
+        } 
+        else if (position.z < -vaultDistance)
+        {
+            position.z = -vaultDistance;
+        }
 
-    public void GrowHeight(CharacterController controller)
-    {
-        controller.height = 1f;
+        position.y = 0;
+        position.y += 8;
+        
+        controller.Move(position * Time.deltaTime);
     }
 
     public void StopMovement(CharacterController controller)
@@ -260,8 +248,12 @@ public class CharacterControllerSO : ScriptableObject
     {
         if (!jumping.boolData && attacking.boolData)
         {
-            controller.transform.localPosition += controller.transform.TransformDirection(Vector3.forward) * swingMomentumSpeed;
+            canMove.boolData = false;
+            position = Vector3.zero;
+            position += controller.transform.TransformDirection(Vector3.forward) * swingMomentumSpeed;
         }
+
+        controller.Move(position * Time.deltaTime);
     }
 
     public void CannotRoll()
@@ -271,6 +263,6 @@ public class CharacterControllerSO : ScriptableObject
 
     public void KnockbackMovement(CharacterController controller)
     {
-        controller.transform.localPosition -= controller.transform.TransformDirection(Vector3.forward) * knockbackDistance;
+        controller.transform.localPosition -= controller.transform.TransformDirection(Vector3.forward) * knockbackDistance; //change this to character controller
     }
 }
