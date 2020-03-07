@@ -15,6 +15,11 @@ public class NavMeshAgentBehavior : MonoBehaviour
         spawnLoc = agent.transform.position;
     }
 
+    public void SetDestination(Transform transformObj)
+    {
+        agent.destination = transformObj.position;
+    }
+
     public void SetDestination(Vector3SO destinationObj)
     {
         var path = new NavMeshPath();

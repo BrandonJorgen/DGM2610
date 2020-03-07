@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="AITargetingBehavior.cs" t="Include" />
           <e p="AnimBehavior.cs" t="Include" />
           <e p="AnimEventBehavior.cs" t="Include" />
           <e p="BoolCheckBehavior.cs" t="Include" />
@@ -18,6 +19,7 @@
           <e p="DodgeRollCooldownBehavior.cs" t="Include" />
           <e p="EbuttonEventBehavior.cs" t="Include" />
           <e p="EnemyAttackBehavior.cs" t="Include" />
+          <e p="EnemyTreasureSearchBehavior.cs" t="Include" />
           <e p="FloatDataSO.cs" t="Include" />
           <e p="GameAction.cs" t="Include" />
           <e p="GameActionHandler.cs" t="Include" />
