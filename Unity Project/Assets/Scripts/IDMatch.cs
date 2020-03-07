@@ -9,7 +9,7 @@ public class IDMatch : IDBehavior
     public struct possibleWork
     {
         public IDName nameIdObj;
-        public UnityEvent EnterEvent, ExitEvent;
+        public UnityEvent EnterEvent, StayEvent, ExitEvent;
     }
 
     private IDBehavior otherBehaviourObj;
@@ -24,12 +24,20 @@ public class IDMatch : IDBehavior
         CheckId(1);
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         otherBehaviourObj = other.GetComponent<IDBehavior>();
         if (otherBehaviourObj == null) return;
         otherIdObj = otherBehaviourObj.nameIdObj;
         CheckId(2);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        otherBehaviourObj = other.GetComponent<IDBehavior>();
+        if (otherBehaviourObj == null) return;
+        otherIdObj = otherBehaviourObj.nameIdObj;
+        CheckId(3);
     }
 
     private void CheckId(int stateNumber)
@@ -43,7 +51,12 @@ public class IDMatch : IDBehavior
                         case 1:
                             obj.EnterEvent.Invoke();
                             break;
+                        
                         case 2:
+                            obj.StayEvent.Invoke();
+                            break;
+                        
+                        case 3:
                             obj.ExitEvent.Invoke();
                             break;
                 }

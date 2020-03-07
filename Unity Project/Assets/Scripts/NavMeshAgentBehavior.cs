@@ -6,27 +6,53 @@ using UnityEngine.Events;
 public class NavMeshAgentBehavior : MonoBehaviour
 {
     private NavMeshAgent agent;
-    public UnityEvent reachedDestination;
+    private Vector3 spawnLoc;
+    public bool stoppingBool;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        spawnLoc = agent.transform.position;
     }
 
-    public void SetDestination(Vector3SO destination)
-    {
-        agent.destination = destination.vector3;
-    }
-
-    public void SetDestination(Transform transformObj)
+    public void SetDestination(Vector3SO destinationObj)
     {
         var path = new NavMeshPath();
         
-        agent.destination = transformObj.position;
+        agent.destination = destinationObj.vector3;
 
-        if (agent.remainingDistance <= 0.25 && agent.CalculatePath(transform.position, path))
+        if (agent.remainingDistance <= agent.stoppingDistance && agent.CalculatePath(transform.position, path))
         {
-            reachedDestination.Invoke();
+            //ReturnToSpawn();
+        }
+    }
+
+    public void ReturnToSpawn()
+    {
+        agent.destination = spawnLoc;
+    }
+
+    public void StoppingDistanceChange()
+    {
+        if (stoppingBool)
+        {
+            agent.stoppingDistance = 2.66f;
+        }
+        else
+        {
+            agent.stoppingDistance = 0.25f;
+        }
+    }
+
+    public void UpdateBool()
+    {
+        if (stoppingBool)
+        {
+            stoppingBool = false;
+        }
+        else
+        {
+            stoppingBool = true;
         }
     }
 }
