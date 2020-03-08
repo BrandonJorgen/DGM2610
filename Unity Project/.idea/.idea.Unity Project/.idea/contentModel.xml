@@ -19,7 +19,6 @@
           <e p="DodgeRollCooldownBehavior.cs" t="Include" />
           <e p="EbuttonEventBehavior.cs" t="Include" />
           <e p="EnemyAttackBehavior.cs" t="Include" />
-          <e p="EnemyTreasureSearchBehavior.cs" t="Include" />
           <e p="FloatDataSO.cs" t="Include" />
           <e p="GameAction.cs" t="Include" />
           <e p="GameActionHandler.cs" t="Include" />

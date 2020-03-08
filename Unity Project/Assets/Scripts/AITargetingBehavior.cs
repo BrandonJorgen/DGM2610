@@ -57,7 +57,7 @@ public class AITargetingBehavior : MonoBehaviour
         CheckId(3);
     }
 
-    private void CheckId(int stateNumber)
+    public void CheckId(int stateNumber)
     {
         foreach (var obj in workIdList)
         {
@@ -137,5 +137,12 @@ public class AITargetingBehavior : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void RemoveTarget()
+    {
+        possibleTargetList.RemoveAt(0);
+        prioritySet = false;
+        PriorityTargetChange();
     }
 }
