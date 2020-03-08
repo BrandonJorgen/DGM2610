@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64028c1aa870b243a1bab583442b2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetingBehavior: {fileID: 4480491184425652931}
   stoppingBool: 0
 --- !u!114 &6083136962951421854
 MonoBehaviour:
@@ -773,11 +774,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5695071078013771448}
         m_MethodName: SetDestination
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4ed495ca50766554d9f42dace34af742,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Vector3SO, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -805,9 +805,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2963393771013158918}
   - component: {fileID: 5854713151954939137}
-  - component: {fileID: 2562559883773450951}
-  m_Layer: 14
-  m_Name: ThrownTreasureDetector
+  - component: {fileID: 4480491184425652931}
+  m_Layer: 0
+  m_Name: AITargeting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -840,7 +840,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2562559883773450951
+--- !u!114 &4480491184425652931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -852,9 +852,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd23c62467875c24b8008ad34e619ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameIdObj: {fileID: 0}
+  prioritySet: 0
+  priorityIdOneInRange: 0
+  priorityIdTwoInRange: 0
+  priorityIdOne: {fileID: 11400000, guid: 4db7aee5db2ba89468d3a395592d7ff4, type: 2}
+  priorityIdTwo: {fileID: 11400000, guid: 99a71767b6d33134da580b91186c5ed8, type: 2}
   workIdList:
   - nameIdObj: {fileID: 11400000, guid: 99a71767b6d33134da580b91186c5ed8, type: 2}
+  - nameIdObj: {fileID: 11400000, guid: 4db7aee5db2ba89468d3a395592d7ff4, type: 2}
   possibleTargetList: []
 --- !u!1 &9034926744749023826
 GameObject:

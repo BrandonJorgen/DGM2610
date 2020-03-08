@@ -2,19 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AITargetingBehavior : IDBehavior
+public class AITargetingBehavior : MonoBehaviour
 {
     [Serializable]
     public struct wantedIDs
     {
         public IDName nameIdObj;
     }
+    
+    [Serializable]
+    public struct possibleTarget
+    {
+        public GameObject gameObj;
+        public IDName nameIdObj;
+    }
 
     private GameObject otherGameObj;
     private IDBehavior otherBehaviourObj;
     private IDName otherIdObj;
+    public bool prioritySet;
+    
+    public bool priorityIdOneInRange, priorityIdTwoInRange;
+    public IDName priorityIdOne, priorityIdTwo;
     public List<wantedIDs> workIdList;
-    public List<GameObject> possibleTargetList;
+    public List<possibleTarget> possibleTargetList;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -45,9 +56,6 @@ public class AITargetingBehavior : IDBehavior
         otherIdObj = otherBehaviourObj.nameIdObj;
         CheckId(3);
     }
-    
-    //FUNCTION that checks if first ID in list matches priority ID
-    //If not, keep going down list until there is a match then set that to first ID
 
     private void CheckId(int stateNumber)
     {
@@ -55,26 +63,27 @@ public class AITargetingBehavior : IDBehavior
         {
             if (otherIdObj == obj.nameIdObj)
             {
+                possibleTarget target = new possibleTarget();
+                target.gameObj = otherGameObj;
+                target.nameIdObj = otherIdObj;
+                
                 switch (stateNumber)
                 {
                     case 1:
-                        Debug.Log(possibleTargetList.Count + 1);
-                        if (possibleTargetList.Count != 0)
-                        {
-                            foreach (var targetObj in possibleTargetList)
-                            {
-                                if (otherGameObj == targetObj)
-                                {
-                                    return;
-                                }
+                        possibleTargetList.Add(target);
+                        prioritySet = false;
+                        PriorityTargetChange();
 
-                                possibleTargetList.Add(otherGameObj);
-                            }
-                        }
-                        else
+                        if (target.nameIdObj == priorityIdOne)
                         {
-                            possibleTargetList.Add(otherGameObj);
+                            priorityIdOneInRange = true;
                         }
+
+                        if (target.nameIdObj == priorityIdTwo)
+                        {
+                            priorityIdTwoInRange = true;
+                        }
+                        
                         break;
                         
                     case 2:
@@ -82,14 +91,49 @@ public class AITargetingBehavior : IDBehavior
                         break;
                         
                     case 3:
-                        foreach (var gameObj in possibleTargetList)
+                        possibleTargetList.Remove(target);
+                        
+                        if (target.nameIdObj == priorityIdOne)
                         {
-                            if (otherGameObj == gameObj)
+                            priorityIdOneInRange = false;
+                        }
+                        
+                        if (target.nameIdObj == priorityIdTwo)
+                        {
+                            priorityIdTwoInRange = false;
+                            
+                            foreach (var searchObj in possibleTargetList)
                             {
-                                possibleTargetList.Remove(gameObj);
+                                if (searchObj.nameIdObj == priorityIdTwo)
+                                {
+                                    prioritySet = false;
+                                    PriorityTargetChange();
+                                    return;
+                                }
                             }
                         }
+                        
                         break;
+                }
+            }
+        }
+    }
+
+    private void PriorityTargetChange()
+    {
+        if (possibleTargetList.Count != 0)
+        {
+            for (int i = 0; i <= possibleTargetList.Count - 1; i++)
+            {
+                if (!prioritySet)
+                {
+                    if (possibleTargetList[i].nameIdObj == priorityIdTwo)
+                    {
+                        possibleTargetList.Insert(0, possibleTargetList[i]);
+                        possibleTargetList.RemoveAt(i + 1);
+                        priorityIdTwoInRange = true;
+                        return;
+                    }
                 }
             }
         }

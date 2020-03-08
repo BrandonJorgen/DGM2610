@@ -7,12 +7,21 @@ public class NavMeshAgentBehavior : MonoBehaviour
 {
     private NavMeshAgent agent;
     private Vector3 spawnLoc;
+    public AITargetingBehavior targetingBehavior;
     public bool stoppingBool;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         spawnLoc = agent.transform.position;
+    }
+
+    public void SetDestination()
+    {
+        if (targetingBehavior.possibleTargetList != null)
+        {
+            agent.destination = targetingBehavior.possibleTargetList[0].gameObj.transform.position;
+        }
     }
 
     public void SetDestination(Transform transformObj)
