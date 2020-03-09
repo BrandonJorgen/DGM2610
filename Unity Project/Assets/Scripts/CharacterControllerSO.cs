@@ -17,7 +17,7 @@ public class CharacterControllerSO : ScriptableObject
     private RaycastHit hit;
 
     public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, 
-        jumping, canJump, isRolling, canRoll, attacking, onSlope;
+        jumping, canJump, isRolling, canRoll, attacking, onSlope, grabbing;
 
     private bool inAir, yReset;
 
@@ -55,9 +55,40 @@ public class CharacterControllerSO : ScriptableObject
                         yReset = true;
                         offGroundTime = 0.25f;
                     }
-                    
-                    position.x = horizontalInput * moveSpeed.value;
-                    position.z = verticalInput * moveSpeed.value;
+
+                    if (grabbing.boolData)
+                    {
+                        if (!canMoveUp.boolData && verticalInput > 0)
+                        {
+                            verticalInput = 0;
+                        }
+
+                        if (!canMoveDown.boolData && verticalInput < 0)
+                        {
+                            verticalInput = 0;
+                        }
+
+                        if (!canMoveLeft.boolData && horizontalInput < 0)
+                        {
+                            horizontalInput = 0;
+                        }
+
+                        if (!canMoveRight.boolData && horizontalInput > 0)
+                        {
+                            horizontalInput = 0;
+                        }
+                    }
+
+                    if (horizontalInput != 0 && verticalInput != 0)
+                    {
+                        position.x = horizontalInput * moveSpeed.value * 0.75f;
+                        position.z = verticalInput * moveSpeed.value * 0.75f;
+                    }
+                    else
+                    {
+                        position.x = horizontalInput * moveSpeed.value;
+                        position.z = verticalInput * moveSpeed.value;
+                    }
     
                     if (faceMoveDirection.boolData)
                     {
@@ -66,25 +97,6 @@ public class CharacterControllerSO : ScriptableObject
                             controller.transform.forward = new Vector3(position.x, 0, position.z);
                         }
                     }
-                }
-                if (!canMoveUp.boolData && verticalInput > 0)
-                {
-                    verticalInput = 0;
-                }
-
-                if (!canMoveDown.boolData && verticalInput < 0)
-                {
-                    verticalInput = 0;
-                }
-
-                if (!canMoveLeft.boolData && horizontalInput < 0)
-                {
-                    horizontalInput = 0;
-                }
-
-                if (!canMoveRight.boolData && horizontalInput > 0)
-                {
-                    horizontalInput = 0;
                 }
                 
                 if (!controller.isGrounded)
