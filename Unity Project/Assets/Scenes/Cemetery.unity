@@ -16207,7 +16207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390522006}
   m_LocalRotation: {x: -0, y: -0.08503089, z: -0, w: 0.99637836}
-  m_LocalPosition: {x: -32.051407, y: 0.8379662, z: -26.612991}
+  m_LocalPosition: {x: -31.85, y: 0.8379662, z: -26.58}
   m_LocalScale: {x: 0.7578568, y: 4.0153, z: 1.1368067}
   m_Children: []
   m_Father: {fileID: 1730100315}
@@ -17557,6 +17557,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2605852142987860971, guid: 9e87f6204099a994fa3455d3c31cc1d2,
     type: 3}
   m_PrefabInstance: {fileID: 427890203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &428150057 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 6574480379532828888, guid: 2c4800b19680c234787bb8517f457e47,
+    type: 3}
+  m_PrefabInstance: {fileID: 509336454}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &433642988
 GameObject:
@@ -20090,6 +20096,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6335115796328210963, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eventSeven.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335115796328210963, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eventSeven.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335115796328210963, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eventSeven.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335115796328210963, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eventSeven.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 55220077556ced6489621afc810ce30e,
+        type: 2}
+    - target: {fileID: 6335115796328210963, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eventSeven.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JumpAttackMovement
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335115796328210963, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eventSeven.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.CharacterController, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335115796328210963, guid: 2c4800b19680c234787bb8517f457e47,
+        type: 3}
+      propertyPath: eventSeven.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 428150057}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c4800b19680c234787bb8517f457e47, type: 3}
 --- !u!1 &509899388

@@ -17,9 +17,9 @@ public class CharacterControllerSO : ScriptableObject
     private RaycastHit hit;
 
     public BoolDataSO canMove, canMoveLeft, canMoveRight, canMoveUp, canMoveDown, faceMoveDirection, 
-        jumping, canJump, isRolling, canRoll, attacking, onSlope, grabbing;
+        jumping, canJump, isRolling, canRoll, onSlope, grabbing;
 
-    private bool inAir, yReset;
+    private bool inAir, yReset, jumpAttack;
 
     public void ResetBools()
     {
@@ -47,6 +47,11 @@ public class CharacterControllerSO : ScriptableObject
                     if (jumping.boolData)
                     {
                         jumping.boolData = false;
+                    }
+
+                    if (jumpAttack)
+                    {
+                        jumpAttack = false;
                     }
 
                     if (!yReset)
@@ -119,14 +124,21 @@ public class CharacterControllerSO : ScriptableObject
                             yReset = false;
                         }
                     }
+
+                    if (jumping.boolData && jumpAttack)
+                    {
+                        Debug.Log("jumping and attacking so extra gravity is in effect");
+                        Debug.Log(jumpAttack);
+                        position.y -= gravity * slopeMultiplier * Time.deltaTime * 2;
+                    }
                     else
                     {
                         position.y -= gravity * Time.deltaTime;
                     }
                 }
+                
+                controller.Move(position * Time.deltaTime);
             }
-            
-            controller.Move(position * Time.deltaTime);
         }
     }
     
@@ -258,14 +270,14 @@ public class CharacterControllerSO : ScriptableObject
 
     public void SwingMovement(CharacterController controller)
     {
-        if (!jumping.boolData && attacking.boolData)
+        if (!jumping.boolData)
         {
             canMove.boolData = false;
             position = Vector3.zero;
             position += controller.transform.TransformDirection(Vector3.forward) * swingMomentumSpeed;
         }
 
-        controller.Move(position * Time.deltaTime);
+        controller.Move(position);
     }
 
     public void CannotRoll()
@@ -276,5 +288,18 @@ public class CharacterControllerSO : ScriptableObject
     public void KnockbackMovement(CharacterController controller)
     {
         controller.transform.localPosition -= controller.transform.TransformDirection(Vector3.forward) * knockbackDistance; //change this to character controller
+    }
+
+    public void JumpAttackMovement(CharacterController controller)
+    {
+        if (!controller.isGrounded)
+        {
+            position.x = 0;
+            position.z = 0;
+            faceMoveDirection.boolData = false;
+            position += controller.transform.TransformDirection(Vector3.forward) * 5;
+            position.y = 0;
+            jumpAttack = true;
+        }
     }
 }
