@@ -258,16 +258,6 @@ public class CharacterControllerSO : ScriptableObject
         canMove.boolData = true;
     }
 
-    public void EnableController(CharacterController controller)
-    {
-        controller.enabled = true;
-    }
-
-    public void DisableController(CharacterController controller)
-    {
-        controller.enabled = false;
-    }
-
     public void SwingMovement(CharacterController controller)
     {
         if (!jumping.boolData)
@@ -287,7 +277,12 @@ public class CharacterControllerSO : ScriptableObject
 
     public void KnockbackMovement(CharacterController controller)
     {
-        controller.transform.localPosition -= controller.transform.TransformDirection(Vector3.forward) * knockbackDistance; //change this to character controller
+        canMove.boolData = false;
+        position.x = 0;
+        position.z = 0;
+        position += controller.transform.TransformDirection(Vector3.back) * knockbackDistance;
+
+        controller.Move(position);
     }
 
     public void JumpAttackMovement(CharacterController controller)
@@ -297,7 +292,7 @@ public class CharacterControllerSO : ScriptableObject
             position.x = 0;
             position.z = 0;
             faceMoveDirection.boolData = false;
-            position += controller.transform.TransformDirection(Vector3.forward) * 5;
+            position += controller.transform.TransformDirection(Vector3.forward) * 10;
             position.y = 0;
             jumpAttack = true;
         }

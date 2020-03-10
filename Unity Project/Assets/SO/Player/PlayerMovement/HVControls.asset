@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900b50f9480d9104fb3ef6594c756353, type: 3}
   m_Name: HVControls
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -0.249082, z: 0}
+  position: {x: 0, y: -0.4562442, z: 0}
   jumpSpeed: 8
   rollSpeed: 20
   gravity: 20
@@ -32,6 +32,5 @@ MonoBehaviour:
   canJump: {fileID: 11400000, guid: 7947aadb29f665a4a81fa040de505337, type: 2}
   isRolling: {fileID: 11400000, guid: fd89ee7adf7166d42884a8ac96f46d9f, type: 2}
   canRoll: {fileID: 11400000, guid: b0f690bf519f4bf458486bae1063be6b, type: 2}
-  attacking: {fileID: 11400000, guid: 10cead8d737805e4db98d74e1959c15d, type: 2}
   onSlope: {fileID: 11400000, guid: 80f47e97b354c2f4cb481b2486e68c05, type: 2}
   grabbing: {fileID: 11400000, guid: 5eebcd621ec11884d9d154669215870a, type: 2}
