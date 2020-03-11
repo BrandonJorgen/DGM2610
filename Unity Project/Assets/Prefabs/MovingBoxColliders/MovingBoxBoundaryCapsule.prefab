@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3596177029624105448}
   - component: {fileID: 3596177029624105451}
-  - component: {fileID: 3596177029624105450}
   - component: {fileID: 7910147892417543502}
+  - component: {fileID: 7695382818424983458}
   m_Layer: 0
   m_Name: MovingBoxBoundaryCapsule
   m_TagString: Untagged
@@ -49,23 +49,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3596177029624105450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3596177029624105455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd8c2ab11a9a464fa3c7c48e974c122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IDNameList:
-  - {fileID: 11400000, guid: 8953b462a1133d440b631568234ec8f0, type: 2}
-  - {fileID: 11400000, guid: b84f8963d10d7a941b5839a0f6cd5f95, type: 2}
-  - {fileID: 11400000, guid: eddf54056e647bd40b90e56de4d27dcc, type: 2}
-  - {fileID: 11400000, guid: ce096cb1f17ffbb42906157cbaba4243, type: 2}
 --- !u!136 &7910147892417543502
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -80,3 +63,16 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7695382818424983458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596177029624105455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37413d6dd25d5114d9f1d4b9c6f77744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameIdObj: {fileID: 11400000, guid: 9a54bb430d56be94eba840562223be3c, type: 2}

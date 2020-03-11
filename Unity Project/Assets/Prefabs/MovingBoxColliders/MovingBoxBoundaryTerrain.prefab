@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5717907541978348414}
   - component: {fileID: 5717907541978348413}
-  - component: {fileID: 5717907541978348412}
   - component: {fileID: 7067010950180843175}
+  - component: {fileID: -2233232495318159761}
   m_Layer: 0
   m_Name: MovingBoxBoundaryTerrain
   m_TagString: Untagged
@@ -49,23 +49,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5717907541978348412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5717907541978348409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd8c2ab11a9a464fa3c7c48e974c122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IDNameList:
-  - {fileID: 11400000, guid: 8953b462a1133d440b631568234ec8f0, type: 2}
-  - {fileID: 11400000, guid: b84f8963d10d7a941b5839a0f6cd5f95, type: 2}
-  - {fileID: 11400000, guid: eddf54056e647bd40b90e56de4d27dcc, type: 2}
-  - {fileID: 11400000, guid: ce096cb1f17ffbb42906157cbaba4243, type: 2}
 --- !u!154 &7067010950180843175
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -77,3 +60,16 @@ TerrainCollider:
   m_Enabled: 1
   m_TerrainData: {fileID: 0}
   m_EnableTreeColliders: 1
+--- !u!114 &-2233232495318159761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717907541978348409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37413d6dd25d5114d9f1d4b9c6f77744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameIdObj: {fileID: 11400000, guid: 9a54bb430d56be94eba840562223be3c, type: 2}
