@@ -25,6 +25,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DestroyObjSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BoolDataSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IDMatch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TransformBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AITargetingBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ParentingBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IDName.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IDBehavior.cs" root0="FORCE_HIGHLIGHTING" />
@@ -62,7 +64,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TRIGGERENTER.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Vector3SO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NavMeshAgentSO.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TransformBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AnimBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DoWorkSO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MathFunctions.cs" />
@@ -95,14 +96,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjPileBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AITargetingBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControllerSO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TransformBehavior.cs" />
       </list>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1049" />
-    <option name="y" value="117" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
   </component>
   <component name="ProjectId" id="1XLkzdOk7Dvqx5iEOSou4vKjCCL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -192,7 +188,8 @@
       <workItem from="1583685267635" duration="14328000" />
       <workItem from="1583715887413" duration="2798000" />
       <workItem from="1583774296138" duration="6693000" />
-      <workItem from="1583848766242" duration="1586000" />
+      <workItem from="1583848766242" duration="1963000" />
+      <workItem from="1583854340593" duration="3216000" />
     </task>
     <servers />
   </component>
