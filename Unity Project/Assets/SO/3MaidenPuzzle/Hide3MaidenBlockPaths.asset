@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f45cf9e2fa34b448289d41ee8769b7, type: 3}
-  m_Name: CanMoveLeft
+  m_Script: {fileID: 11500000, guid: 7b4e9a292636e6d4b968192ac4bcb1aa, type: 3}
+  m_Name: Hide3MaidenBlockPaths
   m_EditorClassIdentifier: 
-  boolData: 1

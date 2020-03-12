@@ -297,4 +297,14 @@ public class CharacterControllerSO : ScriptableObject
             jumpAttack = true;
         }
     }
+
+    public void DisableController(CharacterController controller)
+    {
+        controller.enabled = false;
+    }
+    
+    public void EnableController(CharacterController controller)
+    {
+        controller.enabled = true;
+    }
 }

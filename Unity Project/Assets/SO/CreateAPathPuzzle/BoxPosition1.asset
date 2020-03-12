@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27f45cf9e2fa34b448289d41ee8769b7, type: 3}
-  m_Name: CanMoveLeft
+  m_Script: {fileID: 11500000, guid: 3d2897f428749374da8e7ab4a1dac68f, type: 3}
+  m_Name: BoxPosition1
   m_EditorClassIdentifier: 
-  boolData: 1
+  vector3: {x: 82.04, y: -4.06, z: 201.14}

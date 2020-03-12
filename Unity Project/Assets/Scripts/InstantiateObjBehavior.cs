@@ -7,6 +7,5 @@ public class InstantiateObjBehavior : MonoBehaviour
     public void InstantiateObjWithRotation()
     {
         Instantiate(instObj, transform.position, transform.rotation);
-        Debug.Log("instantiated object");
     }
 }
