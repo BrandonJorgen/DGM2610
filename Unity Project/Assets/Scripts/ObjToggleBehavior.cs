@@ -2,7 +2,7 @@
 
 public class ObjToggleBehavior : MonoBehaviour
 {
-    public void ToggleEnabled()
+    public void ObjToggleEnabled()
     {
         if (gameObject.activeSelf)
         {

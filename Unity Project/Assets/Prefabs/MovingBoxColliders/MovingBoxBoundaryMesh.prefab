@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7495317333111896161}
   - component: {fileID: 9032050452363919491}
   - component: {fileID: -5435635706356231040}
+  - component: {fileID: 1909939030760743182}
+  - component: {fileID: -6265178600825564662}
   m_Layer: 0
   m_Name: MovingBoxBoundaryMesh
   m_TagString: Untagged
@@ -58,7 +60,7 @@ MeshCollider:
   m_GameObject: {fileID: 7495317333111896165}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -76,3 +78,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameIdObj: {fileID: 11400000, guid: 9a54bb430d56be94eba840562223be3c, type: 2}
+--- !u!114 &1909939030760743182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495317333111896165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aa6382d338a304e954d80ef90fa7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 09a89e5599998194c872d7b0fb69e268, type: 2}
+  handlerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -6265178600825564662}
+        m_MethodName: ComponentToggleSwitch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 9032050452363919491}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &-6265178600825564662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495317333111896165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df150b8a601e19a42bf63cbd2be14bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

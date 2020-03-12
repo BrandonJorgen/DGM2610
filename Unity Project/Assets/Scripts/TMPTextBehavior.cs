@@ -11,6 +11,11 @@ public class TMPTextBehavior : MonoBehaviour
         tmpObj = GetComponent<TextMeshProUGUI>();
     }
 
+    public void UpdateText(string stringText)
+    {
+        tmpObj.text = stringText;
+    }
+
     public void UpdateText(FloatDataSO dataObj)
     {
         tmpObj.text = dataObj.value.ToString();

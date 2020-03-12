@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4774014453655143286}
   - component: {fileID: 3847771820596120359}
   - component: {fileID: 9020860534051119540}
+  - component: {fileID: 4210443410692429621}
+  - component: {fileID: 5823349334616047891}
   m_Layer: 0
   m_Name: MovingBoxBoundarySphere
   m_TagString: Untagged
@@ -58,7 +60,7 @@ SphereCollider:
   m_GameObject: {fileID: 4774014453655143282}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -75,3 +77,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameIdObj: {fileID: 11400000, guid: 9a54bb430d56be94eba840562223be3c, type: 2}
+--- !u!114 &4210443410692429621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774014453655143282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aa6382d338a304e954d80ef90fa7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 09a89e5599998194c872d7b0fb69e268, type: 2}
+  handlerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5823349334616047891}
+        m_MethodName: ComponentToggleSwitch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3847771820596120359}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &5823349334616047891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774014453655143282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df150b8a601e19a42bf63cbd2be14bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
