@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 3896616305649567971}
   - component: {fileID: 5681728866460675455}
   - component: {fileID: 513743081783369879}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: Treasure50NoEnemyTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}

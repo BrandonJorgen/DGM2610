@@ -20,7 +20,6 @@ public class AITargetingBehavior : MonoBehaviour
     private GameObject otherGameObj;
     private IDBehavior otherBehaviourObj;
     private IDName otherIdObj;
-    public bool prioritySet;
     
     public IDName priorityIdOne, priorityIdTwo;
     public List<wantedIDs> workIdList;
@@ -70,7 +69,6 @@ public class AITargetingBehavior : MonoBehaviour
                 {
                     case 1:
                         possibleTargetList.Add(target);
-                        prioritySet = false;
                         PriorityTargetChange();
                         
                         break;
@@ -89,7 +87,6 @@ public class AITargetingBehavior : MonoBehaviour
                             {
                                 if (searchObj.nameIdObj == priorityIdTwo)
                                 {
-                                    prioritySet = false;
                                     PriorityTargetChange();
                                     return;
                                 }
@@ -106,16 +103,14 @@ public class AITargetingBehavior : MonoBehaviour
     {
         if (possibleTargetList.Count != 0)
         {
+            Debug.Log("target list was not empty");
             for (int i = 0; i <= possibleTargetList.Count - 1; i++)
             {
-                if (!prioritySet)
+                if (possibleTargetList[i].nameIdObj == priorityIdTwo)
                 {
-                    if (possibleTargetList[i].nameIdObj == priorityIdTwo)
-                    {
-                        possibleTargetList.Insert(0, possibleTargetList[i]);
-                        possibleTargetList.RemoveAt(i + 1);
-                        return;
-                    }
+                    possibleTargetList.Insert(0, possibleTargetList[i]);
+                    possibleTargetList.RemoveAt(i + 1);
+                    return;
                 }
             }
         }
@@ -123,8 +118,10 @@ public class AITargetingBehavior : MonoBehaviour
 
     public void RemoveTarget()
     {
-        possibleTargetList.RemoveAt(0);
-        prioritySet = false;
-        PriorityTargetChange();
+        if (possibleTargetList.Count != 0)
+        {
+            possibleTargetList.RemoveAt(0);
+            PriorityTargetChange();
+        }
     }
 }
