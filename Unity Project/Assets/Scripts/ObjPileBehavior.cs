@@ -1,27 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class ObjPileBehavior : MonoBehaviour
 {
     public float value;
+    public Vector3 scaleValue;
+    public Transform transformObj;
     public UnityEvent valueZero;
-    public List<Mesh> meshList;
     
-    private MeshFilter currentMesh;
     private int detractors;
-    
-    private void Start()
-    {
-        currentMesh = GetComponent<MeshFilter>();
-    }
-
-    public void AddToPile(FloatDataSO dataObj)
-    {
-        value += dataObj.value;
-        //if statements checking value and assigning what mesh to display
-    }
 
     public void Update()
     {
@@ -34,6 +21,12 @@ public class ObjPileBehavior : MonoBehaviour
         {
             valueZero.Invoke();
             Destroy(gameObject);
+        }
+
+        if (value != 50)
+        {
+            scaleValue.Set(value / 50, value / 50, value / 50);
+            transformObj.localScale = scaleValue;
         }
     }
 

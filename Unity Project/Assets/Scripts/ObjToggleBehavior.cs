@@ -13,4 +13,14 @@ public class ObjToggleBehavior : MonoBehaviour
             gameObject.SetActive(true);
         }
     }
+
+    public void ObjTurnOn()
+    {
+        gameObject.SetActive(true);
+    }
+    
+    public void ObjTurnOff()
+    {
+        gameObject.SetActive(false);
+    }
 }

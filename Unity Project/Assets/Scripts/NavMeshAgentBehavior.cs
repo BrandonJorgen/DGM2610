@@ -18,7 +18,7 @@ public class NavMeshAgentBehavior : MonoBehaviour
 
     public void SetDestination()
     {
-        if (targetingBehavior.possibleTargetList != null)
+        if (targetingBehavior.possibleTargetList.Count != 0)
         {
             agent.destination = targetingBehavior.possibleTargetList[0].gameObj.transform.position;
         }

@@ -103,7 +103,6 @@ public class AITargetingBehavior : MonoBehaviour
     {
         if (possibleTargetList.Count != 0)
         {
-            Debug.Log("target list was not empty");
             for (int i = 0; i <= possibleTargetList.Count - 1; i++)
             {
                 if (possibleTargetList[i].nameIdObj == priorityIdTwo)
