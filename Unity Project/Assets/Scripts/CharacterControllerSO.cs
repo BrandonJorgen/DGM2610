@@ -140,6 +140,17 @@ public class CharacterControllerSO : ScriptableObject
                 controller.Move(position * Time.deltaTime);
             }
         }
+
+        if (isRolling.boolData && controller.isGrounded)
+        {
+            if (faceMoveDirection.boolData)
+            {
+                if (position.x != 0 || position.z != 0)
+                {
+                    controller.transform.forward = new Vector3(position.x, 0, position.z);
+                }
+            }
+        }
     }
     
     private void OnSlope(CharacterController controller)
@@ -202,22 +213,18 @@ public class CharacterControllerSO : ScriptableObject
             {
                 if (!jumping.boolData)
                 {
-                    if (canMove.boolData)
+                    if (controller.isGrounded)
                     {
-                        if (controller.isGrounded)
-                        {
-                            position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
-                        }
-
-                        position.y -= gravity * slopeMultiplier * Time.deltaTime;
-                        controller.Move(position * Time.deltaTime);
+                        position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
                     }
+
+                    position.y -= gravity * slopeMultiplier * Time.deltaTime;
+                    controller.Move(position * Time.deltaTime);
                 }
             }
         }
     }
 
-    //Can't vault after being in the air for an amount of time?
     public void VaultEdge(CharacterController controller)
     {
         faceMoveDirection.boolData = false;

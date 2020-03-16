@@ -7,4 +7,9 @@ public class Debugger : ScriptableObject
     {
         Debug.Log(message);
     }
+
+    public void EventDebug(GameObject obj)
+    {
+        Debug.Log(obj);
+    }
 }

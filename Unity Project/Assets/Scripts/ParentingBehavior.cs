@@ -1,21 +1,67 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class ParentingBehavior : MonoBehaviour
 {
-    public GameObjectSO objToParent;
+    private GameObject parentObj;
     private bool isParented;
     
-//    private void OnTriggerEnter(Collider other)
-//    {
-//        objToParent = other.gameObject;
-//    }
+    [Serializable]
+    public struct possibleWork
+    {
+        public IDName nameIdObj;
+    }
 
+    private IDBehavior otherBehaviourObj;
+    private IDName otherIdObj;
+    public List<possibleWork> workIdList;
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        otherBehaviourObj = other.GetComponent<IDBehavior>();
+        if (otherBehaviourObj == null) return;
+        otherIdObj = otherBehaviourObj.nameIdObj;
+        CheckId(1);
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        otherBehaviourObj = other.GetComponent<IDBehavior>();
+        if (otherBehaviourObj == null) return;
+        otherIdObj = otherBehaviourObj.nameIdObj;
+        CheckId(2);
+    }
+    
+    private void CheckId(int stateNumber)
+    {
+        foreach (var obj in workIdList)
+        {
+            if (otherIdObj == obj.nameIdObj)
+            {
+                switch (stateNumber)
+                {
+                    case 1:
+                        parentObj = otherBehaviourObj.gameObject;
+                        break;
+                    
+                    case 2:
+                        parentObj = null;
+                        break;
+                }
+            }
+        }
+    }
+    
     public void ParentSwitch()
     {
         if (!isParented)
         {
-            transform.parent = objToParent.gameObj.transform;
-            isParented = true;
+            if (parentObj != null)
+            {
+                transform.parent = parentObj.transform;
+                isParented = true;
+            }
         }
         else
         {

@@ -12,7 +12,7 @@ public class BoolDataSO : ScriptableObject
             boolData = true;
         }
 
-        if (state == false)
+        if (!state)
         {
             boolData = false;
         }

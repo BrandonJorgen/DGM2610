@@ -23,7 +23,6 @@
           <e p="FloatDataSO.cs" t="Include" />
           <e p="GameAction.cs" t="Include" />
           <e p="GameActionHandler.cs" t="Include" />
-          <e p="GameObjectSO.cs" t="Include" />
           <e p="IDBehavior.cs" t="Include" />
           <e p="IDMatch.cs" t="Include" />
           <e p="IDName.cs" t="Include" />
