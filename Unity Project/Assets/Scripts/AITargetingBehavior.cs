@@ -22,7 +22,6 @@ public class AITargetingBehavior : MonoBehaviour
     private IDName otherIdObj;
     public bool prioritySet;
     
-    public bool priorityIdOneInRange, priorityIdTwoInRange;
     public IDName priorityIdOne, priorityIdTwo;
     public List<wantedIDs> workIdList;
     public List<possibleTarget> possibleTargetList;
@@ -73,16 +72,6 @@ public class AITargetingBehavior : MonoBehaviour
                         possibleTargetList.Add(target);
                         prioritySet = false;
                         PriorityTargetChange();
-
-                        if (target.nameIdObj == priorityIdOne)
-                        {
-                            priorityIdOneInRange = true;
-                        }
-
-                        if (target.nameIdObj == priorityIdTwo)
-                        {
-                            priorityIdTwoInRange = true;
-                        }
                         
                         break;
                         
@@ -93,14 +82,8 @@ public class AITargetingBehavior : MonoBehaviour
                     case 3:
                         possibleTargetList.Remove(target);
                         
-                        if (target.nameIdObj == priorityIdOne)
-                        {
-                            priorityIdOneInRange = false;
-                        }
-                        
                         if (target.nameIdObj == priorityIdTwo)
                         {
-                            priorityIdTwoInRange = false;
                             
                             foreach (var searchObj in possibleTargetList)
                             {
@@ -131,7 +114,6 @@ public class AITargetingBehavior : MonoBehaviour
                     {
                         possibleTargetList.Insert(0, possibleTargetList[i]);
                         possibleTargetList.RemoveAt(i + 1);
-                        priorityIdTwoInRange = true;
                         return;
                     }
                 }

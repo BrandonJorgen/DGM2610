@@ -35752,6 +35752,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 151936751, guid: 2c4800b19680c234787bb8517f457e47, type: 3}
+      propertyPath: handlerEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 151936751, guid: 2c4800b19680c234787bb8517f457e47, type: 3}
+      propertyPath: handlerEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 151936751, guid: 2c4800b19680c234787bb8517f457e47, type: 3}
+      propertyPath: handlerEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 151936751, guid: 2c4800b19680c234787bb8517f457e47, type: 3}
+      propertyPath: handlerEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 0cb3a8f418ff8fe45a76e5177cd9d960,
+        type: 2}
+    - target: {fileID: 151936751, guid: 2c4800b19680c234787bb8517f457e47, type: 3}
+      propertyPath: handlerEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 151936751, guid: 2c4800b19680c234787bb8517f457e47, type: 3}
+      propertyPath: handlerEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c4800b19680c234787bb8517f457e47, type: 3}
 --- !u!1 &509899388

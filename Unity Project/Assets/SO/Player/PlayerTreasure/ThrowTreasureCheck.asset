@@ -10,48 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 690c033da1067574fb2bcc90274d1163, type: 3}
-  m_Name: AddTreasureCheck
+  m_Name: ThrowTreasureCheck
   m_EditorClassIdentifier: 
   dataObj: {fileID: 11400000, guid: 8e61351e1d3133740a690602a379b208, type: 2}
-  greaterThan: 1
-  lessThan: 1
-  equal: 1
+  greaterThan: 0
+  lessThan: 0
+  equal: 0
+  greaterThanOrEqualTo: 1
   greaterThanEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 90556fe0e68a6a8469c1fe40dff86982, type: 2}
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   lessThanEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: eb32b5c3450ce014abab5fb89940bfb4, type: 2}
-        m_MethodName: SetBool
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   equalEvent:
     m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  greaterThanOrEqualToEvent:
+    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 90556fe0e68a6a8469c1fe40dff86982, type: 2}
+      - m_Target: {fileID: 11400000, guid: cd40a6962bb67ea4ab3de5883ae929db, type: 2}
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:

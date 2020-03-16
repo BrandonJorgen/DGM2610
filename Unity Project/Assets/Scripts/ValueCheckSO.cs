@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class ValueCheckSO : ScriptableObject
 {
     public FloatDataSO dataObj;
-    public bool greaterThan, lessThan, equal;
-    public UnityEvent greaterThanEvent, lessThanEvent, equalEvent;
+    public bool greaterThan, lessThan, equal, greaterThanOrEqualTo;
+    public UnityEvent greaterThanEvent, lessThanEvent, equalEvent, greaterThanOrEqualToEvent;
 
     public void CheckAgainstFloat(float comparedFloat)
     {
@@ -23,6 +23,11 @@ public class ValueCheckSO : ScriptableObject
         if (dataObj.value == comparedFloat && equal)
         {
             equalEvent.Invoke();
+        }
+        
+        if (dataObj.value >= comparedFloat && greaterThanOrEqualTo)
+        {
+            greaterThanOrEqualToEvent.Invoke();
         }
     }
 }
