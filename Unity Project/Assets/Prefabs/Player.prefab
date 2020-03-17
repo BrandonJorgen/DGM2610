@@ -590,12 +590,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boolOne: {fileID: 11400000, guid: 4f04bdc9546028e43afb51622e1a1964, type: 2}
-  boolTwo: {fileID: 0}
+  boolTwo: {fileID: 11400000, guid: 12b96bfabe3fef54984cc96088787259, type: 2}
   bothTrue: 0
-  oneTrueTwoFalse: 0
+  oneTrueTwoFalse: 1
   oneFalseTwoTrue: 0
   bothFalse: 0
-  oneTrue: 1
+  oneTrue: 0
   oneFalse: 0
   conditionsMet:
     m_PersistentCalls:
@@ -609,17 +609,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Attack
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6623994914234618386}
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: JumpAttack
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -641,7 +630,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7543183726905465288}
-        m_MethodName: OneBoolCheck
+        m_MethodName: TwoBoolCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2805,6 +2794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3957727286807288756}
   - component: {fileID: 7492824392029827820}
+  - component: {fileID: 8056516987846634654}
   m_Layer: 0
   m_Name: JumpAttackBoolCheck
   m_TagString: Untagged
@@ -2838,13 +2828,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0afdd9f435e48f64293e03099c17a376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boolOne: {fileID: 11400000, guid: 12b96bfabe3fef54984cc96088787259, type: 2}
-  boolTwo: {fileID: 0}
-  bothTrue: 0
+  boolOne: {fileID: 11400000, guid: 4f04bdc9546028e43afb51622e1a1964, type: 2}
+  boolTwo: {fileID: 11400000, guid: 12b96bfabe3fef54984cc96088787259, type: 2}
+  bothTrue: 1
   oneTrueTwoFalse: 0
   oneFalseTwoTrue: 0
   bothFalse: 0
-  oneTrue: 1
+  oneTrue: 0
   oneFalse: 0
   conditionsMet:
     m_PersistentCalls:
@@ -2858,6 +2848,35 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: JumpAttack
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &8056516987846634654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8530165369830282370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aa6382d338a304e954d80ef90fa7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 92e2de1aa62f63d49808d50b2ad7378f, type: 2}
+  handlerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7492824392029827820}
+        m_MethodName: TwoBoolCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,

@@ -11,6 +11,7 @@ public class CharacterControllerSO : ScriptableObject
     public FloatDataSO moveSpeed;
 
     private float offGroundTime = 0.25f;
+    public float jumpAttackResetTime = 0.5f;
 
     private float horizontalInput, verticalInput;
 
@@ -40,6 +41,23 @@ public class CharacterControllerSO : ScriptableObject
 
         if (!isRolling.boolData)
         {
+            if (jumpAttack)
+            {
+                jumpAttackResetTime -= Time.deltaTime;
+
+                if (controller.isGrounded)
+                {
+                    canMove.boolData = false;
+
+                    if (jumpAttackResetTime <= 0)
+                    {
+                        canMove.boolData = true;
+                        jumpAttackResetTime = 0.5f;
+                        jumpAttack = false;
+                    }
+                }
+            }
+            
             if (canMove.boolData)
             {
                 if (controller.isGrounded)
@@ -47,11 +65,7 @@ public class CharacterControllerSO : ScriptableObject
                     if (jumping.boolData)
                     {
                         jumping.boolData = false;
-                    }
-
-                    if (jumpAttack)
-                    {
-                        jumpAttack = false;
+                        canRoll.boolData = true;
                     }
 
                     if (!yReset)
@@ -132,8 +146,7 @@ public class CharacterControllerSO : ScriptableObject
                     if (jumping.boolData && jumpAttack)
                     {
                         Debug.Log("jumping and attacking so extra gravity is in effect");
-                        Debug.Log(jumpAttack);
-                        position.y -= gravity * slopeMultiplier * Time.deltaTime * 2;
+                        position.y -= gravity * slopeMultiplier * Time.deltaTime * 3;
                     }
                     else
                     {
@@ -200,6 +213,7 @@ public class CharacterControllerSO : ScriptableObject
                     {
                         position.y = jumpSpeed;
                         jumping.boolData = true;
+                        canRoll.boolData = false;
                         yReset = false;
                     } 
                     
@@ -207,6 +221,7 @@ public class CharacterControllerSO : ScriptableObject
                     {
                         position.y = jumpSpeed;
                         jumping.boolData = true;
+                        canRoll.boolData = false;
                         yReset = false;
                     }
                 }
@@ -308,11 +323,10 @@ public class CharacterControllerSO : ScriptableObject
     {
         if (!controller.isGrounded)
         {
-            Debug.Log("jump attack called");
             position.x = 0;
             position.z = 0;
             faceMoveDirection.boolData = false;
-            position += controller.transform.TransformDirection(Vector3.forward) * 10;
+            position += controller.transform.TransformDirection(Vector3.forward) * 15;
             position.y = 0;
             jumpAttack = true;
         }
