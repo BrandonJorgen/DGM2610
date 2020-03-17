@@ -7,7 +7,7 @@ public class CharacterControllerSO : ScriptableObject
     public Vector3 position = Vector3.zero;
     
     public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f, 
-        slopeRayLength, slopeMultiplier, knockbackDistance = 1f;
+        slopeRayLength, slopeMultiplier, knockbackDistance = 1f, coyoteTime = 1f;
     public FloatDataSO moveSpeed;
 
     private float offGroundTime = 0.25f;
@@ -60,6 +60,8 @@ public class CharacterControllerSO : ScriptableObject
                         yReset = true;
                         offGroundTime = 0.25f;
                     }
+
+                    coyoteTime = 0.125f;
 
                     if (grabbing.boolData)
                     {
@@ -123,6 +125,8 @@ public class CharacterControllerSO : ScriptableObject
                         {
                             yReset = false;
                         }
+
+                        coyoteTime -= Time.deltaTime;
                     }
 
                     if (jumping.boolData && jumpAttack)
@@ -193,6 +197,13 @@ public class CharacterControllerSO : ScriptableObject
                 if (canMove.boolData)
                 {
                     if (controller.isGrounded)
+                    {
+                        position.y = jumpSpeed;
+                        jumping.boolData = true;
+                        yReset = false;
+                    } 
+                    
+                    if (!controller.isGrounded && coyoteTime > 0)
                     {
                         position.y = jumpSpeed;
                         jumping.boolData = true;
@@ -269,6 +280,7 @@ public class CharacterControllerSO : ScriptableObject
     {
         if (!jumping.boolData)
         {
+            Debug.Log("Swing momentum active");
             canMove.boolData = false;
             position = Vector3.zero;
             position += controller.transform.TransformDirection(Vector3.forward) * swingMomentumSpeed;
@@ -296,6 +308,7 @@ public class CharacterControllerSO : ScriptableObject
     {
         if (!controller.isGrounded)
         {
+            Debug.Log("jump attack called");
             position.x = 0;
             position.z = 0;
             faceMoveDirection.boolData = false;
