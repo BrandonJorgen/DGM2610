@@ -25,7 +25,7 @@ public class AITargetingBehavior : MonoBehaviour
     public List<wantedIDs> workIdList;
     public List<possibleTarget> possibleTargetList;
     
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         otherGameObj = other.gameObject;
         if (otherGameObj == null) return;

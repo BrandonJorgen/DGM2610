@@ -10,8 +10,7 @@ public class CharacterControllerSO : ScriptableObject
         slopeRayLength, slopeMultiplier, knockbackDistance = 1f, coyoteTime = 1f;
     public FloatDataSO moveSpeed;
 
-    private float offGroundTime = 0.25f;
-    public float jumpAttackResetTime = 0.5f;
+    private float offGroundTime = 0.25f, jumpAttackResetTime = 0.5f;
 
     private float horizontalInput, verticalInput;
 
@@ -34,6 +33,8 @@ public class CharacterControllerSO : ScriptableObject
     
     public void MoveCharacter(CharacterController controller)
     {
+        //TODO CONTROLLER STUFF: My fix for the diagonal movement speed really fucks things up for controllers
+        
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         
