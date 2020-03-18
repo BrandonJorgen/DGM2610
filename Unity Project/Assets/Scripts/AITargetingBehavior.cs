@@ -68,7 +68,15 @@ public class AITargetingBehavior : MonoBehaviour
                 switch (stateNumber)
                 {
                     case 1:
-                        possibleTargetList.Add(target);
+                        if (possibleTargetList.Contains(target))
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            possibleTargetList.Add(target);
+                        }
+                        
                         PriorityTargetChange();
                         
                         break;
@@ -122,5 +130,17 @@ public class AITargetingBehavior : MonoBehaviour
             possibleTargetList.RemoveAt(0);
             PriorityTargetChange();
         }
+    }
+
+    public void AddObjToList(GameObject obj)
+    {
+        possibleTarget target = new possibleTarget();
+        target.gameObj = obj;
+        target.nameIdObj = obj.GetComponent<IDBehavior>().nameIdObj;
+        if (!possibleTargetList.Contains(target))
+        {
+            possibleTargetList.Add(target);
+        }
+        PriorityTargetChange();
     }
 }

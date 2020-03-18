@@ -12,8 +12,8 @@ public class IDMatch : IDBehavior
         public UnityEvent EnterEvent, StayEvent, ExitEvent;
     }
 
-    private IDBehavior otherBehaviourObj;
-    private IDName otherIdObj;
+    protected IDBehavior otherBehaviourObj;
+    protected IDName otherIdObj;
     public List<possibleWork> workIdList;
     
     private void OnTriggerEnter(Collider other)

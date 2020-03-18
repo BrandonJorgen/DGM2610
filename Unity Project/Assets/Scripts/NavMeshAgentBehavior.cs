@@ -7,6 +7,7 @@ public class NavMeshAgentBehavior : MonoBehaviour
 {
     private NavMeshAgent agent;
     private Vector3 spawnLoc;
+    
     public AITargetingBehavior targetingBehavior;
 
     private void Start()

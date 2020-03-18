@@ -36,11 +36,13 @@
           <e p="DodgeRollCooldownBehavior.cs" t="Include" />
           <e p="EbuttonEventBehavior.cs" t="Include" />
           <e p="EnemyAttackBehavior.cs" t="Include" />
+          <e p="EnemyEngagedCheckBehavior.cs" t="Include" />
           <e p="FloatDataSO.cs" t="Include" />
           <e p="GameAction.cs" t="Include" />
           <e p="GameActionHandler.cs" t="Include" />
           <e p="IDBehavior.cs" t="Include" />
           <e p="IDMatch.cs" t="Include" />
+          <e p="IDMatchListBehavior.cs" t="Include" />
           <e p="IDName.cs" t="Include" />
           <e p="ImageBehavior.cs" t="Include" />
           <e p="InstantiatedFloatDataBehavior.cs" t="Include" />
