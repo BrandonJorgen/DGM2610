@@ -34,6 +34,7 @@ public class CharacterControllerSO : ScriptableObject
     public void MoveCharacter(CharacterController controller)
     {
         //TODO CONTROLLER STUFF: My fix for the diagonal movement speed really fucks things up for controllers
+        //Debug.Log(controller.velocity.magnitude);
         
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
@@ -103,8 +104,8 @@ public class CharacterControllerSO : ScriptableObject
 
                     if (horizontalInput != 0 && verticalInput != 0)
                     {
-                        position.x = horizontalInput * moveSpeed.value * 0.75f;
-                        position.z = verticalInput * moveSpeed.value * 0.75f;
+                        position.x = horizontalInput * moveSpeed.value * 0.71f;
+                        position.z = verticalInput * moveSpeed.value * 0.71f;
                     }
                     else
                     {

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavMeshAgentBehavior : MonoBehaviour
@@ -9,6 +9,7 @@ public class NavMeshAgentBehavior : MonoBehaviour
     private Vector3 spawnLoc;
     
     public AITargetingBehavior targetingBehavior;
+    public float stunnedTimer = 1f;
 
     private void Start()
     {
@@ -24,25 +25,20 @@ public class NavMeshAgentBehavior : MonoBehaviour
         }
     }
 
-    public void SetDestination(Transform transformObj)
-    {
-        agent.destination = transformObj.position;
-    }
-
-    public void SetDestination(Vector3SO destinationObj)
-    {
-        var path = new NavMeshPath();
-
-        agent.destination = destinationObj.vector3;
-
-        if (agent.remainingDistance <= agent.stoppingDistance && agent.CalculatePath(transform.position, path))
-        {
-            //ReturnToSpawn();
-        }
-    }
-
     public void ReturnToSpawn()
     {
         agent.destination = spawnLoc;
+    }
+
+    public void AgentStunned()
+    {
+        agent.destination = transform.position;
+        StartCoroutine(StunnedCountdown());
+    }
+
+    private IEnumerator StunnedCountdown()
+    {
+        yield return new WaitForSeconds(stunnedTimer);
+        SetDestination();
     }
 }
