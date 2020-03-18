@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavMeshAgentBehavior : MonoBehaviour
@@ -10,6 +11,7 @@ public class NavMeshAgentBehavior : MonoBehaviour
     
     public AITargetingBehavior targetingBehavior;
     public float stunnedTimer = 1f;
+    public UnityEvent endOfStunCountdown;
 
     private void Start()
     {
@@ -40,5 +42,6 @@ public class NavMeshAgentBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(stunnedTimer);
         SetDestination();
+        endOfStunCountdown.Invoke();
     }
 }

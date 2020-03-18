@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7711818896091991747}
   - component: {fileID: 5544997435159453369}
   - component: {fileID: 920615056188983460}
+  - component: {fileID: 7602899440351874935}
   m_Layer: 0
   m_Name: LeftTrigger
   m_TagString: Untagged
@@ -97,8 +98,8 @@ MonoBehaviour:
     EnterEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
-          m_MethodName: Raise
+        - m_Target: {fileID: 7602899440351874935}
+          m_MethodName: OneBoolCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -118,8 +119,8 @@ MonoBehaviour:
     ExitEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
-          m_MethodName: Raise
+        - m_Target: {fileID: 7602899440351874935}
+          m_MethodName: OneBoolCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -131,6 +132,42 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+--- !u!114 &7602899440351874935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796214369237724190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afdd9f435e48f64293e03099c17a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolOne: {fileID: 11400000, guid: ae85cdee2056b5c4b8a7e6973232476e, type: 2}
+  boolTwo: {fileID: 0}
+  bothTrue: 0
+  oneTrueTwoFalse: 0
+  oneFalseTwoTrue: 0
+  bothFalse: 0
+  oneTrue: 1
+  oneFalse: 0
+  conditionsMet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2127915750990698378
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +179,7 @@ GameObject:
   - component: {fileID: 4047296934778069344}
   - component: {fileID: 4889997073660879768}
   - component: {fileID: 7620190464618415865}
+  - component: {fileID: 426255188736869602}
   m_Layer: 0
   m_Name: DownTrigger
   m_TagString: Untagged
@@ -194,8 +232,8 @@ MonoBehaviour:
     EnterEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
-          m_MethodName: Raise
+        - m_Target: {fileID: 7602899440351874935}
+          m_MethodName: OneBoolCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -215,8 +253,8 @@ MonoBehaviour:
     ExitEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
-          m_MethodName: Raise
+        - m_Target: {fileID: 7602899440351874935}
+          m_MethodName: OneBoolCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -228,6 +266,42 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+--- !u!114 &426255188736869602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127915750990698378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afdd9f435e48f64293e03099c17a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolOne: {fileID: 11400000, guid: ae85cdee2056b5c4b8a7e6973232476e, type: 2}
+  boolTwo: {fileID: 0}
+  bothTrue: 0
+  oneTrueTwoFalse: 0
+  oneFalseTwoTrue: 0
+  bothFalse: 0
+  oneTrue: 1
+  oneFalse: 0
+  conditionsMet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &4397891949203848989
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +548,7 @@ GameObject:
   - component: {fileID: 2573417698797060762}
   - component: {fileID: 7644031541496497510}
   - component: {fileID: 7692836640460931009}
+  - component: {fileID: 1200748564996916256}
   m_Layer: 0
   m_Name: UpTrigger
   m_TagString: Untagged
@@ -526,8 +601,8 @@ MonoBehaviour:
     EnterEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
-          m_MethodName: Raise
+        - m_Target: {fileID: 7602899440351874935}
+          m_MethodName: OneBoolCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -547,8 +622,8 @@ MonoBehaviour:
     ExitEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
-          m_MethodName: Raise
+        - m_Target: {fileID: 7602899440351874935}
+          m_MethodName: OneBoolCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -560,6 +635,42 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+--- !u!114 &1200748564996916256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4592789826946890767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afdd9f435e48f64293e03099c17a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolOne: {fileID: 11400000, guid: ae85cdee2056b5c4b8a7e6973232476e, type: 2}
+  boolTwo: {fileID: 0}
+  bothTrue: 0
+  oneTrueTwoFalse: 0
+  oneFalseTwoTrue: 0
+  bothFalse: 0
+  oneTrue: 1
+  oneFalse: 0
+  conditionsMet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5728228362480319674
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +856,7 @@ GameObject:
   - component: {fileID: 4624771355389086709}
   - component: {fileID: 5106379033080191853}
   - component: {fileID: 3118509374825311761}
+  - component: {fileID: 5292219525296816029}
   m_Layer: 0
   m_Name: RightTrigger
   m_TagString: Untagged
@@ -797,8 +909,8 @@ MonoBehaviour:
     EnterEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
-          m_MethodName: Raise
+        - m_Target: {fileID: 7602899440351874935}
+          m_MethodName: OneBoolCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -818,8 +930,8 @@ MonoBehaviour:
     ExitEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
-          m_MethodName: Raise
+        - m_Target: {fileID: 7602899440351874935}
+          m_MethodName: OneBoolCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -831,6 +943,42 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+--- !u!114 &5292219525296816029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5736608035938503791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afdd9f435e48f64293e03099c17a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolOne: {fileID: 11400000, guid: ae85cdee2056b5c4b8a7e6973232476e, type: 2}
+  boolTwo: {fileID: 0}
+  bothTrue: 0
+  oneTrueTwoFalse: 0
+  oneFalseTwoTrue: 0
+  bothFalse: 0
+  oneTrue: 1
+  oneFalse: 0
+  conditionsMet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c26fdb63b6b990347b0b3498f1ba4459, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5737332939907428606
 GameObject:
   m_ObjectHideFlags: 0

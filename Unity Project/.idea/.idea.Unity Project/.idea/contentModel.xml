@@ -4,11 +4,12 @@
     <e p="C:\Users\Brandon\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Brandon\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Unity Project.970502776.00" t="ExcludeRecursive" />
     <e p="F:\DGM2610 Game Design I\Unity Project" t="IncludeRecursive">
-      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="NavMeshComponents" t="Include">
           <e p="Editor" t="Include">
+            <e p="NavMeshAssetManager.cs" t="Include" />
+            <e p="NavMeshComponentsEditor.asmdef" t="Include" />
             <e p="NavMeshComponentsGUIUtility.cs" t="Include" />
             <e p="NavMeshLinkEditor.cs" t="Include" />
             <e p="NavMeshModifierEditor.cs" t="Include" />
@@ -16,6 +17,7 @@
             <e p="NavMeshSurfaceEditor.cs" t="Include" />
           </e>
           <e p="Scripts" t="Include">
+            <e p="NavMeshComponents.asmdef" t="Include" />
             <e p="NavMeshLink.cs" t="Include" />
             <e p="NavMeshModifier.cs" t="Include" />
             <e p="NavMeshModifierVolume.cs" t="Include" />
@@ -57,6 +59,7 @@
           <e p="ObjPileBehavior.cs" t="Include" />
           <e p="ObjToggleBehavior.cs" t="Include" />
           <e p="ParentingBehavior.cs" t="Include" />
+          <e p="TimedEventBehavior.cs" t="Include" />
           <e p="TMPTextBehavior.cs" t="Include" />
           <e p="TransformBehavior.cs" t="Include" />
           <e p="TriggerBehavior.cs" t="Include" />
@@ -93,6 +96,8 @@
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
+      <e p="NavMeshComponents.csproj" t="IncludeRecursive" />
+      <e p="NavMeshComponentsEditor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Temp" t="ExcludeRecursive">

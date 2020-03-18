@@ -141,6 +141,7 @@ public class AITargetingBehavior : MonoBehaviour
         {
             possibleTargetList.Add(target);
         }
+        
         PriorityTargetChange();
     }
 }
