@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -24,6 +25,11 @@ public class NavMeshAgentBehavior : MonoBehaviour
         if (targetingBehavior.possibleTargetList.Count != 0)
         {
             agent.destination = targetingBehavior.possibleTargetList[0].gameObj.transform.position;
+        }
+
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            //make the agent back away
         }
     }
 
