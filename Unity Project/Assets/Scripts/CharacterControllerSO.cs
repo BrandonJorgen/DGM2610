@@ -33,11 +33,10 @@ public class CharacterControllerSO : ScriptableObject
     
     public void MoveCharacter(CharacterController controller)
     {
-        //TODO CONTROLLER STUFF: My fix for the diagonal movement speed really fucks things up for controllers
+        //TODO CONTROLLER STUFF: My fix for the diagonal movement speed really fucks things up
         //Debug.Log(controller.velocity.magnitude);
         
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        
         
         OnSlope(controller);
 
@@ -62,6 +61,9 @@ public class CharacterControllerSO : ScriptableObject
             
             if (canMove.boolData)
             {
+                horizontalInput = Input.GetAxis("Horizontal");
+                verticalInput = Input.GetAxis("Vertical");
+                
                 if (controller.isGrounded)
                 {
                     if (jumping.boolData)

@@ -879,7 +879,7 @@ GameObject:
   - component: {fileID: 5784795994401722162}
   - component: {fileID: 2153350216576572576}
   - component: {fileID: 116781749}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DodgeRollBonkDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
