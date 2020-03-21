@@ -114,7 +114,11 @@ public class CharacterControllerSO : ScriptableObject
                         position.x = horizontalInput * moveSpeed.value;
                         position.z = verticalInput * moveSpeed.value;
                     }
-    
+
+//                    position = new Vector3(horizontalInput, position.y, verticalInput).normalized;
+//                    position.x = position.x * moveSpeed.value;
+//                    position.z = position.z * moveSpeed.value;
+                    
                     if (faceMoveDirection.boolData)
                     {
                         if (position.x != 0 || position.z != 0)

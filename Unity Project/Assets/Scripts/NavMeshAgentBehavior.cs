@@ -11,7 +11,7 @@ public class NavMeshAgentBehavior : MonoBehaviour
     private Vector3 spawnLoc;
     
     public AITargetingBehavior targetingBehavior;
-    public float stunnedTimer = 1f;
+    public float stunnedTimer = 1f, rotateSpeed = 1f;
     public UnityEvent endOfStunCountdown;
 
     private void Start()
@@ -25,9 +25,11 @@ public class NavMeshAgentBehavior : MonoBehaviour
         if (targetingBehavior.possibleTargetList.Count != 0)
         {
             agent.destination = targetingBehavior.possibleTargetList[0].gameObj.transform.position;
+            var targetRotation = Quaternion.LookRotation(targetingBehavior.possibleTargetList[0].gameObj.transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
         }
 
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        if (targetingBehavior.possibleTargetList.Count != 0 && agent.remainingDistance <= agent.stoppingDistance)
         {
             //make the agent back away
         }
