@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterControllerSO : ScriptableObject
 {
     public Vector3 position = Vector3.zero;
+
+    private Vector2 normalizedPosition;
     
     public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f, 
         slopeRayLength, slopeMultiplier, knockbackDistance = 1f, coyoteTime = 1f;
@@ -103,21 +105,19 @@ public class CharacterControllerSO : ScriptableObject
                             horizontalInput = 0;
                         }
                     }
-
+                    
+                    normalizedPosition.Set(horizontalInput, verticalInput);
+                    
                     if (horizontalInput != 0 && verticalInput != 0)
                     {
-                        position.x = horizontalInput * moveSpeed.value * 0.71f;
-                        position.z = verticalInput * moveSpeed.value * 0.71f;
+                        position.x = normalizedPosition.normalized.x * moveSpeed.value;
+                        position.z = normalizedPosition.normalized.y * moveSpeed.value;
                     }
                     else
                     {
                         position.x = horizontalInput * moveSpeed.value;
                         position.z = verticalInput * moveSpeed.value;
                     }
-
-//                    position = new Vector3(horizontalInput, position.y, verticalInput).normalized;
-//                    position.x = position.x * moveSpeed.value;
-//                    position.z = position.z * moveSpeed.value;
                     
                     if (faceMoveDirection.boolData)
                     {
@@ -134,6 +134,7 @@ public class CharacterControllerSO : ScriptableObject
                     {
                         if (onSlope.boolData && (position.x != 0 || position.z != 0))
                         {
+                            Debug.Log("not jumping, on a slope, and moving so gravity has been multiplied");
                             position.y -= gravity * slopeMultiplier * Time.deltaTime;
                         }
                         else
@@ -249,7 +250,16 @@ public class CharacterControllerSO : ScriptableObject
                 {
                     if (controller.isGrounded)
                     {
-                        position.Set(Input.GetAxis("Horizontal") * rollSpeed, 0, Input.GetAxis("Vertical") * rollSpeed);
+                        if (horizontalInput != 0 && verticalInput != 0)
+                        {
+                            position.x = normalizedPosition.normalized.x * rollSpeed;
+                            position.z = normalizedPosition.normalized.y * rollSpeed;
+                        }
+                        else
+                        {
+                            position.x = horizontalInput * rollSpeed;
+                            position.z = verticalInput * rollSpeed;
+                        }
                     }
 
                     position.y -= gravity * slopeMultiplier * Time.deltaTime;
@@ -322,7 +332,7 @@ public class CharacterControllerSO : ScriptableObject
         canMove.boolData = false;
         position.x = 0;
         position.z = 0;
-        position += controller.transform.TransformDirection(Vector3.back) * knockbackDistance;
+        position -= controller.transform.TransformDirection(Vector3.forward) * knockbackDistance;
 
         controller.Move(position);
     }

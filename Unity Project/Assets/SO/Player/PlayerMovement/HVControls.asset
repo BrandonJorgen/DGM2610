@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900b50f9480d9104fb3ef6594c756353, type: 3}
   m_Name: HVControls
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -0.318304, z: 0}
+  position: {x: 0, y: -361.76532, z: 0}
   jumpSpeed: 8
   rollSpeed: 20
   gravity: 20
@@ -20,7 +20,7 @@ MonoBehaviour:
   vaultDistance: 4
   slopeRayLength: 1.5
   slopeMultiplier: 4
-  knockbackDistance: 1.5
+  knockbackDistance: 2
   coyoteTime: 0.125
   moveSpeed: {fileID: 11400000, guid: 25641122a6ad2db4ebfd5cfac64ce6da, type: 2}
   canMove: {fileID: 11400000, guid: 3d1b4b45a53d8414fac98e8f8be18cc5, type: 2}
