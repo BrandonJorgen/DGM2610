@@ -58,8 +58,8 @@ public class CharacterControllerSO : ScriptableObject
             
             if (canMove.boolData)
             {
-                horizontalInput = Input.GetAxisRaw("Horizontal");
-                verticalInput = Input.GetAxisRaw("Vertical");
+                horizontalInput = Input.GetAxis("Horizontal");
+                verticalInput = Input.GetAxis("Vertical");
                 
                 if (controller.isGrounded)
                 {
@@ -103,7 +103,7 @@ public class CharacterControllerSO : ScriptableObject
                     
                     normalizedPosition.Set(horizontalInput, verticalInput);
                     
-                    if (horizontalInput != 0 && verticalInput != 0)
+                    if (normalizedPosition.magnitude > 1)
                     {
                         position.x = normalizedPosition.normalized.x * moveSpeed.value;
                         position.z = normalizedPosition.normalized.y * moveSpeed.value;
@@ -127,7 +127,7 @@ public class CharacterControllerSO : ScriptableObject
                 {
                     if (!jumping.boolData)
                     {
-                        if (onSlope.boolData && (position.x != 0 || position.z != 0))
+                        if (onSlope.boolData && (horizontalInput != 0 || verticalInput != 0))
                         {
                             Debug.Log("not jumping, on a slope, and moving so gravity has been multiplied");
                             position.y -= gravity * slopeMultiplier * Time.deltaTime;
@@ -245,7 +245,7 @@ public class CharacterControllerSO : ScriptableObject
                 {
                     if (controller.isGrounded)
                     {
-                        if (horizontalInput != 0 && verticalInput != 0)
+                        if (normalizedPosition.magnitude > 1)
                         {
                             position.x = normalizedPosition.normalized.x * rollSpeed;
                             position.z = normalizedPosition.normalized.y * rollSpeed;
