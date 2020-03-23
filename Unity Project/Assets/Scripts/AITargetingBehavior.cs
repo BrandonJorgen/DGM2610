@@ -35,16 +35,6 @@ public class AITargetingBehavior : MonoBehaviour
         CheckId(1);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        otherGameObj = other.gameObject;
-        if (otherGameObj == null) return;
-        otherBehaviourObj = otherGameObj.GetComponent<IDBehavior>();
-        if (otherBehaviourObj == null) return;
-        otherIdObj = otherBehaviourObj.nameIdObj;
-        CheckId(2);
-    }
-
     private void OnTriggerExit(Collider other)
     {
         otherGameObj = other.gameObject;
@@ -78,10 +68,6 @@ public class AITargetingBehavior : MonoBehaviour
                         }
                         
                         PriorityTargetChange();
-                        
-                        break;
-                        
-                    case 2:
                         
                         break;
                         
