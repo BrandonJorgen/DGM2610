@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -24,6 +23,7 @@ public class NavMeshAgentBehavior : MonoBehaviour
     private void Update()
     {
         SetDestination();
+        
         if (hadTarget && targetingBehavior.possibleTargetList.Count == 0)
         {
             LostSight();
@@ -40,7 +40,7 @@ public class NavMeshAgentBehavior : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
         }
 
-        if (targetingBehavior.possibleTargetList.Count != 0 && agent.remainingDistance <= agent.stoppingDistance)
+        if (targetingBehavior.possibleTargetList.Count != 0 && agent.remainingDistance < agent.stoppingDistance)
         {
             //make the agent back away
         }
@@ -75,7 +75,6 @@ public class NavMeshAgentBehavior : MonoBehaviour
 
     private IEnumerator ReturnToSpawnCountdown()
     {
-        Debug.Log("return to spawn countdown started");
         yield return new WaitForSeconds(returnTimer);
         ReturnToSpawn();
     }

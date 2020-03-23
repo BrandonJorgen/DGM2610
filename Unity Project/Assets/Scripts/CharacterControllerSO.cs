@@ -127,10 +127,13 @@ public class CharacterControllerSO : ScriptableObject
                 {
                     if (!jumping.boolData)
                     {
-                        if (onSlope.boolData && (horizontalInput != 0 || verticalInput != 0))
+                        if (onSlope.boolData)
                         {
-                            Debug.Log("not jumping, on a slope, and moving so gravity has been multiplied");
-                            position.y -= gravity * slopeMultiplier * Time.deltaTime;
+                            if (horizontalInput != 0 || verticalInput != 0)
+                            {
+                                Debug.Log("not jumping, on a slope, and moving so gravity has been multiplied");
+                                position.y -= gravity * slopeMultiplier * Time.deltaTime;
+                            }
                         }
                         else
                         {
