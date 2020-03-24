@@ -7,7 +7,7 @@ using UnityEngine.Events;
  
      private void Update()
      {
-         if (Input.GetKeyDown(KeyCode.Space))
+         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
          {
              spaceDown.Invoke();
          }
@@ -22,47 +22,47 @@ using UnityEngine.Events;
              leftControlUp.Invoke();
          }
  
-         if (Input.GetKeyDown(KeyCode.LeftShift))
+         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.Joystick1Button1))
          {
              leftShiftDown.Invoke();
          }
          
-         if (Input.GetKeyUp(KeyCode.LeftShift))
+         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.Joystick1Button1))
          {
              leftShiftUp.Invoke();
          }
 
-         if (Input.GetKeyDown(KeyCode.Q))
+         if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Joystick1Button4))
          {
              qDown.Invoke();
          }
 
-         if (Input.GetKeyUp(KeyCode.Q))
+         if (Input.GetKeyUp(KeyCode.Q) || Input.GetKeyDown(KeyCode.Joystick1Button4))
          {
              qUp.Invoke();
          }
          
-         if (Input.GetKeyDown(KeyCode.E))
+         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button5))
          {
              eDown.Invoke();
          }
 
-         if (Input.GetKeyUp(KeyCode.E))
+         if (Input.GetKeyUp(KeyCode.E) || Input.GetKeyUp(KeyCode.Joystick1Button5))
          {
              eUp.Invoke();
          }
          
-         if (Input.GetKeyDown(KeyCode.F))
+         if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Joystick1Button3))
          {
              fDown.Invoke();
          }
 
-         if (Input.GetKeyUp(KeyCode.F))
+         if (Input.GetKeyUp(KeyCode.F) || Input.GetKeyUp(KeyCode.Joystick1Button3))
          {
              fUp.Invoke();
          }
 
-         if (Input.GetMouseButtonDown(0))
+         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Joystick1Button2))
          {
              leftMouseDown.Invoke();
          }
