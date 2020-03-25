@@ -116,7 +116,7 @@ public class CharacterControllerSO : ScriptableObject
                     
                     if (faceMoveDirection.boolData)
                     {
-                        if (position.x != 0 || position.z != 0)
+                        if (horizontalInput != 0 || verticalInput != 0)
                         {
                             controller.transform.forward = new Vector3(position.x, 0, position.z);
                         }
@@ -169,7 +169,7 @@ public class CharacterControllerSO : ScriptableObject
         {
             if (faceMoveDirection.boolData)
             {
-                if (position.x != 0 || position.z != 0)
+                if (horizontalInput != 0 || verticalInput != 0)
                 {
                     controller.transform.forward = new Vector3(position.x, 0, position.z);
                 }
