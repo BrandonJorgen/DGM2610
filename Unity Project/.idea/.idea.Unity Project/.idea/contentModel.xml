@@ -52,6 +52,7 @@
           <e p="InstantiateObjBehavior.cs" t="Include" />
           <e p="InstantiateObjSO.cs" t="Include" />
           <e p="InstantiateSOBehavior.cs" t="Include" />
+          <e p="LoadSceneSO.cs" t="Include" />
           <e p="LookAtCameraSO.cs" t="Include" />
           <e p="MeshRendererBehavior.cs" t="Include" />
           <e p="MonoEventBehavior.cs" t="Include" />

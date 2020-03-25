@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a1cb2b83865ac41b94fb722133187a, type: 3}
   m_Name: RotterEnemyHealth
   m_EditorClassIdentifier: 
-  value: 2
-  valueCap: 2
+  value: 4
+  valueCap: 4
   valueOne: 0
   valueTwo: 0
