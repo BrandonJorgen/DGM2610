@@ -33,6 +33,7 @@
           <e p="CharacterControllerSO.cs" t="Include" />
           <e p="ComponentToggleBehavior.cs" t="Include" />
           <e p="ControlsEventBehavior.cs" t="Include" />
+          <e p="DataStorageSO.cs" t="Include" />
           <e p="Debugger.cs" t="Include" />
           <e p="DestroyObjSO.cs" t="Include" />
           <e p="DodgeRollCooldownBehavior.cs" t="Include" />
