@@ -7,6 +7,7 @@ public class CharacterControllerSO : ScriptableObject
     public Vector3 position = Vector3.zero;
 
     private Vector2 normalizedPosition;
+    private Vector3 lastGroundedPosition;
     
     public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f, 
         slopeRayLength, slopeMultiplier, knockbackDistance = 1f, coyoteTime = 1f;
@@ -63,6 +64,8 @@ public class CharacterControllerSO : ScriptableObject
                 
                 if (controller.isGrounded)
                 {
+                    lastGroundedPosition = controller.transform.position;
+                    
                     if (jumping.boolData)
                     {
                         jumping.boolData = false;
@@ -346,6 +349,13 @@ public class CharacterControllerSO : ScriptableObject
             position.y = 0;
             jumpAttack = true;
         }
+    }
+
+    public void ResetPosition(CharacterController controller)
+    {
+        DisableController(controller);
+        controller.transform.position = lastGroundedPosition;
+        EnableController(controller);
     }
 
     public void DisableController(CharacterController controller)
