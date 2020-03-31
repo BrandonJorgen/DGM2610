@@ -14,11 +14,11 @@
         <counts>
           <entry key="project.closed" value="20" />
           <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.5" value="7" />
+          <entry key="project.open.time.5" value="8" />
           <entry key="project.open.time.6" value="6" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -85,14 +85,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControllerSO.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
               <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
               <folding>
                 <marker date="1585523522000" expanded="false" signature="6:44" ph="..." />
-                <marker date="1585523522000" expanded="true" signature="117:11570" ph="{...}" />
                 <marker date="1585523522000" expanded="true" signature="875:1110" ph="{...}" />
                 <marker date="1585523522000" expanded="true" signature="1177:6153" ph="{...}" />
                 <marker date="1585523522000" expanded="true" signature="1246:5806" ph="{...}" />
@@ -159,6 +158,31 @@
                 <marker date="1585523522000" expanded="true" signature="11185:11336" ph="{...}" />
                 <marker date="1585523522000" expanded="true" signature="11403:11451" ph="{...}" />
                 <marker date="1585523522000" expanded="true" signature="11521:11568" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/ParentingBehavior.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1110">
+              <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
+              <folding>
+                <marker date="1584392150000" expanded="false" signature="6:66" ph="..." />
+                <marker date="1584392150000" expanded="true" signature="114:1807" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="234:279" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="448:639" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="691:882" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="929:1394" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="975:1388" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="1030:1378" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="1081:1364" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="1430:1701" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="1461:1635" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="1506:1625" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="1648:1695" ph="{...}" />
+                <marker date="1584392150000" expanded="true" signature="1732:1805" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -317,11 +341,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
-      </pane>
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
       </pane>
       <pane id="FileSystemExplorer" />
     </panes>
@@ -432,11 +456,12 @@
       <workItem from="1585419390947" duration="5715000" />
       <workItem from="1585457630519" duration="1913000" />
       <workItem from="1585520105243" duration="2017000" />
+      <workItem from="1585608524854" duration="613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85054000" />
+    <option name="totallyTimeSpent" value="85667000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,6 +474,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-848" width="1096" height="1936" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.4527027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -587,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ParentingBehavior.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/TimedEventBehavior.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -721,7 +740,6 @@
           <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
           <folding>
             <marker date="1585523522000" expanded="false" signature="6:44" ph="..." />
-            <marker date="1585523522000" expanded="true" signature="117:11570" ph="{...}" />
             <marker date="1585523522000" expanded="true" signature="875:1110" ph="{...}" />
             <marker date="1585523522000" expanded="true" signature="1177:6153" ph="{...}" />
             <marker date="1585523522000" expanded="true" signature="1246:5806" ph="{...}" />
@@ -788,6 +806,29 @@
             <marker date="1585523522000" expanded="true" signature="11185:11336" ph="{...}" />
             <marker date="1585523522000" expanded="true" signature="11403:11451" ph="{...}" />
             <marker date="1585523522000" expanded="true" signature="11521:11568" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/ParentingBehavior.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
+          <folding>
+            <marker date="1584392150000" expanded="false" signature="6:66" ph="..." />
+            <marker date="1584392150000" expanded="true" signature="114:1807" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="234:279" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="448:639" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="691:882" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="929:1394" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="975:1388" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="1030:1378" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="1081:1364" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="1430:1701" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="1461:1635" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="1506:1625" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="1648:1695" ph="{...}" />
+            <marker date="1584392150000" expanded="true" signature="1732:1805" ph="{...}" />
           </folding>
         </state>
       </provider>
