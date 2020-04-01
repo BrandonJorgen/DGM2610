@@ -12,13 +12,13 @@
     <session id="-379943209">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.5" value="8" />
+          <entry key="project.open.time.5" value="9" />
           <entry key="project.open.time.6" value="6" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -33,12 +33,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="7595" />
+          <entry key="cs" value="7981" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="7595" />
+          <entry key="C#" value="7981" />
         </counts>
       </usages-collector>
     </session>
@@ -163,14 +163,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ParentingBehavior.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1110">
               <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
               <folding>
                 <marker date="1584392150000" expanded="false" signature="6:66" ph="..." />
-                <marker date="1584392150000" expanded="true" signature="114:1807" ph="{...}" />
                 <marker date="1584392150000" expanded="true" signature="234:279" ph="{...}" />
                 <marker date="1584392150000" expanded="true" signature="448:639" ph="{...}" />
                 <marker date="1584392150000" expanded="true" signature="691:882" ph="{...}" />
@@ -183,6 +182,26 @@
                 <marker date="1584392150000" expanded="true" signature="1506:1625" ph="{...}" />
                 <marker date="1584392150000" expanded="true" signature="1648:1695" ph="{...}" />
                 <marker date="1584392150000" expanded="true" signature="1732:1805" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyAttackBehavior.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+              <folding>
+                <marker date="1585761642000" expanded="false" signature="6:70" ph="..." />
+                <marker date="1585761642000" expanded="true" signature="120:971" ph="{...}" />
+                <marker date="1585761642000" expanded="true" signature="277:331" ph="{...}" />
+                <marker date="1585761642000" expanded="true" signature="357:406" ph="{...}" />
+                <marker date="1585761642000" expanded="true" signature="443:485" ph="{...}" />
+                <marker date="1585761642000" expanded="true" signature="521:564" ph="{...}" />
+                <marker date="1585761642000" expanded="true" signature="606:806" ph="{...}" />
+                <marker date="1585761642000" expanded="true" signature="688:800" ph="{...}" />
+                <marker date="1585761642000" expanded="true" signature="816:969" ph="/* Maybe add some sort of combat memory here to prevent the immediate 1 second attack if the player knocks the en ... */" />
               </folding>
             </state>
           </provider>
@@ -279,7 +298,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InstantiateSOBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InstantiatedFloatDataBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InstantiatedValueCheckBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAttackBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AnimEventBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyTreasureSearchBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TransformBehavior.cs" />
@@ -309,6 +327,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSelectorBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TMPTextBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterControllerSO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyAttackBehavior.cs" />
       </list>
     </option>
   </component>
@@ -341,11 +360,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
       </pane>
       <pane id="FileSystemExplorer" />
     </panes>
@@ -456,12 +475,13 @@
       <workItem from="1585419390947" duration="5715000" />
       <workItem from="1585457630519" duration="1913000" />
       <workItem from="1585520105243" duration="2017000" />
-      <workItem from="1585608524854" duration="613000" />
+      <workItem from="1585608524854" duration="1212000" />
+      <workItem from="1585760282125" duration="1351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85667000" />
+    <option name="totallyTimeSpent" value="87617000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -719,21 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TMPUGUITextBehavior.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="1" selection-end-line="36" selection-end-column="1" />
-          <folding>
-            <marker date="1585426842000" expanded="false" signature="6:65" ph="..." />
-            <marker date="1585426842000" expanded="true" signature="279:363" ph="{...}" />
-            <marker date="1585426842000" expanded="true" signature="410:456" ph="{...}" />
-            <marker date="1585426842000" expanded="true" signature="505:565" ph="{...}" />
-            <marker date="1585426842000" expanded="true" signature="595:747" ph="{...}" />
-            <marker date="1585426842000" expanded="true" signature="636:741" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/CharacterControllerSO.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -810,13 +815,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/TMPUGUITextBehavior.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" column="1" selection-end-line="36" selection-end-column="1" />
+          <folding>
+            <marker date="1585426842000" expanded="false" signature="6:65" ph="..." />
+            <marker date="1585426842000" expanded="true" signature="279:363" ph="{...}" />
+            <marker date="1585426842000" expanded="true" signature="410:456" ph="{...}" />
+            <marker date="1585426842000" expanded="true" signature="505:565" ph="{...}" />
+            <marker date="1585426842000" expanded="true" signature="595:747" ph="{...}" />
+            <marker date="1585426842000" expanded="true" signature="636:741" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/ParentingBehavior.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
           <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
           <folding>
             <marker date="1584392150000" expanded="false" signature="6:66" ph="..." />
-            <marker date="1584392150000" expanded="true" signature="114:1807" ph="{...}" />
             <marker date="1584392150000" expanded="true" signature="234:279" ph="{...}" />
             <marker date="1584392150000" expanded="true" signature="448:639" ph="{...}" />
             <marker date="1584392150000" expanded="true" signature="691:882" ph="{...}" />
@@ -829,6 +848,24 @@
             <marker date="1584392150000" expanded="true" signature="1506:1625" ph="{...}" />
             <marker date="1584392150000" expanded="true" signature="1648:1695" ph="{...}" />
             <marker date="1584392150000" expanded="true" signature="1732:1805" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyAttackBehavior.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+          <folding>
+            <marker date="1585761642000" expanded="false" signature="6:70" ph="..." />
+            <marker date="1585761642000" expanded="true" signature="120:971" ph="{...}" />
+            <marker date="1585761642000" expanded="true" signature="277:331" ph="{...}" />
+            <marker date="1585761642000" expanded="true" signature="357:406" ph="{...}" />
+            <marker date="1585761642000" expanded="true" signature="443:485" ph="{...}" />
+            <marker date="1585761642000" expanded="true" signature="521:564" ph="{...}" />
+            <marker date="1585761642000" expanded="true" signature="606:806" ph="{...}" />
+            <marker date="1585761642000" expanded="true" signature="688:800" ph="{...}" />
+            <marker date="1585761642000" expanded="true" signature="816:969" ph="/* Maybe add some sort of combat memory here to prevent the immediate 1 second attack if the player knocks the en ... */" />
           </folding>
         </state>
       </provider>

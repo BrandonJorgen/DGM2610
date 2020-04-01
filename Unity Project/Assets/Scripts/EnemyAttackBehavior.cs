@@ -9,15 +9,16 @@ public class EnemyAttackBehavior : MonoBehaviour
 
     public UnityEvent playerInRangeEvent;
 
-    public void Attack()
+    public void InitiateAttackSequence()
     {
-        if (playerInRange)
-        {
-            playerInRangeEvent.Invoke();
-            StartCoroutine(AttackCooldown());
-        }
+        StartCoroutine(AttackSequence());
     }
 
+    public void Attack()
+    {
+        playerInRangeEvent.Invoke();
+    }
+    
     public void PlayerInRange()
     {
         playerInRange = true;
@@ -28,13 +29,18 @@ public class EnemyAttackBehavior : MonoBehaviour
         playerInRange = false;
     }
 
-    private IEnumerator AttackCooldown()
+    private IEnumerator AttackSequence()
     {
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(1f);
 
-        if (playerInRange)
+        while (playerInRange)
         {
             Attack();
+        
+            yield return new WaitForSeconds(attackCooldown);
         }
     }
+    
+    //Maybe add some sort of combat memory here to prevent the immediate 1 second attack if the player knocks the enemy
+    //back and re-enters attack range
 }
