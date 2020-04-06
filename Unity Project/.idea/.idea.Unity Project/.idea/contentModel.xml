@@ -28,7 +28,9 @@
           <e p="AIBaseSO.cs" t="Include" />
           <e p="AIBrainBehavior.cs" t="Include" />
           <e p="AIChase.cs" t="Include" />
+          <e p="AIHover.cs" t="Include" />
           <e p="AIIdle.cs" t="Include" />
+          <e p="AIReturn.cs" t="Include" />
           <e p="AIStunned.cs" t="Include" />
           <e p="AITargetingBehavior.cs" t="Include" />
           <e p="AnimBehavior.cs" t="Include" />
