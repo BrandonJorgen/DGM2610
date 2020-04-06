@@ -17,19 +17,26 @@ public class AITargetingBehavior : MonoBehaviour
         public IDName nameIdObj;
     }
 
-    private GameObject otherGameObj;
     private IDBehavior otherBehaviourObj;
     private IDName otherIdObj;
     
-    public IDName priorityIdOne, priorityIdTwo;
+    private possibleTarget currentTarget;
+    public Vector3SO targetV3;
+    public IDName priorityIdOne;
     public List<wantedIDs> workIdList;
     public List<possibleTarget> possibleTargetList;
-    
+
+    private void Update()
+    {
+        if (possibleTargetList.Count != 0)
+        {
+            targetV3.vector3 = possibleTargetList[0].gameObj.transform.position;
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
-        otherGameObj = other.gameObject;
-        if (otherGameObj == null) return;
-        otherBehaviourObj = otherGameObj.GetComponent<IDBehavior>();
+        otherBehaviourObj = other.GetComponent<IDBehavior>();
         if (otherBehaviourObj == null) return;
         otherIdObj = otherBehaviourObj.nameIdObj;
         CheckId(1);
@@ -37,12 +44,10 @@ public class AITargetingBehavior : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        otherGameObj = other.gameObject;
-        if (otherGameObj == null) return;
-        otherBehaviourObj = otherGameObj.GetComponent<IDBehavior>();
+        otherBehaviourObj = other.GetComponent<IDBehavior>();
         if (otherBehaviourObj == null) return;
         otherIdObj = otherBehaviourObj.nameIdObj;
-        CheckId(3);
+        CheckId(2);
     }
 
     public void CheckId(int stateNumber)
@@ -51,42 +56,23 @@ public class AITargetingBehavior : MonoBehaviour
         {
             if (otherIdObj == obj.nameIdObj)
             {
-                possibleTarget target = new possibleTarget();
-                target.gameObj = otherGameObj;
-                target.nameIdObj = otherIdObj;
+                currentTarget.gameObj = otherBehaviourObj.gameObject;
+                currentTarget.nameIdObj = otherIdObj;
                 
                 switch (stateNumber)
                 {
                     case 1:
-                        if (possibleTargetList.Contains(target))
+                        if (!possibleTargetList.Contains(currentTarget))
                         {
-                            return;
-                        }
-                        else
-                        {
-                            possibleTargetList.Add(target);
+                            possibleTargetList.Add(currentTarget);
                         }
                         
                         PriorityTargetChange();
-                        
                         break;
                         
-                    case 3:
-                        possibleTargetList.Remove(target);
-                        
-                        if (target.nameIdObj == priorityIdTwo)
-                        {
-                            
-                            foreach (var searchObj in possibleTargetList)
-                            {
-                                if (searchObj.nameIdObj == priorityIdTwo)
-                                {
-                                    PriorityTargetChange();
-                                    return;
-                                }
-                            }
-                        }
-                        
+                    case 2:
+                        possibleTargetList.Remove(currentTarget);
+                        PriorityTargetChange();
                         break;
                 }
             }
@@ -99,7 +85,7 @@ public class AITargetingBehavior : MonoBehaviour
         {
             for (int i = 0; i <= possibleTargetList.Count - 1; i++)
             {
-                if (possibleTargetList[i].nameIdObj == priorityIdTwo)
+                if (possibleTargetList[i].nameIdObj == priorityIdOne)
                 {
                     possibleTargetList.Insert(0, possibleTargetList[i]);
                     possibleTargetList.RemoveAt(i + 1);
@@ -120,12 +106,11 @@ public class AITargetingBehavior : MonoBehaviour
 
     public void AddObjToList(GameObject obj)
     {
-        possibleTarget target = new possibleTarget();
-        target.gameObj = obj;
-        target.nameIdObj = obj.GetComponent<IDBehavior>().nameIdObj;
-        if (!possibleTargetList.Contains(target))
+        currentTarget.gameObj = obj;
+        currentTarget.nameIdObj = obj.GetComponent<IDBehavior>().nameIdObj;
+        if (!possibleTargetList.Contains(currentTarget))
         {
-            possibleTargetList.Add(target);
+            possibleTargetList.Add(currentTarget);
         }
         
         PriorityTargetChange();
