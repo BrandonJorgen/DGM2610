@@ -349,8 +349,13 @@ MonoBehaviour:
   idleBaseObj: {fileID: 11400000, guid: a925d96b356280548bfc118535b9f563, type: 2}
   chaseBaseObj: {fileID: 11400000, guid: 8978c0bd8bd1133408a4f1779af36564, type: 2}
   returnBaseObj: {fileID: 11400000, guid: 05a65b1c5ac209340b7eca77af07e8ea, type: 2}
+  hoverBaseObj: {fileID: 11400000, guid: e82eaa1ca84ecbb4198959bfbb893490, type: 2}
+  attackBaseObj: {fileID: 11400000, guid: 3582de15bbfe4de47a0650feda851974, type: 2}
   aiTargeting: {fileID: 8763952750992972287}
+  playerID: {fileID: 11400000, guid: 4db7aee5db2ba89468d3a395592d7ff4, type: 2}
+  aiID: {fileID: 11400000, guid: 79efca878eb972a49bd20eac40df37fe, type: 2}
   returnWaitTime: 3
+  jumpBackWaitTime: 1
 --- !u!114 &6384166215048398120
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class AIChase : AIBaseSO
     
     public override void BaseTask(NavMeshAgent agent)
     {
+        agent.stoppingDistance = stoppingDistance;
+        agent.speed = speed;
         agent.destination = targetV3.vector3;
     }
 }

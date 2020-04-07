@@ -25,6 +25,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AIAttack.cs" t="Include" />
           <e p="AIBaseSO.cs" t="Include" />
           <e p="AIBrainBehavior.cs" t="Include" />
           <e p="AIChase.cs" t="Include" />
