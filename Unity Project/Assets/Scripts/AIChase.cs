@@ -10,6 +10,7 @@ public class AIChase : AIBaseSO
     {
         agent.stoppingDistance = stoppingDistance;
         agent.speed = speed;
+        agent.radius = avoidanceRadius;
         agent.destination = targetV3.vector3;
     }
 }

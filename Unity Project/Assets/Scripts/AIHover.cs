@@ -10,8 +10,10 @@ public class AIHover : AIBaseSO
     {
         stoppingDistance = 5f;
         speed = 2.25f;
+        avoidanceRadius = 2f;
         agent.stoppingDistance = stoppingDistance;
         agent.speed = speed;
+        agent.radius = avoidanceRadius;
         agent.destination = targetV3.vector3;
     }
 }

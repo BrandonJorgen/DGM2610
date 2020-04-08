@@ -9,5 +9,6 @@ public class AIReturn : AIBaseSO
     {
         stoppingDistance = 0f;
         agent.stoppingDistance = stoppingDistance;
+        agent.radius = avoidanceRadius;
     }
 }
