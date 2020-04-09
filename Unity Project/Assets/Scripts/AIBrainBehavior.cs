@@ -1,48 +1,58 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIBrainBehavior : MonoBehaviour
 {
-    public AIBaseSO aiBaseObj, idleBaseObj, chaseBaseObj, returnBaseObj, hoverBaseObj, attackBaseObj;
+    public AIBaseSO aiBaseObj, idleBaseObj, chaseBaseObj, returnBaseObj, hoverBaseObj, attackBaseObj, backingBaseObj;
     public AITargetingBehavior aiTargeting;
 
-    public IDName playerID, aiID; //aiID is for the special attack stuff
+    public IDName playerID, treasureID, aiID; //aiID is for the special attack stuff
 
-    public float returnWaitTime = 3f, jumpBackWaitTime = 1f, attackWaitTime = 1f;
+    public float returnWaitTime = 3f, attackWaitTime = 1f, postAttackWaitTime = 1f, attackEventWaitTime = 1f;
+
+    public UnityEvent attackEvent;
 
     private NavMeshAgent agent;
     private WaitForFixedUpdate waitObj = new WaitForFixedUpdate();
-    private WaitForSeconds returnWaitObj, jumpBackWaitObj, attackWaitObj;
-    private bool CanRun; //placeholder for ending/restarting game thing
-    private Vector3 spawnLoc;
+    private WaitForSeconds returnWaitObj, attackWaitObj, postAttackWaitObj, attackEventWaitObj;
+    private bool canRun, canAttack = true; //placeholder for ending/restarting game thing
+    private Vector3 spawnLoc, moveBackPosition, attackPosition;
+    private NavMeshHit hit;
+    private float attackCountdown;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(moveBackPosition, 1);
+    }
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         spawnLoc = transform.position;
         returnWaitObj = new WaitForSeconds(returnWaitTime);
-        jumpBackWaitObj = new WaitForSeconds(jumpBackWaitTime);
         attackWaitObj = new WaitForSeconds(attackWaitTime);
+        postAttackWaitObj = new WaitForSeconds(postAttackWaitTime);
+        attackEventWaitObj = new WaitForSeconds(attackEventWaitTime);
+        attackCountdown = 2f;
+        canAttack = true;
         StartCoroutine(Start());
     }
-
-    //Hover around player before attacking
-    //probably use stopping distance paired with a timer
-    //how to make them back away from player once they attacked?
-    //In hover, make the enemy look at the target
+    
     //Unique special attack via IDName
     private IEnumerator Start()
     {
-        CanRun = true;
-        while (CanRun)
+        canRun = true;
+        while (canRun)
         {
             aiBaseObj.BaseTask(agent);
-
+            
             if (aiBaseObj == chaseBaseObj)
             {
-                if (aiTargeting.possibleTargetList.Count == 0 && agent.remainingDistance <= 0.25f + agent.stoppingDistance)
+                if (aiTargeting.possibleTargetList.Count == 0)
                 {
                     ChangeBase(returnBaseObj);
                     yield return returnWaitObj;
@@ -51,10 +61,17 @@ public class AIBrainBehavior : MonoBehaviour
 
                 if (aiTargeting.possibleTargetList.Count != 0 && aiTargeting.possibleTargetList[0].nameIdObj == playerID)
                 {
-                    if (agent.remainingDistance <= 3f)
+                    if (agent.remainingDistance <= 4f)
                     {
+                        ResetAttackCountdown();
                         ChangeBase(hoverBaseObj);
                     }
+                }
+
+                if (aiTargeting.possibleTargetList.Count != 0 && aiTargeting.possibleTargetList[0].nameIdObj == treasureID)
+                {
+                    agent.stoppingDistance = 1f;
+                    agent.radius += 0.25f;
                 }
             }
 
@@ -68,25 +85,78 @@ public class AIBrainBehavior : MonoBehaviour
 
             if (aiBaseObj == hoverBaseObj)
             {
+                moveBackPosition = transform.position - transform.forward * (agent.stoppingDistance - agent.remainingDistance);
+                NavMesh.SamplePosition(moveBackPosition, out hit, 2f, NavMesh.AllAreas);
+                
                 if (aiTargeting.possibleTargetList.Count != 0)
                 {
-                    if (agent.remainingDistance > 3f)
+                    transform.LookAt(aiTargeting.possibleTargetList[0].gameObj.transform.position);
+                    attackCountdown -= Time.deltaTime;
+                    
+                    if (attackCountdown <= 0 && aiTargeting.possibleTargetList.Count != 0 && canAttack)
+                    {
+                        attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
+                        transform.LookAt(attackPosition);
+                        ChangeBase(attackBaseObj);
+                        canAttack = false;
+                        ResetAttackCountdown();
+                        StartCoroutine(AttackCooldown());
+                    }
+                    
+                    if (agent.remainingDistance > agent.stoppingDistance)
                     {
                         ChangeBase(chaseBaseObj);
                     }
                     
-                    if (agent.remainingDistance <= 3f)
+                    
+                    if (agent.remainingDistance < agent.stoppingDistance - 1f)
                     {
-                        yield return attackWaitObj;
-                        //Animation stuff, maybe some cool material changing thing?
-                        //stop looking at player as to not completely merc them, allowing them to dodge
+                        agent.stoppingDistance = 0;
+                        ChangeBase(backingBaseObj);
+                    }
+                }
+                else
+                {
+                    ChangeBase(returnBaseObj);
+                    yield return returnWaitObj;
+                    ReturnToSpawn();
+                }
+                
+                if (agent.remainingDistance > agent.stoppingDistance && aiTargeting.possibleTargetList.Count == 0)
+                {
+                    ChangeBase(returnBaseObj);
+                    yield return returnWaitObj;
+                    ReturnToSpawn();
+                }
+            }
+
+            if (aiBaseObj == backingBaseObj)
+            {
+                agent.destination = hit.position;
+                
+                if (aiTargeting.possibleTargetList.Count != 0)
+                {
+                    transform.LookAt(aiTargeting.possibleTargetList[0].gameObj.transform.position);
+                    attackCountdown -= Time.deltaTime;
+                    
+                    if (aiTargeting.possibleTargetList.Count != 0 && canAttack)
+                    {
+                        attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
+                        transform.LookAt(attackPosition);
                         ChangeBase(attackBaseObj);
-                        yield return attackWaitObj;
+                        canAttack = false;
+                        ResetAttackCountdown();
+                        StartCoroutine(AttackCooldown());
+                    }
+                    
+                    if (agent.remainingDistance <= 0.25f || Vector3.Distance(transform.position, aiTargeting.possibleTargetList[0].gameObj.transform.position) >= 3f)
+                    {
+                        ResetAttackCountdown();
                         ChangeBase(hoverBaseObj);
                     }
                 }
-                
-                if (agent.remainingDistance > 3f && aiTargeting.possibleTargetList.Count == 0)
+
+                if (aiTargeting.possibleTargetList.Count <= 0)
                 {
                     ChangeBase(returnBaseObj);
                     yield return returnWaitObj;
@@ -96,9 +166,13 @@ public class AIBrainBehavior : MonoBehaviour
 
             if (aiBaseObj == attackBaseObj)
             {
-                if (agent.remainingDistance < 3f)
+                agent.destination = attackPosition;
+                
+                if (agent.remainingDistance <= agent.stoppingDistance + 0.25f)
                 {
-                    StartCoroutine(JumpBackTimer());
+                    attackEvent.Invoke();
+                    yield return postAttackWaitObj;
+                    ChangeBase(hoverBaseObj);
                 }
             }
             
@@ -116,19 +190,15 @@ public class AIBrainBehavior : MonoBehaviour
         agent.destination = spawnLoc;
     }
 
-    public void JumpBack()
+    private void ResetAttackCountdown()
     {
-        transform.Translate(0, 0, -2f);
+        attackCountdown = 2f;
     }
 
-    private IEnumerator JumpBackTimer()
+    private IEnumerator AttackCooldown()
     {
-        yield return jumpBackWaitObj;
-        if (agent.remainingDistance < 3f)
-        {
-            JumpBack();
-        }
+        yield return attackWaitObj;
+        canAttack = true;
     }
-    
     //Special attack coroutine stuff here
 }

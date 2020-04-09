@@ -6,6 +6,7 @@ public class AIIdle : AIBaseSO
 {
     public override void BaseTask(NavMeshAgent agent)
     {
-        
+        agent.autoBraking = autoBraking;
+        agent.acceleration = acceleration;
     }
 }

@@ -7,8 +7,10 @@ public class AIReturn : AIBaseSO
     
     public override void BaseTask(NavMeshAgent agent)
     {
-        stoppingDistance = 0f;
         agent.stoppingDistance = stoppingDistance;
+        agent.angularSpeed = angularSpeed;
         agent.radius = avoidanceRadius;
+        agent.acceleration = acceleration;
+        agent.autoBraking = autoBraking;
     }
 }

@@ -3,10 +3,8 @@ using UnityEngine.AI;
 
 public abstract class AIBaseSO : ScriptableObject
 {
-    public float speed = 4.5f;
-    public float angularSpeed = 120f;
-    public float stoppingDistance = 2.66f;
-    public float avoidanceRadius = 0.8f;
+    public float speed = 4.5f, angularSpeed = 120f, stoppingDistance = 2.66f, avoidanceRadius = 0.8f, acceleration = 8f;
+    public bool autoBraking;
 
     public virtual void BaseTask(NavMeshAgent agent)
     {
@@ -14,5 +12,7 @@ public abstract class AIBaseSO : ScriptableObject
         agent.angularSpeed = angularSpeed;
         agent.stoppingDistance = stoppingDistance;
         agent.radius = avoidanceRadius;
+        agent.autoBraking = autoBraking;
+        agent.acceleration = acceleration;
     }
 }

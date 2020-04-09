@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a28ab9ef0091284cbcf3b75c5504302, type: 3}
   m_Name: Hover
   m_EditorClassIdentifier: 
-  speed: 4.5
+  speed: 2.25
   angularSpeed: 120
-  stoppingDistance: 5
+  stoppingDistance: 4
+  avoidanceRadius: 1
+  autoBraking: 1
   targetV3: {fileID: 11400000, guid: 3fc55c86ec6f8a1438162cb8c9e11d2a, type: 2}

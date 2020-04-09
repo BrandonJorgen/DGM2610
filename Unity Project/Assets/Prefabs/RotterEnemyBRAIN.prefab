@@ -320,7 +320,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4898312719026521588}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 1
   m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -351,11 +351,31 @@ MonoBehaviour:
   returnBaseObj: {fileID: 11400000, guid: 05a65b1c5ac209340b7eca77af07e8ea, type: 2}
   hoverBaseObj: {fileID: 11400000, guid: e82eaa1ca84ecbb4198959bfbb893490, type: 2}
   attackBaseObj: {fileID: 11400000, guid: 3582de15bbfe4de47a0650feda851974, type: 2}
+  backingBaseObj: {fileID: 11400000, guid: ae6c82baf821f16408dca8ef070f8a22, type: 2}
   aiTargeting: {fileID: 8763952750992972287}
   playerID: {fileID: 11400000, guid: 4db7aee5db2ba89468d3a395592d7ff4, type: 2}
+  treasureID: {fileID: 11400000, guid: 99a71767b6d33134da580b91186c5ed8, type: 2}
   aiID: {fileID: 11400000, guid: 79efca878eb972a49bd20eac40df37fe, type: 2}
   returnWaitTime: 3
-  jumpBackWaitTime: 1
+  attackWaitTime: 7
+  postAttackWaitTime: 1
+  attackEventWaitTime: 0.33
+  attackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5877669666896379050}
+        m_MethodName: ObjTurnOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &6384166215048398120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,16 +849,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5413613861274665510}
-  - component: {fileID: 4354115122747291960}
+  - component: {fileID: 3976639524997705841}
   - component: {fileID: 4052361152284938445}
-  - component: {fileID: 5951706285837520621}
+  - component: {fileID: 5877669666896379050}
   m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5413613861274665510
 Transform:
   m_ObjectHideFlags: 0
@@ -853,8 +873,8 @@ Transform:
   m_Father: {fileID: 4898312719026521103}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4354115122747291960
-SphereCollider:
+--- !u!65 &3976639524997705841
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -864,8 +884,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.6000001, z: 1}
+  m_Center: {x: 0, y: -0.00000011920929, z: 1}
 --- !u!114 &4052361152284938445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,19 +904,19 @@ MonoBehaviour:
     EnterEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5951706285837520621}
-          m_MethodName: PlayerInRange
-          m_Mode: 1
+        - m_Target: {fileID: 1772672633047853163}
+          m_MethodName: SetTrigger
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: Attack
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 5951706285837520621}
-          m_MethodName: InitiateAttackSequence
+        - m_Target: {fileID: 5877669666896379050}
+          m_MethodName: ObjTurnOff
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -910,21 +930,10 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
     ExitEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5951706285837520621}
-          m_MethodName: PlayerNotInRange
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
---- !u!114 &5951706285837520621
+--- !u!114 &5877669666896379050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -933,26 +942,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5545071112385447545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536e59f01c1eee54d91d0a4620a3fb45, type: 3}
+  m_Script: {fileID: 11500000, guid: a48e3711ef6922e44a86375105c83ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
-  playerInRangeEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1772672633047853163}
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Attack
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &6834176174373980982
 GameObject:
   m_ObjectHideFlags: 0
