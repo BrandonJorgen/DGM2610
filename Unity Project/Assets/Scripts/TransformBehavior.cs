@@ -14,6 +14,7 @@ public class TransformBehavior : MonoBehaviour
 
     public void Knockback()
     {
+        Debug.Log("Knockback called");
         transformObj.position += transformObj.TransformDirection(Vector3.back) * knockbackFloat;
     }
 }

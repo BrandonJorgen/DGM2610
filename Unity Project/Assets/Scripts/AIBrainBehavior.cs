@@ -13,12 +13,12 @@ public class AIBrainBehavior : MonoBehaviour
 
     public float returnWaitTime = 3f, attackWaitTime = 1f, postAttackWaitTime = 1f, attackEventWaitTime = 1f;
 
-    public UnityEvent attackEvent;
+    public UnityEvent attackEvent, preAttackEvent;
 
     private NavMeshAgent agent;
     private WaitForFixedUpdate waitObj = new WaitForFixedUpdate();
     private WaitForSeconds returnWaitObj, attackWaitObj, postAttackWaitObj, attackEventWaitObj;
-    private bool canRun, canAttack = true; //placeholder for ending/restarting game thing
+    public bool canRun, canAttack = true; //placeholder for ending/restarting game thing
     private Vector3 spawnLoc, moveBackPosition, attackPosition;
     private NavMeshHit hit;
     private float attackCountdown;
@@ -93,11 +93,12 @@ public class AIBrainBehavior : MonoBehaviour
                     transform.LookAt(aiTargeting.possibleTargetList[0].gameObj.transform.position);
                     attackCountdown -= Time.deltaTime;
                     
-                    if (attackCountdown <= 0 && aiTargeting.possibleTargetList.Count != 0 && canAttack)
+                    if (attackCountdown <= 0 && canAttack)
                     {
                         attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
                         transform.LookAt(attackPosition);
                         ChangeBase(attackBaseObj);
+                        Debug.Log("changed to attack");
                         canAttack = false;
                         ResetAttackCountdown();
                         StartCoroutine(AttackCooldown());
@@ -109,7 +110,7 @@ public class AIBrainBehavior : MonoBehaviour
                     }
                     
                     
-                    if (agent.remainingDistance < agent.stoppingDistance - 1f)
+                    if (Vector3.Distance(transform.position, aiTargeting.possibleTargetList[0].gameObj.transform.position) < agent.stoppingDistance - 1f)
                     {
                         agent.stoppingDistance = 0;
                         ChangeBase(backingBaseObj);
@@ -139,11 +140,12 @@ public class AIBrainBehavior : MonoBehaviour
                     transform.LookAt(aiTargeting.possibleTargetList[0].gameObj.transform.position);
                     attackCountdown -= Time.deltaTime;
                     
-                    if (aiTargeting.possibleTargetList.Count != 0 && canAttack)
+                    if (canAttack)
                     {
                         attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
                         transform.LookAt(attackPosition);
                         ChangeBase(attackBaseObj);
+                        Debug.Log("changed to attack");
                         canAttack = false;
                         ResetAttackCountdown();
                         StartCoroutine(AttackCooldown());
@@ -155,25 +157,35 @@ public class AIBrainBehavior : MonoBehaviour
                         ChangeBase(hoverBaseObj);
                     }
                 }
-
-                if (aiTargeting.possibleTargetList.Count <= 0)
+                else
                 {
-                    ChangeBase(returnBaseObj);
-                    yield return returnWaitObj;
-                    ReturnToSpawn();
+                    ResetAttackCountdown();
+                    ChangeBase(hoverBaseObj);
                 }
+
+//                if (aiTargeting.possibleTargetList.Count <= 0)
+//                {
+//                    ChangeBase(returnBaseObj);
+//                    yield return returnWaitObj;
+//                    ReturnToSpawn();
+//                }
             }
 
             if (aiBaseObj == attackBaseObj)
             {
                 //Animation/Delay stuff here
+                preAttackEvent.Invoke();
                 agent.destination = attackPosition;
-                
-                if (agent.remainingDistance <= agent.stoppingDistance + 0.25f)
+
+                if (aiTargeting.possibleTargetList.Count != 0)
                 {
-                    attackEvent.Invoke();
-                    yield return postAttackWaitObj;
-                    ChangeBase(hoverBaseObj);
+                    if (Vector3.Distance(transform.position, aiTargeting.possibleTargetList[0].gameObj.transform.position) <= agent.stoppingDistance + 0.25f)
+                    {
+                        attackEvent.Invoke();
+                        ChangeBase(hoverBaseObj);
+                        Debug.Log("Changed to hover");
+                        yield return postAttackWaitObj;
+                    }
                 }
             }
             
