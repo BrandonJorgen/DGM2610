@@ -166,6 +166,7 @@ public class AIBrainBehavior : MonoBehaviour
 
             if (aiBaseObj == attackBaseObj)
             {
+                //Animation/Delay stuff here
                 agent.destination = attackPosition;
                 
                 if (agent.remainingDistance <= agent.stoppingDistance + 0.25f)

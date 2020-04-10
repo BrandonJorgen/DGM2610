@@ -5,6 +5,7 @@ public class EnemyEngagedCheckBehavior : IDMatch
 {
     private IDMatchListBehavior idMatchListObj;
     public GameObject gameObj;
+    public AIBaseSO chaseBaseObj;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class EnemyEngagedCheckBehavior : IDMatch
                 if (currentEnemy == null) return;
                 currentEnemy.GetComponentInChildren<EnemyEngagedCheckBehavior>().gameObj = gameObj;
                 currentEnemy.GetComponentInChildren<AITargetingBehavior>().AddObjToList(gameObj);
-                currentEnemy.GetComponent<NavMeshAgentBehavior>().SetDestination();
+                currentEnemy.GetComponent<AIBrainBehavior>().ChangeBase(chaseBaseObj);
             }
         }
     }
