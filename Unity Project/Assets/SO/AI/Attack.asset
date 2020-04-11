@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   angularSpeed: 0
-  stoppingDistance: 2
+  stoppingDistance: 0
   avoidanceRadius: 0.8
-  acceleration: 9999999
-  autoBraking: 0
+  acceleration: 50
+  autoBraking: 1

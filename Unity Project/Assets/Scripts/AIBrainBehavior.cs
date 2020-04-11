@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIBrainBehavior : MonoBehaviour
@@ -98,7 +99,6 @@ public class AIBrainBehavior : MonoBehaviour
                         attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
                         transform.LookAt(attackPosition);
                         ChangeBase(attackBaseObj);
-                        Debug.Log("changed to attack");
                         canAttack = false;
                         ResetAttackCountdown();
                         StartCoroutine(AttackCooldown());
@@ -140,12 +140,11 @@ public class AIBrainBehavior : MonoBehaviour
                     transform.LookAt(aiTargeting.possibleTargetList[0].gameObj.transform.position);
                     attackCountdown -= Time.deltaTime;
                     
-                    if (canAttack)
+                    if (attackCountdown <= 0 && canAttack)
                     {
                         attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
                         transform.LookAt(attackPosition);
                         ChangeBase(attackBaseObj);
-                        Debug.Log("changed to attack");
                         canAttack = false;
                         ResetAttackCountdown();
                         StartCoroutine(AttackCooldown());
@@ -162,30 +161,26 @@ public class AIBrainBehavior : MonoBehaviour
                     ResetAttackCountdown();
                     ChangeBase(hoverBaseObj);
                 }
-
-//                if (aiTargeting.possibleTargetList.Count <= 0)
-//                {
-//                    ChangeBase(returnBaseObj);
-//                    yield return returnWaitObj;
-//                    ReturnToSpawn();
-//                }
             }
 
             if (aiBaseObj == attackBaseObj)
             {
-                //Animation/Delay stuff here
                 preAttackEvent.Invoke();
+                yield return attackEventWaitObj;
                 agent.destination = attackPosition;
 
                 if (aiTargeting.possibleTargetList.Count != 0)
                 {
-                    if (Vector3.Distance(transform.position, aiTargeting.possibleTargetList[0].gameObj.transform.position) <= agent.stoppingDistance + 0.25f)
+                    if (Vector3.Distance(transform.position, aiTargeting.possibleTargetList[0].gameObj.transform.position) <= agent.stoppingDistance + 0.33f)
                     {
                         attackEvent.Invoke();
-                        ChangeBase(hoverBaseObj);
-                        Debug.Log("Changed to hover");
                         yield return postAttackWaitObj;
+                        ChangeBase(hoverBaseObj);
                     }
+                }
+                else
+                {
+                    Debug.Log("reeeeeeee");
                 }
             }
             
@@ -212,6 +207,7 @@ public class AIBrainBehavior : MonoBehaviour
     {
         yield return attackWaitObj;
         canAttack = true;
+        Debug.Log("just reset CanAttack");
     }
     //Special attack coroutine stuff here
 }
