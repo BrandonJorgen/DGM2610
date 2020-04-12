@@ -19,7 +19,7 @@ public class AIBrainBehavior : MonoBehaviour
     private NavMeshAgent agent;
     private WaitForFixedUpdate waitObj = new WaitForFixedUpdate();
     private WaitForSeconds returnWaitObj, attackWaitObj, postAttackWaitObj, attackEventWaitObj;
-    public bool canRun, canAttack = true; //placeholder for ending/restarting game thing
+    public bool canRun, canAttack = true, attacked; //placeholder for ending/restarting game thing
     private Vector3 spawnLoc, moveBackPosition, attackPosition;
     private NavMeshHit hit;
     private float attackCountdown;
@@ -40,6 +40,7 @@ public class AIBrainBehavior : MonoBehaviour
         attackEventWaitObj = new WaitForSeconds(attackEventWaitTime);
         attackCountdown = 2f;
         canAttack = true;
+        attacked = false;
         StartCoroutine(Start());
     }
     
@@ -53,26 +54,32 @@ public class AIBrainBehavior : MonoBehaviour
             
             if (aiBaseObj == chaseBaseObj)
             {
-                if (aiTargeting.possibleTargetList.Count == 0)
+                if (agent.remainingDistance > agent.stoppingDistance && aiTargeting.possibleTargetList.Count == 0)
                 {
                     ChangeBase(returnBaseObj);
                     yield return returnWaitObj;
                     ReturnToSpawn();
                 }
 
-                if (aiTargeting.possibleTargetList.Count != 0 && aiTargeting.possibleTargetList[0].nameIdObj == playerID)
+                if (aiTargeting.possibleTargetList.Count != 0)
                 {
-                    if (agent.remainingDistance <= 4f)
+                    if (aiTargeting.possibleTargetList[0].nameIdObj == playerID)
                     {
-                        ResetAttackCountdown();
-                        ChangeBase(hoverBaseObj);
+                        if (agent.remainingDistance <= 4f)
+                        {
+                            ResetAttackCountdown();
+                            ChangeBase(hoverBaseObj);
+                        }
                     }
-                }
 
-                if (aiTargeting.possibleTargetList.Count != 0 && aiTargeting.possibleTargetList[0].nameIdObj == treasureID)
-                {
-                    agent.stoppingDistance = 1f;
-                    agent.radius += 0.25f;
+                    if (aiTargeting.possibleTargetList[0].nameIdObj == treasureID)
+                    {
+                        if (aiTargeting.possibleTargetList.Count != 0)
+                        {
+                            agent.stoppingDistance = 1f;
+                            agent.radius += 0.25f;
+                        }
+                    }
                 }
             }
 
@@ -86,8 +93,11 @@ public class AIBrainBehavior : MonoBehaviour
 
             if (aiBaseObj == hoverBaseObj)
             {
-                moveBackPosition = transform.position - transform.forward * (agent.stoppingDistance - agent.remainingDistance);
-                NavMesh.SamplePosition(moveBackPosition, out hit, 2f, NavMesh.AllAreas);
+                if (agent.remainingDistance < 5f)
+                {
+                    moveBackPosition = transform.position - transform.forward * (agent.stoppingDistance - agent.remainingDistance);
+                    NavMesh.SamplePosition(moveBackPosition, out hit, 2f, NavMesh.AllAreas);
+                }
                 
                 if (aiTargeting.possibleTargetList.Count != 0)
                 {
@@ -96,12 +106,7 @@ public class AIBrainBehavior : MonoBehaviour
                     
                     if (attackCountdown <= 0 && canAttack)
                     {
-                        attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
-                        transform.LookAt(attackPosition);
                         ChangeBase(attackBaseObj);
-                        canAttack = false;
-                        ResetAttackCountdown();
-                        StartCoroutine(AttackCooldown());
                     }
                     
                     if (agent.remainingDistance > agent.stoppingDistance)
@@ -109,18 +114,11 @@ public class AIBrainBehavior : MonoBehaviour
                         ChangeBase(chaseBaseObj);
                     }
                     
-                    
-                    if (Vector3.Distance(transform.position, aiTargeting.possibleTargetList[0].gameObj.transform.position) < agent.stoppingDistance - 1f)
+                    if (agent.remainingDistance < agent.stoppingDistance - 1f)
                     {
                         agent.stoppingDistance = 0;
                         ChangeBase(backingBaseObj);
                     }
-                }
-                else
-                {
-                    ChangeBase(returnBaseObj);
-                    yield return returnWaitObj;
-                    ReturnToSpawn();
                 }
                 
                 if (agent.remainingDistance > agent.stoppingDistance && aiTargeting.possibleTargetList.Count == 0)
@@ -142,15 +140,9 @@ public class AIBrainBehavior : MonoBehaviour
                     
                     if (attackCountdown <= 0 && canAttack)
                     {
-                        attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
-                        transform.LookAt(attackPosition);
                         ChangeBase(attackBaseObj);
-                        canAttack = false;
-                        ResetAttackCountdown();
-                        StartCoroutine(AttackCooldown());
-                    }
-                    
-                    if (agent.remainingDistance <= 0.25f || Vector3.Distance(transform.position, aiTargeting.possibleTargetList[0].gameObj.transform.position) >= 3f)
+                    } 
+                    else if (agent.remainingDistance <= 0.25f)
                     {
                         ResetAttackCountdown();
                         ChangeBase(hoverBaseObj);
@@ -162,25 +154,39 @@ public class AIBrainBehavior : MonoBehaviour
                     ChangeBase(hoverBaseObj);
                 }
             }
-
+            
             if (aiBaseObj == attackBaseObj)
             {
-                preAttackEvent.Invoke();
-                yield return attackEventWaitObj;
-                agent.destination = attackPosition;
-
                 if (aiTargeting.possibleTargetList.Count != 0)
                 {
-                    if (Vector3.Distance(transform.position, aiTargeting.possibleTargetList[0].gameObj.transform.position) <= agent.stoppingDistance + 0.33f)
+                    if (!attacked)
                     {
+                        transform.LookAt(aiTargeting.possibleTargetList[0].gameObj.transform.position);
+                        agent.destination = transform.position;
+                        preAttackEvent.Invoke();
+                        yield return attackEventWaitObj;
+                        attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
+                        transform.LookAt(attackPosition);
+                        agent.destination = attackPosition;
+                        canAttack = false;
+                        attacked = true;
+                        ResetAttackCountdown();
+                        StartCoroutine(AttackCooldown());
+                    }
+                    
+                    if (Vector3.Distance(transform.position, attackPosition) < agent.stoppingDistance + 0.25f)
+                    {
+                        agent.velocity = Vector3.zero;
+                        agent.destination = transform.position;
                         attackEvent.Invoke();
                         yield return postAttackWaitObj;
-                        ChangeBase(hoverBaseObj);
+                        ChangeBase(backingBaseObj);
                     }
                 }
                 else
                 {
-                    Debug.Log("reeeeeeee");
+                    ResetAttackCountdown();
+                    ChangeBase(backingBaseObj);
                 }
             }
             
@@ -207,7 +213,7 @@ public class AIBrainBehavior : MonoBehaviour
     {
         yield return attackWaitObj;
         canAttack = true;
-        Debug.Log("just reset CanAttack");
+        attacked = false;
     }
     //Special attack coroutine stuff here
 }

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Hover
   m_EditorClassIdentifier: 
   speed: 2.25
-  angularSpeed: 120
+  angularSpeed: 60
   stoppingDistance: 4
   avoidanceRadius: 1
+  acceleration: 8
   autoBraking: 1
   targetV3: {fileID: 11400000, guid: 3fc55c86ec6f8a1438162cb8c9e11d2a, type: 2}

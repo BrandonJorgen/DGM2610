@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chase
   m_EditorClassIdentifier: 
   speed: 4.5
-  angularSpeed: 120
+  angularSpeed: 60
   stoppingDistance: 4
   avoidanceRadius: 1
   acceleration: 8

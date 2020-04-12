@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc818b542b271ac4c88a63ee02881194, type: 3}
   m_Name: Attack
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 20
   angularSpeed: 0
-  stoppingDistance: 0
-  avoidanceRadius: 0.8
-  acceleration: 50
+  stoppingDistance: 1
+  avoidanceRadius: 0
+  acceleration: 60
   autoBraking: 1
