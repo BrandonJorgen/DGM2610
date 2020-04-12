@@ -375,6 +375,17 @@ MonoBehaviour:
           m_StringArgument: attack event called
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7417034274250054817}
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   preAttackEvent:
@@ -883,6 +894,7 @@ GameObject:
   - component: {fileID: 3976639524997705841}
   - component: {fileID: 4052361152284938445}
   - component: {fileID: 5877669666896379050}
+  - component: {fileID: 7417034274250054817}
   m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
@@ -988,6 +1000,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48e3711ef6922e44a86375105c83ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7417034274250054817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545071112385447545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93eb32ac6496a1c408ccd129457c3c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.75
+  countdownFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5877669666896379050}
+        m_MethodName: ObjTurnOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &6834176174373980982
 GameObject:
   m_ObjectHideFlags: 0

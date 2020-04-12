@@ -17,4 +17,9 @@ public class TimedEventBehavior : MonoBehaviour
         yield return new WaitForSeconds(time);
         countdownFinished.Invoke();
     }
+
+    public void StartTimer()
+    {
+        StartCoroutine(Countdown());
+    }
 }
