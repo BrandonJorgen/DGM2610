@@ -25,12 +25,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="83" />
+          <entry key="cs" value="84" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="83" />
+          <entry key="C#" value="84" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -104,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/AIBrainBehavior.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="768">
@@ -146,6 +146,19 @@
                 <marker date="1586652884000" expanded="true" signature="7438:7488" ph="{...}" />
                 <marker date="1586652884000" expanded="true" signature="7529:7571" ph="{...}" />
                 <marker date="1586652884000" expanded="true" signature="7613:7713" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/InstantiateObjBehavior.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <marker date="1583992126000" expanded="true" signature="71:234" ph="{...}" />
+                <marker date="1583992126000" expanded="true" signature="150:232" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -498,12 +511,12 @@
       <workItem from="1586449557410" duration="1561000" />
       <workItem from="1586476876403" duration="1263000" />
       <workItem from="1586541116867" duration="9598000" />
-      <workItem from="1586628755601" duration="21337000" />
+      <workItem from="1586628755601" duration="21934000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201602000" />
+    <option name="totallyTimeSpent" value="202199000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -969,6 +982,17 @@
             <marker date="1586652884000" expanded="true" signature="7438:7488" ph="{...}" />
             <marker date="1586652884000" expanded="true" signature="7529:7571" ph="{...}" />
             <marker date="1586652884000" expanded="true" signature="7613:7713" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/InstantiateObjBehavior.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <marker date="1583992126000" expanded="true" signature="71:234" ph="{...}" />
+            <marker date="1583992126000" expanded="true" signature="150:232" ph="{...}" />
           </folding>
         </state>
       </provider>
