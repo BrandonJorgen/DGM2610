@@ -343,6 +343,7 @@ MonoBehaviour:
   attackBaseObj: {fileID: 11400000, guid: 3582de15bbfe4de47a0650feda851974, type: 2}
   backingBaseObj: {fileID: 11400000, guid: ae6c82baf821f16408dca8ef070f8a22, type: 2}
   aiTargeting: {fileID: 8763952750992972287}
+  aiSightRadius: {fileID: 4898312718407552754}
   playerID: {fileID: 11400000, guid: 4db7aee5db2ba89468d3a395592d7ff4, type: 2}
   treasureID: {fileID: 11400000, guid: 99a71767b6d33134da580b91186c5ed8, type: 2}
   aiID: {fileID: 11400000, guid: 79efca878eb972a49bd20eac40df37fe, type: 2}
@@ -415,9 +416,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  canRun: 1
-  canAttack: 1
-  attacked: 0
 --- !u!114 &6384166215048398120
 MonoBehaviour:
   m_ObjectHideFlags: 0

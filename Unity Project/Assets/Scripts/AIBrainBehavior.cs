@@ -9,6 +9,7 @@ public class AIBrainBehavior : MonoBehaviour
 {
     public AIBaseSO aiBaseObj, idleBaseObj, chaseBaseObj, returnBaseObj, hoverBaseObj, attackBaseObj, backingBaseObj;
     public AITargetingBehavior aiTargeting;
+    public SphereCollider aiSightRadius;
 
     public IDName playerID, treasureID, aiID; //aiID is for the special attack stuff
 
@@ -19,7 +20,7 @@ public class AIBrainBehavior : MonoBehaviour
     private NavMeshAgent agent;
     private WaitForFixedUpdate waitObj = new WaitForFixedUpdate();
     private WaitForSeconds returnWaitObj, attackWaitObj, postAttackWaitObj, attackEventWaitObj;
-    public bool canRun, canAttack = true, attacked; //placeholder for ending/restarting game thing
+    private bool canRun, canAttack = true, attacked;
     private Vector3 spawnLoc, moveBackPosition, attackPosition;
     private NavMeshHit hit;
     private float attackCountdown;
@@ -59,13 +60,14 @@ public class AIBrainBehavior : MonoBehaviour
                     ChangeBase(returnBaseObj);
                     yield return returnWaitObj;
                     ReturnToSpawn();
+                    ResetAttackCountdown();
                 }
 
                 if (aiTargeting.possibleTargetList.Count != 0)
                 {
                     if (aiTargeting.possibleTargetList[0].nameIdObj == playerID)
                     {
-                        if (agent.remainingDistance <= 4f)
+                        if (agent.remainingDistance <= aiSightRadius.radius / 2)
                         {
                             ResetAttackCountdown();
                             ChangeBase(hoverBaseObj);
@@ -93,8 +95,9 @@ public class AIBrainBehavior : MonoBehaviour
 
             if (aiBaseObj == hoverBaseObj)
             {
-                if (agent.remainingDistance < 5f)
+                if (agent.remainingDistance < aiSightRadius.radius / 2 + 1f)
                 {
+                    Debug.Log("Updating the fallback point");
                     moveBackPosition = transform.position - transform.forward * (agent.stoppingDistance - agent.remainingDistance);
                     NavMesh.SamplePosition(moveBackPosition, out hit, 2f, NavMesh.AllAreas);
                 }
@@ -144,13 +147,11 @@ public class AIBrainBehavior : MonoBehaviour
                     } 
                     else if (agent.remainingDistance <= 0.25f)
                     {
-                        ResetAttackCountdown();
                         ChangeBase(hoverBaseObj);
                     }
                 }
                 else
                 {
-                    ResetAttackCountdown();
                     ChangeBase(hoverBaseObj);
                 }
             }
