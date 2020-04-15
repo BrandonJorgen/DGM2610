@@ -134,7 +134,6 @@ public class CharacterControllerSO : ScriptableObject
                         {
                             if (horizontalInput != 0 || verticalInput != 0)
                             {
-                                Debug.Log("not jumping, on a slope, and moving so gravity has been multiplied");
                                 position.y -= gravity * slopeMultiplier * Time.deltaTime;
                             }
                         }
@@ -155,7 +154,6 @@ public class CharacterControllerSO : ScriptableObject
 
                     if (jumping.boolData && jumpAttack)
                     {
-                        Debug.Log("jumping and attacking so extra gravity is in effect");
                         position.y -= gravity * slopeMultiplier * Time.deltaTime * 3;
                     }
                     else
@@ -188,8 +186,6 @@ public class CharacterControllerSO : ScriptableObject
         }
         else if (Physics.Raycast(controller.transform.position, Vector3.down, out hit, controller.height / 2 * slopeRayLength))
         {
-            Debug.DrawRay(controller.transform.position, Vector3.down * slopeRayLength);
-            
             if (hit.normal != Vector3.up)
             {
                 onSlope.boolData = true;
@@ -314,7 +310,6 @@ public class CharacterControllerSO : ScriptableObject
     {
         if (!jumping.boolData)
         {
-            Debug.Log("Swing momentum active");
             canMove.boolData = false;
             position = Vector3.zero;
             position += controller.transform.TransformDirection(Vector3.forward) * swingMomentumSpeed;

@@ -418,7 +418,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10.5
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &452917808317207277
 MonoBehaviour:
@@ -552,7 +552,9 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   gameObj: {fileID: 0}
-  chaseBaseObj: {fileID: 11400000, guid: 8978c0bd8bd1133408a4f1779af36564, type: 2}
+  idOne: {fileID: 11400000, guid: 118ea1c396a54e442bac351b04a061bf, type: 2}
+  chaseBaseObjOne: {fileID: 11400000, guid: 8b3adf5a4443bf64db7b06094dc526c9, type: 2}
+  chaseBaseObjTwo: {fileID: 11400000, guid: 8978c0bd8bd1133408a4f1779af36564, type: 2}
 --- !u!114 &3213508811058700318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +577,7 @@ MonoBehaviour:
           m_MethodName: ChangeBase
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 8b3adf5a4443bf64db7b06094dc526c9,
+            m_ObjectArgument: {fileID: 11400000, guid: 8978c0bd8bd1133408a4f1779af36564,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: AIBaseSO, Assembly-CSharp
             m_IntArgument: 0
@@ -598,7 +600,7 @@ MonoBehaviour:
           m_MethodName: ChangeBase
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 8b3adf5a4443bf64db7b06094dc526c9,
+            m_ObjectArgument: {fileID: 11400000, guid: 8978c0bd8bd1133408a4f1779af36564,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: AIBaseSO, Assembly-CSharp
             m_IntArgument: 0
@@ -668,8 +670,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.25
-  m_Height: 4.5
+  m_Radius: 0.5
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &5750430095666714327
@@ -681,7 +683,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5750430095666714408}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.25
+  m_Radius: 1
   m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -706,13 +708,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70124728ad287c74197de25ffd986c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiBaseObj: {fileID: 11400000, guid: 398c3f8c4f30af34581418d5e9ef5280, type: 2}
-  idleBaseObj: {fileID: 11400000, guid: 398c3f8c4f30af34581418d5e9ef5280, type: 2}
-  chaseBaseObj: {fileID: 11400000, guid: 8b3adf5a4443bf64db7b06094dc526c9, type: 2}
-  returnBaseObj: {fileID: 11400000, guid: be8488a1011e5ce428ae3dfa697ed1ca, type: 2}
-  hoverBaseObj: {fileID: 11400000, guid: 238c74cc906a92c46bedafc7e8c64ebc, type: 2}
-  attackBaseObj: {fileID: 11400000, guid: 024a3d3b134956148920a24367399585, type: 2}
-  backingBaseObj: {fileID: 11400000, guid: 7f01a80a54edf954d97ba41dba114b98, type: 2}
+  aiBaseObj: {fileID: 11400000, guid: a925d96b356280548bfc118535b9f563, type: 2}
+  idleBaseObj: {fileID: 11400000, guid: a925d96b356280548bfc118535b9f563, type: 2}
+  chaseBaseObj: {fileID: 11400000, guid: 8978c0bd8bd1133408a4f1779af36564, type: 2}
+  returnBaseObj: {fileID: 11400000, guid: 05a65b1c5ac209340b7eca77af07e8ea, type: 2}
+  hoverBaseObj: {fileID: 11400000, guid: e82eaa1ca84ecbb4198959bfbb893490, type: 2}
+  attackBaseObj: {fileID: 11400000, guid: 3582de15bbfe4de47a0650feda851974, type: 2}
+  backingBaseObj: {fileID: 11400000, guid: ae6c82baf821f16408dca8ef070f8a22, type: 2}
   aiTargeting: {fileID: 8478092632995318563}
   aiSightRadius: {fileID: 5750430095009471534}
   playerID: {fileID: 11400000, guid: 4db7aee5db2ba89468d3a395592d7ff4, type: 2}
@@ -892,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37413d6dd25d5114d9f1d4b9c6f77744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameIdObj: {fileID: 11400000, guid: 5c8a5399121b2f949b2f71bda8e08174, type: 2}
+  nameIdObj: {fileID: 11400000, guid: 118ea1c396a54e442bac351b04a061bf, type: 2}
 --- !u!54 &1132542695658669082
 Rigidbody:
   m_ObjectHideFlags: 0

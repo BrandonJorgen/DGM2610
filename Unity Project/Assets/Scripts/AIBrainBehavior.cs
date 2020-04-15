@@ -95,9 +95,8 @@ public class AIBrainBehavior : MonoBehaviour
 
             if (aiBaseObj == hoverBaseObj)
             {
-                if (agent.remainingDistance < aiSightRadius.radius / 2 + 1f)
+                if (agent.remainingDistance < aiSightRadius.radius / 2 + 0.75f)
                 {
-                    Debug.Log("Updating the fallback point");
                     moveBackPosition = transform.position - transform.forward * (agent.stoppingDistance - agent.remainingDistance);
                     NavMesh.SamplePosition(moveBackPosition, out hit, 2f, NavMesh.AllAreas);
                 }
@@ -166,13 +165,22 @@ public class AIBrainBehavior : MonoBehaviour
                         agent.destination = transform.position;
                         preAttackEvent.Invoke();
                         yield return attackEventWaitObj;
-                        attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
-                        transform.LookAt(attackPosition);
-                        agent.destination = attackPosition;
-                        canAttack = false;
-                        attacked = true;
-                        ResetAttackCountdown();
-                        StartCoroutine(AttackCooldown());
+                        
+                        if (aiTargeting.possibleTargetList.Count != 0)
+                        {
+                            attackPosition = aiTargeting.possibleTargetList[0].gameObj.transform.position;
+                            transform.LookAt(attackPosition);
+                            agent.destination = attackPosition;
+                            canAttack = false;
+                            attacked = true;
+                            ResetAttackCountdown();
+                            StartCoroutine(AttackCooldown());
+                        }
+                        else
+                        {
+                            ResetAttackCountdown();
+                            ChangeBase(backingBaseObj);
+                        }
                     }
                     
                     if (Vector3.Distance(transform.position, attackPosition) < agent.stoppingDistance + 0.25f)

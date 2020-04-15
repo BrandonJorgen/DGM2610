@@ -181,7 +181,9 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   gameObj: {fileID: 0}
-  chaseBaseObj: {fileID: 11400000, guid: 8978c0bd8bd1133408a4f1779af36564, type: 2}
+  idOne: {fileID: 11400000, guid: 79efca878eb972a49bd20eac40df37fe, type: 2}
+  chaseBaseObjOne: {fileID: 11400000, guid: 8978c0bd8bd1133408a4f1779af36564, type: 2}
+  chaseBaseObjTwo: {fileID: 11400000, guid: 8b3adf5a4443bf64db7b06094dc526c9, type: 2}
 --- !u!114 &2355173696161280706
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,6 @@ MonoBehaviour:
   speed: 8
   angularSpeed: 0
   stoppingDistance: 0
-  avoidanceRadius: 1.4
+  avoidanceRadius: 1
   acceleration: 16
   autoBraking: 1
