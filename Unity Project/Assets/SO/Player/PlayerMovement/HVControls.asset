@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900b50f9480d9104fb3ef6594c756353, type: 3}
   m_Name: HVControls
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -27.12098, z: 0}
+  position: {x: 0, y: -0.39305198, z: 0}
   jumpSpeed: 8
   rollSpeed: 20
   gravity: 20
   swingMomentumSpeed: 0.33
   vaultDistance: 4
-  slopeRayLength: 1.1
+  slopeRayLength: 1.5
   slopeMultiplier: 4
   knockbackDistance: 2
   coyoteTime: 0.125

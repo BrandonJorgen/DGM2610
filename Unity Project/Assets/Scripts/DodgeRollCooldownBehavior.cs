@@ -5,6 +5,12 @@ public class DodgeRollCooldownBehavior : MonoBehaviour
 {
     public BoolDataSO dataObj;
     public float cooldownTime = 1f;
+    private WaitForSeconds cooldownWaitObj;
+
+    private void Start()
+    {
+        cooldownWaitObj = new WaitForSeconds(cooldownTime);
+    }
 
     public void StartCooldown()
     {
@@ -14,7 +20,7 @@ public class DodgeRollCooldownBehavior : MonoBehaviour
     private IEnumerator Cooldown()
     {
         dataObj.boolData = false;
-        yield return new WaitForSeconds(cooldownTime);
+        yield return cooldownWaitObj;
         dataObj.boolData = true;
     }
 }

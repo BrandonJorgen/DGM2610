@@ -7,7 +7,7 @@ public class CharacterControllerSO : ScriptableObject
     public Vector3 position = Vector3.zero;
 
     private Vector2 normalizedPosition;
-    private Vector3 lastGroundedPosition;
+    private Vector3 lastGroundedPosition, facingDirection;
     
     public float jumpSpeed = 10f, rollSpeed = 100f, gravity = 9.81f, swingMomentumSpeed = 5f, vaultDistance = 5f, 
         slopeRayLength, slopeMultiplier, knockbackDistance = 1f, coyoteTime = 1f;
@@ -119,9 +119,11 @@ public class CharacterControllerSO : ScriptableObject
                     
                     if (faceMoveDirection.boolData)
                     {
+                        facingDirection.Set(position.x, 0, position.z);
+                
                         if (horizontalInput != 0 || verticalInput != 0)
                         {
-                            controller.transform.forward = new Vector3(position.x, 0, position.z);
+                            controller.transform.forward = facingDirection;
                         }
                     }
                 }
@@ -170,9 +172,11 @@ public class CharacterControllerSO : ScriptableObject
         {
             if (faceMoveDirection.boolData)
             {
+                facingDirection.Set(position.x, 0, position.z);
+                
                 if (horizontalInput != 0 || verticalInput != 0)
                 {
-                    controller.transform.forward = new Vector3(position.x, 0, position.z);
+                    controller.transform.forward = facingDirection;
                 }
             }
         }
@@ -209,31 +213,28 @@ public class CharacterControllerSO : ScriptableObject
 
     public void Jump(CharacterController controller)
     {
-        if (canJump.boolData)
+        if (canJump.boolData && !jumping.boolData)
         {
-            if (!jumping.boolData)
+            if (canMove.boolData)
             {
-                if (canMove.boolData)
+                if (controller.isGrounded)
                 {
-                    if (controller.isGrounded)
-                    {
-                        position.y = jumpSpeed;
-                        jumping.boolData = true;
-                        canRoll.boolData = false;
-                        yReset = false;
-                    } 
-                    
-                    if (!controller.isGrounded && coyoteTime > 0)
-                    {
-                        position.y = jumpSpeed;
-                        jumping.boolData = true;
-                        canRoll.boolData = false;
-                        yReset = false;
-                    }
+                    position.y = jumpSpeed;
+                    jumping.boolData = true;
+                    canRoll.boolData = false;
+                    yReset = false;
+                } 
+                
+                if (!controller.isGrounded && coyoteTime > 0)
+                {
+                    position.y = jumpSpeed;
+                    jumping.boolData = true;
+                    canRoll.boolData = false;
+                    yReset = false;
                 }
-
-                controller.Move(position * Time.deltaTime);
             }
+
+            controller.Move(position * Time.deltaTime);
         }
     }
 
@@ -257,6 +258,8 @@ public class CharacterControllerSO : ScriptableObject
                             position.x = horizontalInput * rollSpeed;
                             position.z = verticalInput * rollSpeed;
                         }
+
+                        yReset = false;
                     }
 
                     position.y -= gravity * slopeMultiplier * Time.deltaTime;

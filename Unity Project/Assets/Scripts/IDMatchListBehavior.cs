@@ -11,12 +11,17 @@ public class IDMatchListBehavior : IDMatch
     }
 
     public List<nearbyEnemy> nearbyEnemyList;
+    private nearbyEnemy enemyObj;
+
+    private void Start()
+    {
+        enemyObj = new nearbyEnemy();
+    }
 
     public void AddToList()
     {
-        nearbyEnemy enemy = new nearbyEnemy();
-        enemy.enemyObj = otherBehaviourObj.gameObject;
+        enemyObj.enemyObj = otherBehaviourObj.gameObject;
         
-        nearbyEnemyList.Add(enemy);
+        nearbyEnemyList.Add(enemyObj);
     }
 }
