@@ -1,11 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TransformBehavior : MonoBehaviour
 {
     private Transform transformObj;
 
-    public float knockbackFloat;
+    public float knockbackFloat, movementRate = 1f;
 
     private void Start()
     {
@@ -14,7 +13,16 @@ public class TransformBehavior : MonoBehaviour
 
     public void Knockback()
     {
-        Debug.Log("Knockback called");
         transformObj.position += transformObj.TransformDirection(Vector3.back) * knockbackFloat;
+    }
+    
+    public void KnockbackFloatArg(float knockbackDistance)
+    {
+        transformObj.position += transformObj.TransformDirection(Vector3.back) * knockbackDistance;
+    }
+
+    public void MoveLeft()
+    {
+        transformObj.position += transformObj.TransformDirection(Vector3.left) * movementRate * Time.deltaTime;
     }
 }

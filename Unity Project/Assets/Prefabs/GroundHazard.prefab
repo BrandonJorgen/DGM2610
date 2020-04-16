@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8089841372856449946}
   - component: {fileID: 7598694040208119876}
   - component: {fileID: 4755290062770292125}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GroundHazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

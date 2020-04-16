@@ -47,6 +47,7 @@
           <e p="DestroyObjSO.cs" t="Include" />
           <e p="DodgeRollCooldownBehavior.cs" t="Include" />
           <e p="EbuttonEventBehavior.cs" t="Include" />
+          <e p="EnemyAccess.cs" t="Include" />
           <e p="EnemyAttackBehavior.cs" t="Include" />
           <e p="EnemyEngagedCheckBehavior.cs" t="Include" />
           <e p="FloatDataSO.cs" t="Include" />

@@ -16,16 +16,16 @@ TagManager:
   - Wall
   - Wall Check
   - Ground
-  - 
-  - 
-  - 
+  - GroundHazard
+  - AttackableGate
+  - Enemy
   - Enemy Sight
   - Enemy Targets
   - 
   - 
   - 
   - 
-  - 
+  - PlayerDamageTrigger
   - 
   - 
   - 

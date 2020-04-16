@@ -882,6 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackFloat: 5
+  movementRate: 1
 --- !u!114 &2442441683509780559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,7 +1279,7 @@ GameObject:
   - component: {fileID: 5387261057852881193}
   - component: {fileID: 1413521952140420800}
   - component: {fileID: 8938135442354712974}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DamageDetection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1330,28 +1331,6 @@ MonoBehaviour:
     EnterEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1114884502935547629}
-          m_MethodName: AddValue
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: -1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 6102080190181414900}
-          m_MethodName: CheckValue
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 4140100267399783110}
           m_MethodName: ChangeBase
           m_Mode: 2
@@ -1359,17 +1338,6 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 11400000, guid: 238c74cc906a92c46bedafc7e8c64ebc,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: AIBaseSO, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 7253441502321942588}
-          m_MethodName: Knockback
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
