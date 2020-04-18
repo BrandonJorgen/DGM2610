@@ -7,19 +7,19 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIBrainBehavior : MonoBehaviour
 {
-    public AIBaseSO aiBaseObj, idleBaseObj, chaseBaseObj, returnBaseObj, hoverBaseObj, attackBaseObj, backingBaseObj;
+    public AIBaseSO aiBaseObj, idleBaseObj, chaseBaseObj, returnBaseObj, hoverBaseObj, attackBaseObj, backingBaseObj, stunnedBaseObj;
     public AITargetingBehavior aiTargeting;
     public SphereCollider aiSightRadius;
 
     public IDName playerID, treasureID, aiID; //aiID is for the special attack stuff
 
-    public float returnWaitTime = 3f, attackWaitTime = 1f, postAttackWaitTime = 1f, attackEventWaitTime = 1f;
+    public float returnWaitTime = 3f, attackWaitTime = 1f, postAttackWaitTime = 1f, attackEventWaitTime = 1f, stunnedWaitTime = 1f;
 
     public UnityEvent attackEvent, preAttackEvent;
 
     private NavMeshAgent agent;
     private WaitForFixedUpdate waitObj = new WaitForFixedUpdate();
-    private WaitForSeconds returnWaitObj, attackWaitObj, postAttackWaitObj, attackEventWaitObj;
+    private WaitForSeconds returnWaitObj, attackWaitObj, postAttackWaitObj, attackEventWaitObj, stunnedWaitObj;
     private bool canRun, canAttack = true, attacked;
     private Vector3 spawnLoc, moveBackPosition, attackPosition;
     private NavMeshHit hit;
@@ -39,6 +39,7 @@ public class AIBrainBehavior : MonoBehaviour
         attackWaitObj = new WaitForSeconds(attackWaitTime);
         postAttackWaitObj = new WaitForSeconds(postAttackWaitTime);
         attackEventWaitObj = new WaitForSeconds(attackEventWaitTime);
+        stunnedWaitObj = new WaitForSeconds(stunnedWaitTime);
         attackCountdown = 2f;
         canAttack = true;
         attacked = false;
@@ -197,6 +198,13 @@ public class AIBrainBehavior : MonoBehaviour
                     ResetAttackCountdown();
                     ChangeBase(backingBaseObj);
                 }
+            }
+
+            if (aiBaseObj == stunnedBaseObj)
+            {
+                agent.destination = transform.position;
+                yield return stunnedWaitObj;
+                ChangeBase(hoverBaseObj);
             }
             
             yield return waitObj;

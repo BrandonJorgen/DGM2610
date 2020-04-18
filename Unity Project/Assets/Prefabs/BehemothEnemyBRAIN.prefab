@@ -715,6 +715,7 @@ MonoBehaviour:
   hoverBaseObj: {fileID: 11400000, guid: e82eaa1ca84ecbb4198959bfbb893490, type: 2}
   attackBaseObj: {fileID: 11400000, guid: 3582de15bbfe4de47a0650feda851974, type: 2}
   backingBaseObj: {fileID: 11400000, guid: ae6c82baf821f16408dca8ef070f8a22, type: 2}
+  stunnedBaseObj: {fileID: 11400000, guid: b4895562c3726634597841aa390bc186, type: 2}
   aiTargeting: {fileID: 8478092632995318563}
   aiSightRadius: {fileID: 5750430095009471534}
   playerID: {fileID: 11400000, guid: 4db7aee5db2ba89468d3a395592d7ff4, type: 2}
@@ -724,6 +725,7 @@ MonoBehaviour:
   attackWaitTime: 6
   postAttackWaitTime: 0.75
   attackEventWaitTime: 2
+  stunnedWaitTime: 1
   attackEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1335,12 +1337,23 @@ MonoBehaviour:
           m_MethodName: ChangeBase
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 238c74cc906a92c46bedafc7e8c64ebc,
+            m_ObjectArgument: {fileID: 11400000, guid: b4895562c3726634597841aa390bc186,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: AIBaseSO, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1490164387106470583}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: TookDamage
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
