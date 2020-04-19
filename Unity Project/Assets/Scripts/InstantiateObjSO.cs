@@ -7,7 +7,7 @@ public class InstantiateObjSO : ScriptableObject
 
     public void InstantiateObj(Transform location)
     {
-        if (objToInstantiate != null)
+        if (objToInstantiate != null && location != null)
         {
             Instantiate(objToInstantiate, location.position, location.rotation);
         }

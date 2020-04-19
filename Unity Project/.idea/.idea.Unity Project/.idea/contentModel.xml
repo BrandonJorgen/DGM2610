@@ -42,6 +42,7 @@
           <e p="CharacterControllerSO.cs" t="Include" />
           <e p="ComponentToggleBehavior.cs" t="Include" />
           <e p="ControlsEventBehavior.cs" t="Include" />
+          <e p="CursorSO.cs" t="Include" />
           <e p="DataStorageSO.cs" t="Include" />
           <e p="Debugger.cs" t="Include" />
           <e p="DestroyObjSO.cs" t="Include" />
@@ -59,6 +60,7 @@
           <e p="IDMatchListBehavior.cs" t="Include" />
           <e p="IDName.cs" t="Include" />
           <e p="ImageBehavior.cs" t="Include" />
+          <e p="InputDeviceOptions.cs" t="Include" />
           <e p="InputSelectorBehavior.cs" t="Include" />
           <e p="InstantiatedFloatDataBehavior.cs" t="Include" />
           <e p="InstantiatedValueCheckBehavior.cs" t="Include" />
@@ -73,7 +75,9 @@
           <e p="ObjPileBehavior.cs" t="Include" />
           <e p="ObjToggleBehavior.cs" t="Include" />
           <e p="ParentingBehavior.cs" t="Include" />
+          <e p="QualityOptions.cs" t="Include" />
           <e p="QuitGameSO.cs" t="Include" />
+          <e p="ResolutionOptions.cs" t="Include" />
           <e p="TimedEventBehavior.cs" t="Include" />
           <e p="TMPTextBehavior.cs" t="Include" />
           <e p="TMPUGUITextBehavior.cs" t="Include" />

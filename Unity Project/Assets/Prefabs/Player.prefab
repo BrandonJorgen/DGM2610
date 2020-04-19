@@ -604,6 +604,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: bd86bae312ab1094d89030881cc5d81c, type: 2}
+          m_MethodName: EventDebug
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: treasure found ONLY ONCE >:(
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
     ExitEvent:
@@ -1501,6 +1512,8 @@ GameObject:
   - component: {fileID: 151936752}
   - component: {fileID: 151936750}
   - component: {fileID: 151936751}
+  - component: {fileID: 817250399}
+  - component: {fileID: 3815194197905681202}
   m_Layer: 0
   m_Name: DropTreasure
   m_TagString: Untagged
@@ -1646,17 +1659,6 @@ MonoBehaviour:
   handlerEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 06f7155484ddf344d99d20699bd221b5, type: 2}
-        m_MethodName: InstantiateObj
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6574480378439824411}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 8e61351e1d3133740a690602a379b208, type: 2}
         m_MethodName: AddToData
         m_Mode: 4
@@ -1701,8 +1703,55 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: bd86bae312ab1094d89030881cc5d81c, type: 2}
+        m_MethodName: EventDebug
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: only call me once dillweed
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 817250399}
+        m_MethodName: InstantiateObjWithRotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &817250399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378439824410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af51721c4625d394fa5cec8602b44338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instObj: {fileID: 6967578194115173150, guid: dbdd69d1922d10040966d645f876bf9e, type: 3}
+--- !u!114 &3815194197905681202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574480378439824410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a48e3711ef6922e44a86375105c83ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6574480378495206237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2446,7 +2495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBackDistance: {fileID: 11400000, guid: 730e20277e5a503469bc583cc8479560, type: 2}
-  playerDamage: {fileID: 0}
+  playerDamage: {fileID: 11400000, guid: 5335219d58615794f8a3034c249f3fb4, type: 2}
 --- !u!1 &6574480379532828890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,6 +2920,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 06603495eb46a594388b8376660dfac2, type: 2}
+        m_MethodName: ToggleCursor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2029793974
@@ -3247,6 +3307,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 06603495eb46a594388b8376660dfac2, type: 2}
+        m_MethodName: ShowCursor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &318956119386270919
@@ -3380,6 +3451,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: c75134fb463d7b14f8ae617d3ddbf63c, type: 2}
         m_MethodName: SwitchBool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3815194197905681202}
+        m_MethodName: ObjToggleEnabled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

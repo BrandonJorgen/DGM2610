@@ -5,10 +5,15 @@ public class GameActionHandler : MonoBehaviour
 {
     public GameAction gameActionObj;
     public UnityEvent handlerEvent;
-    
-    void Start()
+
+    private void OnEnable()
     {
         gameActionObj.action += Action;
+    }
+
+    private void OnDisable()
+    {
+        gameActionObj.action -= Action;
     }
 
     private void Action()

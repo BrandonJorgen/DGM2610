@@ -5,27 +5,26 @@ using UnityEngine.Events;
 public class ValueCheckSO : ScriptableObject
 {
     public FloatDataSO dataObj;
-    public bool greaterThan, lessThan, equal, greaterThanOrEqualTo;
     public UnityEvent greaterThanEvent, lessThanEvent, equalEvent, greaterThanOrEqualToEvent;
 
     public void CheckAgainstFloat(float comparedFloat)
     {
-        if (dataObj.value > comparedFloat && greaterThan)
+        if (dataObj.value > comparedFloat)
         {
             greaterThanEvent.Invoke();
         }
         
-        if (dataObj.value < comparedFloat && lessThan)
+        if (dataObj.value < comparedFloat)
         {
             lessThanEvent.Invoke();
         }
 
-        if (dataObj.value == comparedFloat && equal)
+        if (dataObj.value == comparedFloat)
         {
             equalEvent.Invoke();
         }
         
-        if (dataObj.value >= comparedFloat && greaterThanOrEqualTo)
+        if (dataObj.value >= comparedFloat)
         {
             greaterThanOrEqualToEvent.Invoke();
         }

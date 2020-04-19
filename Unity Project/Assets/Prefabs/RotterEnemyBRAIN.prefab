@@ -759,7 +759,7 @@ MonoBehaviour:
   attackWaitTime: 6
   postAttackWaitTime: 0.75
   attackEventWaitTime: 2
-  stunnedWaitTime: 1
+  stunnedWaitTime: 0.5
   attackEvent:
     m_PersistentCalls:
       m_Calls:

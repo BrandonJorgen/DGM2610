@@ -13,10 +13,6 @@ MonoBehaviour:
   m_Name: ThrowTreasureCheck
   m_EditorClassIdentifier: 
   dataObj: {fileID: 11400000, guid: 8e61351e1d3133740a690602a379b208, type: 2}
-  greaterThan: 0
-  lessThan: 0
-  equal: 0
-  greaterThanOrEqualTo: 1
   greaterThanEvent:
     m_PersistentCalls:
       m_Calls: []
