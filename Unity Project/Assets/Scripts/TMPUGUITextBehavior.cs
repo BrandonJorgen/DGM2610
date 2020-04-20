@@ -8,11 +8,17 @@ public class TMPUGUITextBehavior : MonoBehaviour
     private TextMeshProUGUI tmpObj;
     private int i;
 
+    [Multiline]
     public List<string> stringList;
 
     private void Awake()
     {
         tmpObj = GetComponent<TextMeshProUGUI>();
+        NextString();
+    }
+
+    private void OnDisable()
+    {
         NextString();
     }
 

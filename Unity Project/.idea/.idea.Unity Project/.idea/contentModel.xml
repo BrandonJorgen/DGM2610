@@ -51,6 +51,7 @@
           <e p="EnemyAccess.cs" t="Include" />
           <e p="EnemyAttackBehavior.cs" t="Include" />
           <e p="EnemyEngagedCheckBehavior.cs" t="Include" />
+          <e p="EscapeKeyInput.cs" t="Include" />
           <e p="FloatDataSO.cs" t="Include" />
           <e p="GameAction.cs" t="Include" />
           <e p="GameActionHandler.cs" t="Include" />
@@ -79,6 +80,7 @@
           <e p="QuitGameSO.cs" t="Include" />
           <e p="ResolutionOptions.cs" t="Include" />
           <e p="TimedEventBehavior.cs" t="Include" />
+          <e p="TimeScaleSO.cs" t="Include" />
           <e p="TMPTextBehavior.cs" t="Include" />
           <e p="TMPUGUITextBehavior.cs" t="Include" />
           <e p="TransformBehavior.cs" t="Include" />
